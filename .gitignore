@@ -4,3 +4,4 @@ node_modules/
 src/bundles
 src/assets/_hot
 .DS_Store
+temp/
