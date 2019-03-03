@@ -1,0 +1,16 @@
+{
+  "title": "Alexander Morgunov",
+  "url": "https://amorgunov.com/",
+  "description": "I am writing about my experiences as a naval navel-gazer.",
+  "feed": {
+    "subtitle": "I am writing about my experiences as a naval navel-gazer.",
+    "filename": "feed.xml",
+    "path": "/feed/feed.xml",
+    "url": "https://amorgunov.com/feed/feed.xml",
+    "id": "https://amorgunov.com/"
+  },
+  "author": {
+    "name": "Alexander Morgunov",
+    "email": "fxl@list.ru"
+  }
+}

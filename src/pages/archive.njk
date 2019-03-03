@@ -1,0 +1,18 @@
+---
+layout: layouts/home.njk
+title: Архив постов
+tags:
+  - nav
+navtitle: Посты
+pagination:
+  data: collections.posts
+  size: 10
+permalink: /posts/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber }}/{% endif %}index.html
+---
+
+<h1>Архив постов</h1>
+
+{% set postslist = pagination.items %}
+{% include "components/posts.njk" %}
+
+{% include "components/pagination.njk" %}

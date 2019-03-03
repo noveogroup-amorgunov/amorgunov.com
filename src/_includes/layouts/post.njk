@@ -1,0 +1,17 @@
+---
+layout: layouts/default.njk
+templateClass: tmpl-post
+---
+<div class="post">
+  <h1>{{ title }}</h1>
+
+  {{ content | safe }}
+</div>
+<p style="text-align: center;"><a href="{{ '/' | url }}">← На главную</a></p>
+
+<div class="post-layer__up">
+  <div class="post-layer__back">
+    <i class="arrow arrow_type_up"></i>
+    <i class="arrow arrow_type_down"></i>
+  </div>
+</div>

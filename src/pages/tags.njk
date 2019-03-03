@@ -1,0 +1,24 @@
+---
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+  filter:
+    - all
+    - nav
+    - post
+    - posts
+layout: layouts/home.njk
+renderData:
+  title: Протегировано “{{ tag }}”
+permalink: /tags/{{ tag }}/
+---
+<h1>Протегировано “{{ tag }}”</h1>
+
+{% set postslist = collections[ tag ] %}
+{% include "components/posts.njk" %}
+
+<div class="more">
+  <p>Смотрите <a href="{{ '/tags/' | url }}">все теги</a>.</p>
+</div>
+

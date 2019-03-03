@@ -1,0 +1,136 @@
+.terminal {
+  margin-bottom: 30px;
+}
+
+.term {
+  height: 20rem;
+  width: 82%;
+  margin: 0 auto;
+  background: #111;
+  border: 1px solid #252525;
+  border-radius: 0.3rem;
+  box-shadow: 0 0 4rem rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+}
+
+.term-bar {
+  height: 42px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.term-winctrl {
+  padding: 5px 10px;
+}
+
+.term:hover .term-btn {
+  &.close {
+    background-color: #ff3b30;
+  }
+
+  &.minimise {
+    background-color: #fc0;
+  }
+
+  &.maximise {
+    background-color: #28cd41;
+  }
+}
+
+.term .term-btn {
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 0.5rem;
+  display: inline-block;
+  margin: 1px 3px;
+  background-color: #eee;
+}
+
+.term-title {
+  font-size: 15px;
+  font-family: "Menlo", "Meslo LG", monospace;
+  line-height: 22px;
+  color: #eee;
+  margin: auto 0;
+}
+
+.term-bar-spacer {
+  display: inline-block;
+  width: 4.5rem;
+  height: 2rem;
+  padding: 0.5rem;
+  text-align: right;
+  margin: 0;
+
+  svg {
+    width: 1rem;
+    height: 1rem;
+    fill: #666;
+  }
+}
+
+.term-line {
+  height: 20px;
+  font-size: 14px;
+}
+
+.term-cont {
+  font-family: 'Inconsolata', monospace;
+  color: #fff;
+  padding: 8px;
+  height: calc(100% - 50px);
+  overflow-y: auto;
+  margin-bottom: 15px;
+}
+
+.term-cmd {
+  background: none;
+  margin: 0;
+  border: 0;
+  color: inherit;
+  font-family: inherit;
+  font-size: 14px;
+  outline: none;
+}
+
+.term-cmd.current {
+  min-width: 1px;
+  padding-left: 0;
+  display: inline-block;
+}
+
+.term .bot {
+  color: #ff77cd;
+  font-weight: bold;
+}
+
+.term-line2::after {
+  content: "_";
+  opacity: 0;
+  animation: cursor 1s infinite;
+}
+
+@keyframes cursor {
+  0% {
+    opacity: 0;
+  }
+
+  40% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}

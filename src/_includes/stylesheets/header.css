@@ -1,0 +1,26 @@
+@import './media.css';
+@import './variables.css';
+
+/* Header */
+
+.header {
+  display: flex;
+  width: 100%;
+  color: #999;
+  margin: 30px 0;
+  max-width: var(--content-max-width);
+}
+
+.header__homepage {
+  flex-grow: 1;
+  font-weight: bold;
+}
+
+.header__nav-item {
+  padding-right: 5px;
+}
+
+.header__nav-item:not(:last-child)::after {
+  padding-left: 5px;
+  content: '•';
+}

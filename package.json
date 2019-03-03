@@ -1,0 +1,100 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "NODE_ENV=production npm-run-all webpack:build eleventy:build",
+    "dev": "npm-run-all --parallel webpack:watch eleventy:serve",
+    "eleventy:serve": "eleventy --input=src --config=configs/eleventy.config.js --serve",
+    "eleventy:build": "eleventy --input=src --config=configs/eleventy.config.js",
+    "webpack:watch": "webpack --mode development --watch --config configs/webpack.config.js",
+    "webpack:build": "webpack --mode production --config configs/webpack.config.js",
+    "create:post": "node scripts/newPost",
+    "lint": "npm-run-all lint:*",
+    "lint:css": "stylelint src/_includes/stylesheets/*.css",
+    "lint:js": "eslint src/_includes/javascript"
+  },
+  "dependencies": {
+    "@babel/polyfill": "7.2.5",
+    "@typebot/core": "0.0.2",
+    "event-emitter": "0.3.5"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "0.7.1",
+    "@11ty/eleventy-plugin-rss": "1.0.3",
+    "@11ty/eleventy-plugin-syntaxhighlight": "2.0.0",
+    "@babel/core": "7.3.4",
+    "@babel/preset-env": "7.3.4",
+    "@babel/register": "7.0.0",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "8.0.5",
+    "css-hot-loader": "1.4.3",
+    "css-loader": "2.1.0",
+    "eslint": "5.14.1",
+    "eslint-config-iddqd": "1.2.0",
+    "eslint-plugin-import": "2.16.0",
+    "eslint-plugin-react": "7.12.4",
+    "husky": "1.3.1",
+    "luxon": "1.0.0",
+    "markdown-it": "8.4.1",
+    "markdown-it-anchor": "5.0.2",
+    "mini-css-extract-plugin": "0.5.0",
+    "npm-run-all": "4.1.5",
+    "postcss-cssnext": "3.1.0",
+    "postcss-custom-media": "7.0.7",
+    "postcss-import": "12.0.1",
+    "postcss-loader": "3.0.0",
+    "postcss-nested": "4.1.2",
+    "postcss-preset-env": "6.5.0",
+    "postcss-reporter": "6.0.1",
+    "stylelint": "9.10.1",
+    "stylelint-config-recommended": "^2.1.0",
+    "stylelint-config-standard": "^18.2.0",
+    "webpack": "4.29.5",
+    "webpack-cli": "3.2.3"
+  },
+  "browserslist": [
+    "last 2 version",
+    "last 2 Chrome version",
+    "last 2 Firefox version",
+    "last 2 Safari version",
+    "Opera 12.1",
+    "last 1 Opera version",
+    "ie >= 10",
+    "android >= 4",
+    "ios >= 5.1",
+    "safari >= 8"
+  ],
+  "eslintConfig": {
+    "extends": "iddqd/react",
+    "parser": "babel-eslint",
+    "parserOptions": {
+      "ecmaVersion": "2018"
+    },
+    "env": {
+      "browser": true
+    },
+    "globals": {
+      "window": true,
+      "document": true,
+      "fetch": true
+    },
+    "rules": {
+      "no-console": 1,
+      "import/order": 0,
+      "no-return-await": 0,
+      "capitalized-comments": 0,
+      "generator-star-spacing": 0,
+      "import/prefer-default-export": 0,
+      "no-undefined": 0,
+      "indent": [
+        "error",
+        2
+      ]
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint",
+      "pre-push": "npm run lint"
+    }
+  }
+}

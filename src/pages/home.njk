@@ -1,0 +1,27 @@
+---
+layout: layouts/home.njk
+#tags:
+#  - nav
+#navtitle: "@amorgunov"
+permalink: /
+---
+<div class="homepage">
+  <img class="homepage__photo" src="/assets/images/avatar.jpg"/>
+  <h1>Morgunov Alexander</h1>
+  <div class="desc">Javascript разработчик в Яндексе, сфокусированный <span>на&nbsp;результате</span> и производительности.
+
+  </div>
+  <div class="desc2">Работаю в Яндексе с начала 2018 года разработчиком в Новосибирске, Россия. Кратко о себе: люблю Javascipt и разработку в целом, люблю когда настроены бизнес-процессы, добиваться поставленных целей и играть в футбол. Пишу небольшие заметки в тегерамме: <a rel="external" href="https://t.me/amorgunov">t.me/amorgunov</a>
+  </div>
+
+  <h3>Последние посты</h3>
+
+  {% set postslist = collections.posts | head(-3) %}
+  {% include "components/posts.njk" %}
+
+  <div class="more">
+    Больше постов вы найдете <a href="{{ '/posts/' | url }}">в архиве</a>.
+  </div>
+
+</div>
+

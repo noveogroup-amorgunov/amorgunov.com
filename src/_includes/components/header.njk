@@ -1,0 +1,10 @@
+<header class="header">
+  <div class="header__homepage">
+    {%  if page.url != '/' %}<a href="/">← amorgunov</a>{%  endif %}
+  </div>
+  <div class="header__nav">
+    {%- for nav in collections.nav -%}
+      <span class="header__nav-item{% if nav.url == page.url %} header__nav-item_active{% endif %}"><a href="{{ nav.url | url }}">{{ nav.data.navtitle }}</a></span>
+    {%- endfor -%}
+  </div>
+</header>
