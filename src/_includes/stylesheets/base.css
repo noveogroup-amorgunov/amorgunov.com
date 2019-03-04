@@ -42,6 +42,15 @@ a[rel~='external']::after {
   }
 }
 
+.post a[rel~='external']::after {
+  opacity: 0.8;
+  content: '\2009';
+  width: 15px;
+  background-position-y: 5px;
+  background-repeat: no-repeat;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' aria-hidden='true' x='0px' y='0px' viewBox='0 0 100 100' width='15' height='15' class='icon outbound'%3E%3Cpath fill='currentColor' d='M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z'%3E%3C/path%3E%3Cpolygon fill='currentColor' points='45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9'%3E%3C/polygon%3E%3C/svg%3E");
+}
+
 a[rel~='external'] {
   &:hover {
     opacity: 0.8;
@@ -199,6 +208,11 @@ pre code.hljs {
   padding: 20px 30px;
   -webkit-font-smoothing: antialiased;
   border-radius: 2px;
+
+  @media (--viewport-small) {
+    -webkit-overflow-scrolling: touch;
+    overflow-x: scroll;
+  }
 }
 
 p code {
@@ -329,4 +343,10 @@ body.tmpl-post {
 ul {
   padding-inline-start: 40px;
   padding-left: 40px;
+}
+
+iframe {
+  @media (--viewport-small) {
+    width: 100%;
+  }
 }
