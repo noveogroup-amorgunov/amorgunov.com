@@ -280,7 +280,8 @@ pre code.hljs {
 }
 @media (max-width: 1024px) {
 pre code.hljs {
-    -webkit-overflow-scrolling: touch
+    -webkit-overflow-scrolling: touch;
+    overflow-x: scroll
 }
   }
 p code {
