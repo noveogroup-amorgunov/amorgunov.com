@@ -123,7 +123,7 @@ animation.addEventListener('finish', tidyUpAnimations);
       type="image/gif">
     <img
       alt="Пример хорошей перерисовки компонентов"
-      class="lazyload
+      class="lazyload"
       src="/assets/images/2019-03-01-meetup-review-js-party-nsk/5.min.jpg"
       data-src="/assets/images/2019-03-01-meetup-review-js-party-nsk/5.gif">
 </picture>
@@ -143,7 +143,7 @@ animation.addEventListener('finish', tidyUpAnimations);
       type="image/gif">
     <img
       alt="Пример с лишней перерисовкой статической части контента"
-      class="lazyload
+      class="lazyload"
       src="/assets/images/2019-03-01-meetup-review-js-party-nsk/4.min.jpg"
       data-src="/assets/images/2019-03-01-meetup-review-js-party-nsk/4.gif">
 </picture>
@@ -153,7 +153,12 @@ animation.addEventListener('finish', tidyUpAnimations);
 
 Кроме использования данных с вкладки Rendering в Chrome DevTools, можно контролировать рендеринг с помощью библиотеки [maicki/why-did-you-update](https://github.com/maicki/why-did-you-update), которая будет спамить в консоль, если react компонент отрендерился без изменения пропсов.
 
-<p><img alt="Пример работы библиотеки why-did-you-update" src="/assets/images/2019-03-01-meetup-review-js-party-nsk/3.png" /></p>
+<p><img
+  alt="Пример работы библиотеки why-did-you-update"
+  class="lazyload"
+  src="/assets/images/2019-03-01-meetup-review-js-party-nsk/3.min.png"
+  data-src="/assets/images/2019-03-01-meetup-review-js-party-nsk/3.png" />
+</p>
 
 **Что-бы контролировать обновление компонента, можно использовать PureComponent**. Такие компоненты определяют lifecycle-метод `shouldComponentUpdate`, который в случае возврата `false`, не будет перерендеривать компонент. PureComponent будет вызывать рендер только в том случае, если обнаружит изменения в state или props компонента. Но стоит учесть, что происходит неглубокая проверка (так как глубокая проверка трудозатратная операция), так что сравнение не будет происходить по вложенным объектам и массивам.
 
@@ -239,7 +244,13 @@ class MyComponent extends PureComponent {...}
 
 Вот результат двух способов:
 
-<p><img alt="Сравнение grayscale с оригинальным изображением" src="/assets/images/2019-03-01-meetup-review-js-party-nsk/6.jpg" /></p>
+<p>
+<img
+  alt="Сравнение grayscale с оригинальным изображением"
+  class="lazyload"
+  src="/assets/images/2019-03-01-meetup-review-js-party-nsk/6.min.jpg"
+  data-src="/assets/images/2019-03-01-meetup-review-js-party-nsk/6.jpg" />
+</p>
 <div class="image-text">Слева оригинал, по середине css filter, справа canvas</div>
 
 Используя не сложные формулы, можно реализовать чуть ли не все эффекты, которые есть, например, в photoshop-е - Multiply, Screen, Darken, Lighten и так далее. Хотя, все это же можно реализовать и css-ом (Онлайн демо: https://www.cssfilters.co/).
@@ -291,4 +302,10 @@ const type = types.error;
 
 В общем ходите на митапы, а если есть что рассказать, то не в качестве слушателя, а в качестве докладчика. Всем бобра
 
-<p><img alt="Бейджик с мероприятия" src="/assets/images/2019-03-01-meetup-review-js-party-nsk/2.jpg" /></p>
+<p>
+<img
+  alt="Бейджик с мероприятия"
+  class="lazyload"
+  src="/assets/images/2019-03-01-meetup-review-js-party-nsk/2.min.jpg"
+  data-src="/assets/images/2019-03-01-meetup-review-js-party-nsk/2.jpg" />
+</p>
