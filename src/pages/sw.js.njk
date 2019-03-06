@@ -1,0 +1,48 @@
+---
+permalink: sw.js
+excludeFromSitemap: true
+---
+importScripts('assets/cache-polyfill.js');
+
+const APP_VERSION = '{{ 'v' | version }}';
+const CACHE_NAME = `amorgunov-${APP_VERSION}`;
+
+self.addEventListener('install', e => {
+  e.waitUntil(
+    caches.open(CACHE_NAME).then(cache => {
+      return cache.addAll([
+        `/`,
+        `/index.html`,
+        `/assets/app.css`,
+        `/assets/app.js`,
+        `/assets/cache-polyfill.js`,
+        `/assets/favicon.png`,
+        `/assets/highlight.js`,
+        `/offline.html`
+      ]).then(() => self.skipWaiting());
+    })
+  );
+});
+
+self.addEventListener('activate', event => {
+  event.waitUntil(
+    caches.keys().then(cacheNames => Promise.all(
+      cacheNames
+        .filter(cacheName => cacheName !== CACHE_NAME)
+        .map(cacheName => caches.delete(cacheName))
+        .concat(self.clients.claim())
+    ))
+  );
+});
+
+self.addEventListener('fetch', event => {
+  event.respondWith(
+    caches.open(CACHE_NAME)
+      .then(cache => cache.match(event.request, { ignoreSearch: true }))
+      .then(response => response || fetch(event.request))
+      .catch(function() {
+        // If both fail, show a generic fallback:
+        return caches.match('/offline.html');
+      })
+  );
+});

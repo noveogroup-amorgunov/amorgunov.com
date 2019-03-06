@@ -12,7 +12,10 @@ layout: layouts/post.njk
 
 Вообще, планирую после подобных встреч, особенно когда уровень докладов был на уровне, буду оформлять мини-конспекты или самые интересные вещи и мысли. Поэтому поехали.
 
-<p><img src="/assets/images/2019-03-01-meetup-review-js-party-nsk/1.jpg" /></p>
+<p><img
+  alt="Фотография с митапа"
+  src="/assets/images/2019-03-01-meetup-review-js-party-nsk/1.jpg" />
+ </p>
 
 ## Анимация в реакте
 
@@ -48,7 +51,7 @@ layout: layouts/post.njk
 
 По умолчанию не изменяется поведение компонента, только отслеживается состояния «входа» и «выхода». А мы уже сами можем придать смысл этим состояниям. Например, мы можем добавить стили к компоненту, когда он "появляется" или "уходит", тем самым сделав такую анимацию (причем компонент после ухода "unmount-ится" из DOM):
 
-<p style="text-align: center;"><iframe src="https://codesandbox.io/embed/omxqmw0nq?fontsize=14" style="width:100%; height:300px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe></p>
+<p style="text-align: center;"><iframe title="Пример работы react-transition-group" src="https://codesandbox.io/embed/omxqmw0nq?fontsize=14" style="width:100%; height:300px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe></p>
 
 ### FLIP принцип
 
@@ -65,7 +68,7 @@ layout: layouts/post.njk
 
 Если вы ничего не поняли, то вот наглядная демка этих четырех шагов:
 
-<p style="text-align: center"><iframe src="https://codepen.io/davidkpiano/embed/EbwrQQ?height=419&amp;theme-id=1&amp;slug-hash=EbwrQQ&amp;default-tab=result&amp;user=davidkpiano&amp;embed-version=2&amp;pen-title=How%20the%20FLIP%20technique%20works&amp;name=cp_embed_1" scrolling="no" style="width:100%; height:419px; border:0; border-radius: 4px; overflow:hidden;" allowtransparency="true" allowfullscreen="true"></iframe>
+<p style="text-align: center"><iframe title="Пример работы FLIP" src="https://codepen.io/davidkpiano/embed/EbwrQQ?height=419&amp;theme-id=1&amp;slug-hash=EbwrQQ&amp;default-tab=result&amp;user=davidkpiano&amp;embed-version=2&amp;pen-title=How%20the%20FLIP%20technique%20works&amp;name=cp_embed_1" scrolling="no" style="width:100%; height:419px; border:0; border-radius: 4px; overflow:hidden;" allowtransparency="true" allowfullscreen="true"></iframe>
 </p>
 
 Эта техника идеально подходит, когда нам нужно реагировать на действия пользователя и потом что-то анимировать. Например, есть галерея изображений, и при клике на изображение мы увеличиваем его. Часто начальные и конечные положение элементов не известны, и сделав расчеты заранее, получится поддерживать анимацию c 60fps. Однако есть одно *но*, эти расчеты должны уложится в 100мс после действия пользователя, которые он не сможет заметить, и ему будет казаться, что сайт отреагировал мгновенно.
@@ -110,9 +113,16 @@ animation.addEventListener('finish', tidyUpAnimations);
 
 <p>
 <picture>
-    <source data-srcset="/assets/images/2019-03-01-meetup-review-js-party-nsk/5.webp" type="image/webp">
-    <source data-srcset="/assets/images/2019-03-01-meetup-review-js-party-nsk/5.gif" type="image/gif">
+    <source
+      srcset="/assets/images/2019-03-01-meetup-review-js-party-nsk/5.min.jpg"
+      data-srcset="/assets/images/2019-03-01-meetup-review-js-party-nsk/5.webp"
+      type="image/webp">
+    <source
+      srcset="/assets/images/2019-03-01-meetup-review-js-party-nsk/5.min.jpg"
+      data-srcset="/assets/images/2019-03-01-meetup-review-js-party-nsk/5.gif"
+      type="image/gif">
     <img
+      alt="Пример хорошей перерисовки компонентов"
       class="lazyload
       src="/assets/images/2019-03-01-meetup-review-js-party-nsk/5.min.jpg"
       data-src="/assets/images/2019-03-01-meetup-review-js-party-nsk/5.gif">
@@ -123,9 +133,16 @@ animation.addEventListener('finish', tidyUpAnimations);
 
 <p>
 <picture>
-    <source data-srcset="/assets/images/2019-03-01-meetup-review-js-party-nsk/4.webp" type="image/webp">
-    <source data-srcset="/assets/images/2019-03-01-meetup-review-js-party-nsk/4.gif" type="image/gif">
+    <source
+      srcset="/assets/images/2019-03-01-meetup-review-js-party-nsk/4.min.jpg"
+      data-srcset="/assets/images/2019-03-01-meetup-review-js-party-nsk/4.webp"
+      type="image/webp">
+    <source
+      srcset="/assets/images/2019-03-01-meetup-review-js-party-nsk/4.min.jpg"
+      data-srcset="/assets/images/2019-03-01-meetup-review-js-party-nsk/4.gif"
+      type="image/gif">
     <img
+      alt="Пример с лишней перерисовкой статической части контента"
       class="lazyload
       src="/assets/images/2019-03-01-meetup-review-js-party-nsk/4.min.jpg"
       data-src="/assets/images/2019-03-01-meetup-review-js-party-nsk/4.gif">
@@ -136,7 +153,7 @@ animation.addEventListener('finish', tidyUpAnimations);
 
 Кроме использования данных с вкладки Rendering в Chrome DevTools, можно контролировать рендеринг с помощью библиотеки [maicki/why-did-you-update](https://github.com/maicki/why-did-you-update), которая будет спамить в консоль, если react компонент отрендерился без изменения пропсов.
 
-<p><img src="/assets/images/2019-03-01-meetup-review-js-party-nsk/3.png" /></p>
+<p><img alt="Пример работы библиотеки why-did-you-update" src="/assets/images/2019-03-01-meetup-review-js-party-nsk/3.png" /></p>
 
 **Что-бы контролировать обновление компонента, можно использовать PureComponent**. Такие компоненты определяют lifecycle-метод `shouldComponentUpdate`, который в случае возврата `false`, не будет перерендеривать компонент. PureComponent будет вызывать рендер только в том случае, если обнаружит изменения в state или props компонента. Но стоит учесть, что происходит неглубокая проверка (так как глубокая проверка трудозатратная операция), так что сравнение не будет происходить по вложенным объектам и массивам.
 
@@ -156,7 +173,7 @@ class MyComponent extends PureComponent {...}
 
 В общем на этом доклад и закончился, задача успешна выполнена, анимация радует пользователей. Могу так же порекомендовать отличный доклад с HolyJS по анимации в реакте:
 
-<p style="text-align: center;"><iframe width="560" height="315" src="https://www.youtube.com/embed/Ug_dwJa07Os" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+<p style="text-align: center;"><iframe title="Доклад по анимации в react" width="560" height="315" src="https://www.youtube.com/embed/Ug_dwJa07Os" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
 
 ## Отпимизация изображений
 
@@ -222,7 +239,7 @@ class MyComponent extends PureComponent {...}
 
 Вот результат двух способов:
 
-<p><img src="/assets/images/2019-03-01-meetup-review-js-party-nsk/6.jpg" /></p>
+<p><img alt="Сравнение grayscale с оригинальным изображением" src="/assets/images/2019-03-01-meetup-review-js-party-nsk/6.jpg" /></p>
 <div class="image-text">Слева оригинал, по середине css filter, справа canvas</div>
 
 Используя не сложные формулы, можно реализовать чуть ли не все эффекты, которые есть, например, в photoshop-е - Multiply, Screen, Darken, Lighten и так далее. Хотя, все это же можно реализовать и css-ом (Онлайн демо: https://www.cssfilters.co/).
@@ -239,7 +256,7 @@ class MyComponent extends PureComponent {...}
 
 Никита уже раньше рассказывал этот доклад, вы можете его посмотреть сами:
 
-<p style="text-align: center;"><iframe width="560" height="315" src="https://www.youtube.com/embed/D9WRXN2dcdk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+<p style="text-align: center;"><iframe title="Доклад по работе с AST" width="560" height="315" src="https://www.youtube.com/embed/D9WRXN2dcdk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
 
 ---
 
@@ -274,4 +291,4 @@ const type = types.error;
 
 В общем ходите на митапы, а если есть что рассказать, то не в качестве слушателя, а в качестве докладчика. Всем бобра
 
-<p><img src="/assets/images/2019-03-01-meetup-review-js-party-nsk/2.jpg" /></p>
+<p><img alt="Бейджик с мероприятия" src="/assets/images/2019-03-01-meetup-review-js-party-nsk/2.jpg" /></p>

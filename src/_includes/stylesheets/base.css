@@ -78,7 +78,7 @@ a[rel~='external'] {
 
 a {
   text-decoration: none;
-  color: #777;
+  color: #585858;
 }
 
 .homepage h1 {
@@ -247,7 +247,7 @@ blockquote p {
 .image-text {
   text-align: center;
   margin: -10px auto 0;
-  color: #777;
+  color: #595959;
   font-size: 16px;
   line-height: 16px;
 }

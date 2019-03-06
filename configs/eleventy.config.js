@@ -11,6 +11,12 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addLayoutAlias('post', 'layouts/post.njk');
 
+  eleventyConfig.addFilter('version', value => {
+    const version = process.env.COMMIT_REF || 'dev';
+
+    return `${value}${version}`;
+  });
+
   eleventyConfig.addFilter('readableDate', dateObj => {
     return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toFormat('dd/LL/yyyy');
   });

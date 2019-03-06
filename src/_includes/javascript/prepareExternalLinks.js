@@ -8,7 +8,7 @@ function isExternalLink(url) {
 export default function prepareExternalLinks() {
   document.querySelectorAll('.post a').forEach(a => {
     if (isExternalLink(a.getAttribute('href'))) {
-      a.setAttribute('rel', 'external');
+      a.setAttribute('rel', 'noreferrer external');
       a.setAttribute('target', '_blank');
     }
   });

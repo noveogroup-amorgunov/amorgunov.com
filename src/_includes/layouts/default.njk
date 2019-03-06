@@ -12,6 +12,7 @@
     <meta name="Description" content="{{ renderData.description or description or metadata.description }}">
     <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
     <link rel="stylesheet" href="{{ '/assets/app.css' | url }}">
+    <link rel="manifest" href="/manifest.json">
   </head>
   <body {% if templateClass %}class="{{ templateClass }}"{% endif %}>
 
@@ -24,15 +25,21 @@
     {% include "components/footer.njk" %}
     {% include "components/yandex-metrika.njk" %}
 
-    <link rel="stylesheet" href="{{ '/assets/highlight/github.css' | url }}">
-    <script src="{{ '/assets/highlight/highlight.js' | url }}"></script>
+    <script src="{{ '/assets/highlight.js' | url }}"></script>
     <script src="{{ '/assets/app.js' | url }}"></script>
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-    <script>console.log("Current page: {{ page.url | url }}");</script>
+    <script>
+      if('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js', { scope: '/' })
+          .then(function(registration) {
+            console.debug('Service Worker Registered');
+          });
+
+        navigator.serviceWorker.ready.then(function(registration) {
+          console.debug('Service Worker Ready');
+        });
+      }
+    </script>
   </body>
 </html>
-
-<!--link rel="stylesheet" href="{{ '/css/index.css' | url }}">
-    <link rel="stylesheet" href="{{ '/css/prism-base16-monokai.dark.css' | url }}"-->
-<!--h1 class="home"><a href="{{ '/' | url }}">{{ metadata.title }}</a></h1-->

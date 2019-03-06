@@ -75,7 +75,8 @@
     "globals": {
       "window": true,
       "document": true,
-      "fetch": true
+      "fetch": true,
+      "importScripts": true
     },
     "rules": {
       "no-console": 1,
