@@ -31,7 +31,7 @@ layout: layouts/post.njk
         src="/assets/images/2018-10-10-image-lazy-loading/2.min.png"
         data-src="/assets/images/2018-10-10-image-lazy-loading/2.gif">
 </picture>
-</p> 
+</p>
 <div class="image-text">Мое удивление когда я это увидел, что js бандл в 5 раз меньше картинок</div>
 
 Небольшая демка того, что мы будем сегодня реализовывать.

@@ -1,0 +1,30 @@
+{% set currentItemIndex = 0 %}
+{% set countOfItems = collections[collection].length %}
+
+{% for item in collections[collection] %}
+  {% if item.url == page.url %}
+    {% set currentItemIndex = loop.index0 %}
+  {% endif %}
+{% endfor %}
+
+{% set nextItemIndex = currentItemIndex + 1  %}
+{% set nextItem = collections[collection][nextItemIndex] %}
+
+{% set prevItemIndex = currentItemIndex - 1  %}
+{% set prevItem = collections[collection][prevItemIndex] %}
+
+<div class="nextprev">
+  <div class="nextprev__arrow">{% if nextItem %}←{% endif %}</div>
+  <div class="nextprev__item">
+  {% if nextItem %}
+    <a href="{{ nextItem.url | url }}" class=""> {{ nextItem.data.title }}</a>
+  {% endif %}
+  </div>
+
+  <div class="nextprev__item nextprev__item_right">
+  {% if prevItem %}
+    <a href="{{ prevItem.url | url }}" class="">{{ prevItem.data.title }} </a>
+  {% endif %}
+  </div>
+  <div class="nextprev__arrow nextprev__arrow_right">{% if prevItem %}→{% endif %}</div>
+</div>

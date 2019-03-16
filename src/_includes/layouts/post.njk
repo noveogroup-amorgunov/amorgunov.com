@@ -7,7 +7,14 @@ templateClass: tmpl-post
 
   {{ content | safe }}
 </div>
-<p style="text-align: center;"><a href="{{ '/' | url }}">← На главную</a></p>
+
+<div class="post-tags">
+  {% set tags = tags %}
+  {% include "components/tags.njk" %}
+</div>
+
+{% set collection = "posts" %}
+{% include "components/nextprev.njk" %}
 
 <div class="post-layer__up">
   <div class="post-layer__back">

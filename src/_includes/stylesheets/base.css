@@ -225,7 +225,7 @@ video {
 }
 
 img.lazyload {
-  filter: blur(10px);
+  filter: blur(0px);
 }
 
 blockquote {
@@ -258,6 +258,34 @@ blockquote p {
   &:hover {
     text-decoration: none;
   }
+}
+
+.nextprev {
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  padding: 15px 0;
+  display: flex;
+  font-size: 14px;
+}
+
+.nextprev__item {
+  width: 50%;
+
+  &_right {
+    text-align: right;
+  }
+}
+
+.nextprev__arrow {
+  width: 20px;
+
+  &_right {
+    text-align: right;
+  }
+}
+
+.post-tags {
+  margin-bottom: 30px;
 }
 
 hr {
