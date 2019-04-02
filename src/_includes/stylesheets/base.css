@@ -76,6 +76,15 @@ a[rel~='external'] {
   border-radius: 120px;
 }
 
+.homepage__year {
+  font-size: 39px;
+  padding-bottom: 10px;
+}
+
+.homepage__year_yellow {
+  background: #f5f548;
+}
+
 a {
   text-decoration: none;
   color: #585858;
@@ -83,6 +92,65 @@ a {
 
 .homepage h1 {
   font-size: 2.82715em;
+  position: relative;
+
+  &::before,
+  &::after {
+    display: block;
+    content: '<Morgunov Alexander />';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0.8;
+  }
+
+  &::after {
+    color: #f0f;
+    z-index: -2;
+  }
+
+  &::before {
+    color: #0ff;
+    z-index: -1;
+  }
+
+  &:hover {
+    &::before {
+      animation: glitch 0.8s cubic-bezier(.25, .46, .45, .94) both infinite;
+    }
+
+    &::after {
+      animation: glitch 0.8s cubic-bezier(.25, .46, .45, .94) reverse both infinite;
+    }
+  }
+}
+
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+  }
+
+  20% {
+    transform: translate(-1px, 1px);
+  }
+
+  40% {
+    transform: translate(-1px, -1px);
+  }
+
+  60% {
+    transform: translate(1px, 1px);
+  }
+
+  80% {
+    transform: translate(1px, -1px);
+  }
+
+  to {
+    transform: translate(0);
+  }
 }
 
 .desc {
@@ -132,6 +200,10 @@ a {
   padding: 10px 0;
 }
 
+.postlist-item_home {
+  padding: 5px 0;
+}
+
 .postlist-link {
   font-weight: bold;
   display: block;
@@ -141,6 +213,12 @@ a {
   &:hover {
     color: #888;
   }
+}
+
+.postlist-link-home {
+  padding-right: 15px;
+  text-decoration: underline;
+  display: inline-block;
 }
 
 .pagination {
@@ -178,6 +256,10 @@ a {
 .post h1 {
   font-family: Arial, serif;
   line-height: 1em;
+}
+
+.post .highlight {
+  background: rgba(255, 235, 59, 0.35);
 }
 
 .post p {

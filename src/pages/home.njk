@@ -4,6 +4,8 @@ layout: layouts/home.njk
 #  - nav
 #navtitle: "@amorgunov"
 permalink: /
+title: Блог Александра Моргунова
+description: В блоге я публикую заметки о javascript и всей его экосистеме, о процессах разработки и просто небольшие заметки по работе и не только
 ---
 <div class="homepage">
   <img alt="Фотография" class="homepage__photo" src="/assets/images/avatar.jpg"/>
@@ -11,13 +13,13 @@ permalink: /
   <div class="desc">Javascript разработчик в Яндексе, сфокусированный <span>на&nbsp;результате</span> и производительности.
 
   </div>
-  <div class="desc2">Работаю в Яндексе с начала 2018 года разработчиком в Новосибирске, Россия. Кратко о себе: люблю Javascipt и разработку в целом, люблю когда настроены бизнес-процессы, добиваться поставленных целей и играть в футбол. Пишу небольшие заметки в тегерамме: <a rel="external" href="https://t.me/amorgunov">t.me/amorgunov</a>
+  <div class="desc2">Работаю в Яндексе с начала 2018 года разработчиком в Новосибирске, Россия. Кратко о себе: люблю Javascipt и разработку в целом, люблю когда настроены бизнес-процессы, добиваться поставленных целей и играть в футбол. Пишу небольшие заметки в телеграмме: <a rel="external" href="https://t.me/amorgunov">t.me/amorgunov</a>
   </div>
 
-  <h3>Последние посты</h3>
+  <h3 class="homepage__year"><span class="homepage__year_yellow">20</span>19</h3>
 
-  {% set postslist = collections.posts | head(-3) %}
-  {% include "components/posts.njk" %}
+  {% set postslist = collections.posts | head(-5) %}
+  {% include "components/posts-home.njk" %}
 
   <div class="more">
     Больше постов вы найдете <a href="{{ '/posts/' | url }}">в архиве</a>.

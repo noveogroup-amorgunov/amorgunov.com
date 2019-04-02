@@ -1,0 +1,8 @@
+<ol reversed class="postlist" style="counter-reset: start-from {{ postslist.length + 1 }}">
+  {% for post in postslist | reverse %}
+    <li class="postlist-item postlist-item_home">
+      <a href="{{ post.url | url }}" class="postlist-link postlist-link-home">{{ post.data.title }}</a>
+      <time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDateShort }}</time>
+    </li>
+  {% endfor %}
+</ol>
