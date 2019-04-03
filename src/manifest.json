@@ -1,7 +1,3 @@
----
-permalink: manifest.json
-excludeFromSitemap: true
----
 {
   "short_name": "amorgunov",
   "name": "Блог Александра Моргунова",

@@ -43,6 +43,8 @@ module.exports = function (eleventyConfig) {
 
   // eleventyConfig.addPassthroughCopy('./src/');
   eleventyConfig.addPassthroughCopy('src/assets');
+  eleventyConfig.addPassthroughCopy('src/_redirects');
+  eleventyConfig.addPassthroughCopy('src/manifest.json');
 
   /* Markdown Plugins */
   const markdownIt = require('markdown-it');
