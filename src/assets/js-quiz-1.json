@@ -1,0 +1,63 @@
+{
+  "steps": [
+    {
+      "content": "<div style='text-align: center;margin-top: 15%;'><button class='quiz__btn quiz__btn_type_action'>Начать</button></div>"
+    },
+    {
+      "content": "<strong>{counter}</strong> Что выведет console.log?<pre><code class='language-js hljs javascript'>console.log([] + 1 + 2 + '')</code></pre>",
+      "answers": ["NaN", "12", "3", "[Object object]12"]
+    },
+    {
+      "content": "<strong>{counter}</strong> Что выведется в консоль:<br/><pre><code class='language-js hljs javascript'>const User = () => {\n  this.name = 'Nina';\n};\nconst user = new User();\nconsole.log(user.name);</code></pre>",
+      "answers": ["Nina", "undefined", "Ошибка", "null"]
+    },
+    {
+      "content": "<strong>{counter}</strong> Что выведет console.log?:<br/><pre><code class='language-js hljs javascript'>console.log(a);\nlet a = 1;\na += 2;</code></pre>",
+      "answers": ["Ошибка", "1", "undefined", "3"]
+    },
+    {
+      "content": "<strong>{counter}</strong> Что выведется в консоль?<br/><pre><code class='language-js hljs javascript'>let bar = () => this.x;\nlet foo = bar.bind({ x: 3 });\n\nconsole.log(foo.call({ x: 5 }));</code></pre>",
+      "answers": ["3", "5", "undefined", "Ошибка"]
+    },
+    {
+      "content": "<strong>{counter}</strong> Какой будет результат?<br/><pre><code class='language-js hljs javascript'>function bar() {\n  try {\n    throw new Error('Oops...');\n  } catch (e) {\n    throw e;\n    return 1;\n  } finally {\n    return 2;\n  }\n  return 3;\n}\n\nconst foo = bar()</code></pre>",
+      "answers": ["1", "2", "3", "Ошибка"]
+    },
+    {
+      "content": "<strong>{counter}</strong> В каком порядке будут выведены результаты?<br/><pre><code class='language-js hljs javascript'>console.log('A');\nsetTimeout(() => {\n  console.log('B');\n}, 0);\nPromise.resolve().then(() => {\n  console.log('C');\n}).then(() => {\n  console.log('D');\n});\nconsole.log('E');</code></pre>",
+      "answers": ["AECBD", "AEBCD", "ACDBE", "AECDB", "CDAEB"]
+    },
+    {
+      "content": "<strong>{counter}</strong> Что выведет console.log?<br/><pre><code class='language-js hljs javascript'>console.log(typeof typeof 1 / 0);</code></pre>",
+      "answers": ["Ошибка", "string", "number", "NaN"]
+    },
+    {
+      "content": "<strong>{counter}</strong> Чему будет равно proto.prop?<br/><pre><code class='language-js hljs javascript'>const proto = { prop: 'a' };\nconst obj = Object.create(proto);\nobj.prop = 'b';</code></pre>",
+      "answers": ["b", "a", "Ошибка", "Почему так сложно!?"]
+    },
+    {
+      "content": "<strong>{counter}</strong> Что выведет console.log?<br/><pre><code class='language-js hljs javascript'>const foo = { prop: 1 };\nconst bar = Object.create(foo);\n\nconsole.log(\n  bar == foo,\n  bar.__proto__ == foo,\n  Object.getPrototypeOf(bar) === foo.prototype\n);</code></pre>",
+      "answers": ["false,true,false", "false,true,true", "true,false,true", "false,false,false"]
+    },
+    {
+      "content": "<strong>{counter}</strong> Что будет выведено console.log-ом?<br/><pre><code class='language-js hljs javascript'>const bar = typeof class extends Array {};\n\nconsole.log(bar);</code></pre>",
+      "answers": ["class", "object", "array", "function"]
+    },
+    {
+      "content": "<strong>{counter}</strong> Какой из вариантов использования static некорректен в ES2018?<br/><pre><code class='language-js hljs javascript'>const defaultProps = {\n  display: false,\n};\n\nclass Foo {\n  // 1\n  static defaultProps;\n  // 2\n  static render() { }\n  // 3\n  static get classes() {}\n}</code></pre>",
+      "answers": ["1", "2", "3", "Все корректны"]
+    },
+    {
+      "content": "<strong>{counter}</strong> Какой будет результат?<br/><pre><code class='language-js hljs javascript'>const bar = {\n  prop: 1, \n};\n\nclass Foo {\n  constructor(prop) {\n    this.bar = bar;\n    bar.prop = prop;\n  return bar;\n  }\n  print() {\n    console.log(this.bar.prop);\n  }\n}\nconst foo = new Foo(2);\nfoo.print();</code></pre>",
+      "answers": ["1", "2", "Ошибка"]
+    },
+    {
+      "content": "<strong>{counter}</strong> Если существует элемент с id «my_elem» и у него есть вложенные элементы, то чему будет равно значение document.getElementById('my_elem').lastChild.nextSibling в таком случае?<br/><br/>",
+      "answers": ["Ошибка", "null", "Элементу после my_elem"]
+    },
+    {
+      "content": "Вы ответили на все вопросы за <strong>{time}</strong> сек. и набрали <strong>{rightCount} баллов из {totalCount}</strong> возможных.<br /><br />{wrongLinks}<br/><br/><div style='text-align: center;'><button class='quiz__btn quiz__btn_type_action'>Заново</button></div>"
+    }
+  ],
+  "answers": "1202131103021"
+}

@@ -3,7 +3,7 @@
   "scripts": {
     "build": "NODE_ENV=production npm-run-all webpack:build eleventy:build",
     "dev": "npm-run-all --parallel webpack:watch eleventy:serve",
-    "eleventy:serve": "eleventy --input=src --config=configs/eleventy.config.js --serve",
+    "eleventy:serve": "eleventy --input=src --config=configs/eleventy.config.js --serve --quiet",
     "eleventy:build": "eleventy --input=src --config=configs/eleventy.config.js",
     "webpack:watch": "webpack --mode development --watch --config configs/webpack.config.js",
     "webpack:build": "webpack --mode production --config configs/webpack.config.js",
@@ -15,10 +15,12 @@
   "dependencies": {
     "@babel/polyfill": "7.2.5",
     "@typebot/core": "0.0.2",
-    "event-emitter": "0.3.5"
+    "clipboard": "2.0.4",
+    "event-emitter": "0.3.5",
+    "medium-zoom": "1.0.4"
   },
   "devDependencies": {
-    "@11ty/eleventy": "0.7.1",
+    "@11ty/eleventy": "0.8.3",
     "@11ty/eleventy-plugin-rss": "1.0.3",
     "@11ty/eleventy-plugin-syntaxhighlight": "2.0.0",
     "@babel/core": "7.3.4",

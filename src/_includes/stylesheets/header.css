@@ -9,11 +9,26 @@
   color: #999;
   margin: 30px 0;
   max-width: var(--content-max-width);
+
+  @media (--viewport-small) {
+    justify-content: center;
+  }
 }
 
 .header__homepage {
   flex-grow: 1;
   font-weight: bold;
+
+  @media (--viewport-small) {
+    padding-right: 25px;
+    flex-grow: 0;
+  }
+}
+
+.tmpl-home {
+  .header__homepage {
+    padding-right: 5px;
+  }
 }
 
 .header__nav-item {

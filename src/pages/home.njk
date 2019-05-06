@@ -8,15 +8,14 @@ title: Блог Александра Моргунова
 description: В блоге я публикую заметки о javascript и всей его экосистеме, о процессах разработки и просто небольшие заметки по работе и не только
 ---
 <div class="homepage">
-  <img alt="Фотография" class="homepage__photo" src="/assets/images/avatar.jpg"/>
-  <h1>&lt;Morgunov Alexander /&gt;</h1>
-  <div class="desc">Javascript разработчик в Яндексе, сфокусированный <span>на&nbsp;результате</span> и производительности.
-
+  <div class="homepage__top">
+    <img alt="Фотография" class="homepage__photo" src="/assets/images/avatar.jpg"/>
+    <h1 class="homepage__title">Morgunov Alexander</h1>
+    <div class="homepage__desc">Javascript разработчик в <span>Яндексе</span></div>
   </div>
-  <div class="desc2">Работаю в Яндексе с начала 2018 года разработчиком в Новосибирске, Россия. Кратко о себе: люблю Javascipt и разработку в целом, люблю когда настроены бизнес-процессы, добиваться поставленных целей и играть в футбол. Пишу небольшие заметки в телеграмме: <a rel="external" href="https://t.me/amorgunov">t.me/amorgunov</a>
+  <div class="desc2">Занимаюсь разработкой еще со школы, три года работал в Новео, с начала 2018 работаю в Яндексе (Новосибирск, Россия). Кратко о себе: люблю Javascript и разработку в целом, люблю когда настроены бизнес-процессы, добиваться поставленных целей, играть в футбол и кататься на лыжах. Пишу небольшие заметки в телеграмме <a rel="external" href="https://t.me/amorgunov">t.me/amorgunov</a> и твиттере <a rel="external" href="https://twitter.com/_amorgunov">twitter.com/_amorgunov</a>.
   </div>
-
-  <h3 class="homepage__year"><span class="homepage__year_yellow">20</span>19</h3>
+  <h3 class="homepage__year">2019</h3>
 
   {% set postslist = collections.posts | head(-5) %}
   {% include "components/posts-home.njk" %}

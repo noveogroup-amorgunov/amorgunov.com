@@ -1,4 +1,4 @@
-function isExternalLink(url) {
+function isExternalLink(url = '') {
   const { host } = document.location;
   const isExternal = url.startsWith('http') && !url.includes(host);
 
