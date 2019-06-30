@@ -243,7 +243,7 @@ curl --data "url=<INVOKE_URL>" "https://api.telegram.org/bot<TELEGRAM_ACCESS_TOK
     <source data-srcset="/assets/images/2019-03-26-create-telegram-echo-bot-with-serverless/3.webp" type="image/webp">
     <source data-srcset="/assets/images/2019-03-26-create-telegram-echo-bot-with-serverless/3.gif" type="image/gif"> 
     <img
-        class="lazyload
+        class="lazyload"
         src="/assets/images/2019-03-26-create-telegram-echo-bot-with-serverless/3.min.png"
         data-src="/assets/images/2019-03-26-create-telegram-echo-bot-with-serverless/3.gif">
 </picture>
