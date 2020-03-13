@@ -2,6 +2,7 @@
 title: "Использование техники content placeholder"
 description:
 date: 2018-11-05
+time: 4
 tags:
   - content-placeholder
   - react

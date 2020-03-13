@@ -2,6 +2,7 @@
 title: "Что нового в es2019: Array.prototype.flat, Object.fromEntries"
 description: Недавно стандарт ES2019 был окончательно утвержден, включая несколько новых фич. Все фичи уже реализованы в Chrome 73
 date: 2019-02-08
+time: 5
 tags:
   - nodejs
   - es2019

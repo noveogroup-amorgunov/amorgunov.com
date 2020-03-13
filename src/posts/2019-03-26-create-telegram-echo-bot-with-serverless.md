@@ -2,6 +2,7 @@
 title: "Создаем телеграм бота с помощью serverless на nodejs"
 description: "Создаем телеграм бота с помощью serverless на nodejs"
 date: 2019-03-26
+time: 11
 tags:
   - nodejs
   - aws lambda

@@ -1,6 +1,7 @@
 ---
 title: "Обзор митапа JS Party в новосибирске"
 date: 2019-03-01
+time: 6
 description:
 tags:
   - meetup

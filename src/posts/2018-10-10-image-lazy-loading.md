@@ -2,6 +2,7 @@
 title: "Lazy-loading изображений"
 description:
 date: 2018-10-10
+time: 7
 tags:
   - image
   - lazyload

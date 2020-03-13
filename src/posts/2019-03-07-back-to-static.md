@@ -1,6 +1,7 @@
 ---
 title: "Back to static. Переписал блог с реакта на статический сайт"
 date: 2019-03-03
+time: 2
 description: "Back to static. Переписал блог с react и mobx на статический сайт"
 tags:
   - eleventy

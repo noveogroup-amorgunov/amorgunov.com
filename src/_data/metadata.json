@@ -1,9 +1,9 @@
 {
-  "title": "Alexander Morgunov",
+  "title": "Блог Александра Моргунова",
   "url": "https://amorgunov.com/",
-  "description": "I am writing about my experiences as a naval navel-gazer.",
+  "description": "Блог Александра Моргунова. Пишу про разработку, javascript и жизнь в целом",
   "feed": {
-    "subtitle": "I am writing about my experiences as a naval navel-gazer.",
+    "subtitle": "Блог Моргунова Александра. Пишу про разработку, javascript и жизнь в целом.",
     "filename": "feed.xml",
     "path": "/feed/feed.xml",
     "url": "https://amorgunov.com/feed/feed.xml",

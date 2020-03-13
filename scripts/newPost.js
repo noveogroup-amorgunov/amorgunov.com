@@ -1,20 +1,22 @@
-/**
- * Script to create new post with title and slug
- *
- * Usage:
- *   `npm run create:post "Awesome title" "awesome-slug"`
- *   `npm run create:post "Awesome title" # Slug is auto-generated
- */
-
 const fs = require('fs');
 const { DateTime } = require('luxon');
+
+const template = `---
+title: "{title}"
+date: {date}
+time: 5
+description: ""
+tags:
+  - {tagName}
+layout: layouts/post.njk
+---`;
 
 const [, , title, slug] = process.argv;
 
 if (!title) {
   throw new Error(
     'The title is required.\n' +
-    'You should run script like `node newPost.js <title>`.'
+    'You should run script like `npm run create-post <title>`.'
   );
 }
 
@@ -26,24 +28,19 @@ const date = DateTime
   .fromJSDate(new Date(), { zone: 'utc' })
   .toFormat('yyyy-LL-dd');
 
-const path = `./src/posts/${date}-${formattedSlug}.md`;
+const fileName = `${date}-${formattedSlug}`;
+const path = `./src/posts/${fileName}.md`;
+const content = template
+  .replace('{title}', title)
+  .replace('{date}', date);
 
-fs.writeFileSync(path, getTemplate(title, date), err => {
+fs.mkdirSync(`./src/assets/images/${fileName}`);
+fs.writeFileSync(path, content, err => {
   if (err) {
     console.log(err);
 
     return;
   }
 
-  console.log(`Post "${title}" was created!`);
+  console.log(`Post was created in ${path}!`);
 });
-
-function getTemplate(t, d) {
-  return `---
-title: "${t}"
-date: ${d}
-description:
-tags:
-layout: layouts/post.njk
----`;
-}

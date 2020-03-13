@@ -1,6 +1,7 @@
 ---
 title: "Разбор JavaScript квиза с CodeFest"
 date: 2019-06-29
+time: 10
 description: "Разбираем 13 интересных вопросов c javascript квиза"
 tags:
   - javascript

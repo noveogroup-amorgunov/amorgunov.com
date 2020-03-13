@@ -1,0 +1,74 @@
+.post__emotions {
+  background: #000;
+}
+
+.post_emotion {
+  width: 30px;
+  height: 30px;
+}
+
+.post__emotion_type_shocked {
+  background-image: url('/assets/images/emotions/0.png');
+}
+
+.post__tags {
+  margin-bottom: 30px;
+}
+
+.post a {
+  text-decoration: underline;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.post__time {
+  color: #777;
+  font-family: Arial, serif;
+  font-size: 14px;
+  margin-top: -10px;
+  margin-left: 2px;
+}
+
+.post {
+  padding: 0;
+  margin: 0;
+  font-size: 19px;
+  font-family: Georgia, serif;
+  color: rgba(0, 0, 0, 0.86);
+  line-height: 1.5em;
+  word-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+  background-color: #fff;
+  max-width: 720px;
+  margin-bottom: 30px;
+}
+
+.post h1 {
+  font-family: Arial, serif;
+  line-height: 1em;
+}
+
+.post .highlight {
+  background: rgba(255, 235, 59, 0.35);
+}
+
+.post p {
+  margin-block-start: 1em;
+  margin-block-end: 1.5em;
+  margin-top: 25px;
+}
+
+.post img {
+  max-width: 100%;
+  width: 100%;
+}
+
+.image_size_xl {
+  @media (width >= 1200px) {
+    max-width: none;
+    width: 1200px;
+    margin-left: -240px;
+  }
+}

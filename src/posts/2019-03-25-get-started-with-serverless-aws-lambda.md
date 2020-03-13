@@ -2,6 +2,7 @@
 title: "Что такое serverless технологии"
 description: "Что такое serverless технологии"
 date: 2019-03-25
+time: 6
 tags:
   - nodejs
   - aws lambda

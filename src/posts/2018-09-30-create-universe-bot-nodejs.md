@@ -2,6 +2,7 @@
 title: "Как сделать универсальный фреймворк для ботов на Nodejs"
 description:
 date: 2018-09-30
+time: 13
 tags:
   - nodejs
   - bots

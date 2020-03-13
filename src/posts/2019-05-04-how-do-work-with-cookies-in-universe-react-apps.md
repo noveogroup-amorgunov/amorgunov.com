@@ -1,6 +1,7 @@
 ---
 title: "Работа с cookies в универсальных приложениях на react"
 date: 2019-05-04
+time: 9
 description: "Принцип работы с cookies (куками) в универсальных приложениях на react"
 tags:
   - react

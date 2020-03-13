@@ -86,7 +86,7 @@ a[rel~='external'] {
 }
 
 .homepage__title {
-  font-size: 2.82715em;
+  font-size: 2.6em;
   position: relative;
   margin-bottom: 0.17em;
   padding-top: 10px;
@@ -114,8 +114,8 @@ a {
 }
 
 .homepage__desc {
-  font-size: 1.4em;
-  line-height: 32px;
+  font-size: 1.1em;
+  line-height: 22px;
   font-weight: bold;
 }
 
@@ -185,6 +185,19 @@ a {
   text-decoration: underline;
 }
 
+.with-video::before {
+  display: inline-block;
+  content: '▶';
+  padding-left: 5px;
+  color: #fff;
+  font-size: 10px;
+  margin-right: 5px;
+  background: #ea264a;
+  border-radius: 2px;
+  height: 13px;
+  width: 14px;
+}
+
 .pagination {
   padding: 30px 0;
   display: flex;
@@ -201,40 +214,6 @@ a {
   display: inline-block;
   font-weight: 400;
   content: '\2190\2009';
-}
-
-.post {
-  padding: 0;
-  margin: 0;
-  font-size: 19px;
-  font-family: Georgia, serif;
-  color: rgba(0, 0, 0, 0.86);
-  line-height: 1.5em;
-  word-wrap: break-word;
-  -webkit-font-smoothing: antialiased;
-  background-color: #fff;
-  max-width: 720px;
-  margin-bottom: 30px;
-}
-
-.post h1 {
-  font-family: Arial, serif;
-  line-height: 1em;
-}
-
-.post .highlight {
-  background: rgba(255, 235, 59, 0.35);
-}
-
-.post p {
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  margin-top: 40px;
-}
-
-.post img {
-  max-width: 100%;
-  width: 100%;
 }
 
 .title {
@@ -273,7 +252,7 @@ video {
 }
 
 img.lazyload {
-  filter: blur(0px);
+  filter: blur(0);
 }
 
 blockquote {
@@ -300,14 +279,6 @@ blockquote p {
   line-height: 16px;
 }
 
-.post a {
-  text-decoration: underline;
-
-  &:hover {
-    text-decoration: none;
-  }
-}
-
 .nextprev {
   border-top: 1px solid #eee;
   border-bottom: 1px solid #eee;
@@ -332,10 +303,6 @@ blockquote p {
   }
 }
 
-.post-tags {
-  margin-bottom: 30px;
-}
-
 hr {
   border: 0;
   height: 3px;
@@ -345,6 +312,10 @@ hr {
 h2 {
   margin-block-start: 0.83em;
   margin-block-end: 0.83em;
+}
+
+h3 {
+  padding-top: 1em;
 }
 
 body.tmpl-post {
@@ -441,5 +412,11 @@ iframe {
       text-decoration: underline;
       color: #000;
     }
+  }
+}
+
+@media (--viewport-small) {
+  ol {
+    margin-left: 15px;
   }
 }
