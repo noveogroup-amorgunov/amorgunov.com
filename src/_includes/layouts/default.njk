@@ -32,9 +32,6 @@
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
     <script>
-      if (location.host !== 'amorgunov.com') {
-        return;
-      }
       if('serviceWorker' in navigator) {
         navigator.serviceWorker.register('/sw.js', { scope: '/' })
           .then(function(registration) {
