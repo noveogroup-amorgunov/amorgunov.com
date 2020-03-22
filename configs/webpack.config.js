@@ -32,8 +32,8 @@ module.exports = {
 
     // Don't create hot-update files
     // @see https://github.com/gaearon/react-hot-loader/issues/456#issuecomment-316522465
-    hotUpdateChunkFilename: '_hot/hot-update.js',
-    hotUpdateMainFilename: '_hot/hot-update.json'
+    // hotUpdateChunkFilename: '_hot/hot-update.js',
+    // hotUpdateMainFilename: '_hot/hot-update.json'
   },
   module: {
     rules: [

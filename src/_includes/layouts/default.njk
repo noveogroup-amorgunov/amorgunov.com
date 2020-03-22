@@ -13,6 +13,8 @@
     <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
     <link rel="stylesheet" href="{{ '/assets/app.css' | url }}">
     <link rel="manifest" href="/manifest.json">
+
+    <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic|Lora:400,700,400italic,700italic|Merriweather:400italic,400,300italic,300,700,700italic|Open+Sans:300italic,400italic,700italic,700,300,400&amp;subset=latin,cyrillic-ext,greek-ext,greek,devanagari,vietnamese,latin-ext,cyrillic" rel="stylesheet" type="text/css">
   </head>
   <body {% if templateClass %}class="{{ templateClass }}"{% endif %}>
 
@@ -30,6 +32,9 @@
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
     <script>
+      if (location.host !== 'amorgunov.com') {
+        return;
+      }
       if('serviceWorker' in navigator) {
         navigator.serviceWorker.register('/sw.js', { scope: '/' })
           .then(function(registration) {

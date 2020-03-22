@@ -1,0 +1,47 @@
+@import './media.css';
+
+.about__paragraph {
+  padding: 10px 0;
+}
+
+.about__img {
+  width: 100%;
+}
+
+.about__name {
+  font-size: 2.2em;
+  position: relative;
+  margin-bottom: 0.17em;
+  padding-top: 10px;
+
+  @media (--viewport-small) {
+    font-size: 1.8em;
+  }
+}
+
+.about__spec {
+  font-size: 1.1em;
+  line-height: 22px;
+  font-weight: bold;
+}
+
+.about__desc {
+  font-size: 1rem;
+  margin: 0 0 40px;
+  line-height: 150%;
+  text-align: justify;
+}
+
+.about__top {
+  padding-bottom: 40px;
+
+  &::after {
+    content: "";
+    clear: both;
+    display: block;
+  }
+
+  @media (--viewport-small) {
+    text-align: center;
+  }
+}

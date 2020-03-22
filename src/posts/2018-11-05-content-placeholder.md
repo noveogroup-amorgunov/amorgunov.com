@@ -6,7 +6,7 @@ time: 4
 tags:
   - content-placeholder
   - react
-  - js
+  - javascript
   - ux
   - spa
 layout: layouts/post.njk

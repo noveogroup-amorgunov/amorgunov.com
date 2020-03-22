@@ -1,8 +1,19 @@
-<ol reversed class="postlist" style="counter-reset: start-from {{ postslist.length + 1 }}">
+<div class="posts posts_home">
   {% for post in postslist | reverse %}
-    <li class="postlist-item postlist-item_home">
-      <time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDateShort }}</time>
-      <a href="{{ post.url | url }}" class="postlist-link postlist-link-home {{post.data.class}}">{{ post.data.title }}</a>
-    </li>
+    <div style="{% if post.data.bg %}background-image: url('{{ post.data.bg }}');{% endif %}" class="posts__item{% if post.url == url %} posts__item_active{% endif %}{% if post.data.bg %} posts__item_theme_light{% endif %}">
+      <time class="posts__date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
+      <a href="{{ post.url | url }}" class="posts__link {{post.data.class}}">{{ post.data.title }}</a>
+
+      {% set tagUrl %}/tags/{{ post.data.tags[1] }}/{% endset %}
+      <a href="{{ tagUrl | url }}" class="posts__tag">
+        {{ post.data.tags[1] }}
+      </a>
+    </div>
   {% endfor %}
-</ol>
+  <a href="/javascript-quiz?from=home" class="posts__item posts__item_type_quiz"></a>
+  <div class="posts__item posts__item_type_telegram">
+    <a href="https://t.me/amorgunov" target="_blank" class="posts__link">
+      Подписывайтесь и читайте небольшие заметки в telegram-канале: <strong>t.me/amorgunov</strong>
+    </a>
+  </div>
+</div>

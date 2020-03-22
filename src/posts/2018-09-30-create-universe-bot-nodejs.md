@@ -3,6 +3,7 @@ title: "Как сделать универсальный фреймворк дл
 description:
 date: 2018-09-30
 time: 13
+color: "#d8ecf3"
 tags:
   - nodejs
   - bots

@@ -1,9 +1,9 @@
 {
-  "title": "Блог Александра Моргунова",
+  "title": "Блог о веб-разработке",
   "url": "https://amorgunov.com/",
-  "description": "Блог Александра Моргунова. Пишу про разработку, javascript и жизнь в целом",
+  "description": "Блог о JavaScript, NodeJs, React, TypeScript и веб-разработке в целом",
   "feed": {
-    "subtitle": "Блог Моргунова Александра. Пишу про разработку, javascript и жизнь в целом.",
+    "subtitle": "Блог о JavaScript, NodeJs, React, TypeScript и веб-разработке в целом",
     "filename": "feed.xml",
     "path": "/feed/feed.xml",
     "url": "https://amorgunov.com/feed/feed.xml",

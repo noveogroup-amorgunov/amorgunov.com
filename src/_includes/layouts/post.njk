@@ -5,21 +5,28 @@ templateClass: tmpl-post
 <div class="post">
   <h1>{{ title }}</h1>
   <div class="post__time">
-    <time datetime="{{date | htmlDateString }}">{{ date | readableDate}}</time>, 🕓<strong>{{time}} мин.</strong> на чтение материала</div>
+    <time datetime="{{date | htmlDateString }}">{{ date | readableDate}}</time>
+  </div>
+
+  <div class="post__tags">
+    {% set tags = tags %}
+    {% include "components/tags.njk" %}
+  </div>
+
   {{ content | safe }}
 </div>
 
-<div class="post__tags">
-  {% set tags = tags %}
-  {% include "components/tags.njk" %}
+<div class="post__readmore">
+  <h3 class="post__readmore-title">Вам может быть интересно</h3>
+  {% set postslist = collections.posts | relatedPosts(page.url, tags, 3) %}
+  {% include "components/posts.njk" %}
 </div>
 
 <div class="post__emotions">
     <span class="post_emotion post__emotion_type_shocked"></span>
 </div>
 
-{% set collection = "posts" %}
-{% include "components/nextprev.njk" %}
+<!--{ % set collection = "posts" % }{ % include "components/nextprev.njk" % }-->
 
 <div class="post-layer__up">
   <div class="post-layer__back">

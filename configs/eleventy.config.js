@@ -21,6 +21,29 @@ module.exports = function (eleventyConfig) {
     return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toFormat('dd/LL/yyyy');
   });
 
+  eleventyConfig.addFilter('random', (arr, n) => {
+    return arr.sort(() => Math.random() - Math.random()).slice(0, n);
+  });
+
+  eleventyConfig.addFilter('relatedPosts', (arr, pageUrl, tags, n) => {
+    const relatedPosts = [...arr];
+
+    relatedPosts.forEach(post => {
+      post.related = 0;
+
+      (post.data.tags || []).forEach(tag => {
+        if (tags.includes(tag)) {
+          post.related += 1;
+        }
+      });
+    });
+
+    return relatedPosts
+      .filter(post => post.url !== pageUrl)
+      .sort((a, b) => b.related - a.related)
+      .slice(0, n);
+  });
+
   eleventyConfig.addFilter('readableDateShort', dateObj => {
     return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toFormat('dd/LL');
   });
