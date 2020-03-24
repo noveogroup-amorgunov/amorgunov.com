@@ -1,0 +1,91 @@
+.cv-page {
+  background: linear-gradient(90deg, #f9f9f9, #fff, #f9f9f9);
+
+  &__section {
+    padding: 20px 0;
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: bold;
+    padding: 10px 0;
+  }
+}
+
+.cv-card {
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  display: flex;
+
+  &_type_experience, &_type_common {
+    border-bottom: 0;
+  }
+
+  &__position {
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  &__job-place {
+    color: #777;
+    font-size: 13px;
+
+    &-link {
+      font-size: 12px;
+    }
+  }
+
+  &__period {
+    color: #777;
+    font-size: 12px;
+    min-width: 135px;
+    width: 135px;
+    padding-right: 40px;
+
+    &_active {
+      font-weight: bold;
+    }
+  }
+
+  &__desc {
+    padding: 10px 0;
+  }
+
+  &__block {
+    position: relative;
+
+    &_point {
+      width: 8px;
+      height: 8px;
+      background: #9e9e9e;
+      z-index: 100;
+      position: absolute;
+      left: -28px;
+      top: 20px;
+    }
+
+    &_line {
+      position: absolute;
+      width: 2px;
+      left: -25px;
+      background: #aaa9a5;
+      border: 0;
+
+      &_full {
+        height: calc(100% - 10px + 31px);
+        top: -11px;
+      }
+
+      &_bottom {
+        height: calc(100% - 10px);
+        top: 20px;
+      }
+
+      &_top {
+        top: -11px;
+        height: 34px;
+        bottom: 20px;
+      }
+    }
+  }
+}
