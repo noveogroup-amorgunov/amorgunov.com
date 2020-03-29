@@ -17,7 +17,8 @@
   border-bottom: 1px solid #eee;
   display: flex;
 
-  &_type_experience, &_type_common {
+  &_type_experience,
+  &_type_common {
     border-bottom: 0;
   }
 

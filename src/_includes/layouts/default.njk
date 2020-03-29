@@ -2,14 +2,22 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8">
-    <link rel="icon" type="image/png" href="{{ '/assets/favicon.png' | url }}">
+    <link rel="shortcut icon" type="image/png" href="{{ '/assets/favicon.png' | url }}">
     <meta name="yandex-verification" content="e1570293e78bfd37" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="theme-color" content="#ffffff" />
     <meta name="robots" content="index,follow" />
     <title>{{ renderData.title or title or metadata.title }}</title>
-    <meta name="Description" content="{{ renderData.description or description or metadata.description }}">
+    <meta name="description" content="{{ renderData.description or description or metadata.description }}">
+
+    <meta property="og:url" content="{{metadata.url}}{{page.url}}">
+    <meta property="og:title" content="{{renderData.title or title or metadata.title}}">
+    <meta property="og:site_name" content="{{metadata.title}}">
+    <meta property="og:description" content="{{renderData.description or description or metadata.description}}">
+    <meta property="og:image" content="{{metadata.url}}{{featuredImageThumbnail or metadata.featuredImageThumbnail}}">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ru">
     <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
     <link rel="stylesheet" href="{{ '/assets/app.css' | url }}">
     <link rel="manifest" href="/manifest.json">

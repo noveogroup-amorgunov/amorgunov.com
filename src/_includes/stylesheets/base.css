@@ -174,7 +174,7 @@ blockquote p {
 
 .image-text {
   text-align: center;
-  margin: -10px auto 0;
+  margin: -20px auto 20px;
   color: #595959;
   font-size: 16px;
   line-height: 16px;

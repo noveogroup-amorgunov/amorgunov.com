@@ -32,7 +32,7 @@ async function optimizeImage() {
     for (const file of files) {
       const [fileName, extension] = file.split('.');
 
-      if (extension === 'min') {
+      if (['min', 'gif'].includes(extension)) {
         continue;
       }
 

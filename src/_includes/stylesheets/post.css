@@ -23,6 +23,7 @@
 
 .post a:not(.tag) {
   text-decoration: underline;
+  color: #2196f3;
 
   &:hover {
     text-decoration: none;

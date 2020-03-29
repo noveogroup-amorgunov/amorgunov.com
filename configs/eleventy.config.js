@@ -44,6 +44,10 @@ module.exports = function (eleventyConfig) {
       .slice(0, n);
   });
 
+  eleventyConfig.addFilter('toJSON', obj => {
+    return JSON.stringify(obj);
+  });
+
   eleventyConfig.addFilter('readableDateShort', dateObj => {
     return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toFormat('dd/LL');
   });
