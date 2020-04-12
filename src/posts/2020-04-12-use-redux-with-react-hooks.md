@@ -76,7 +76,7 @@ function AwesomeComponent() {
 <img
     class="lazyload"
     alt="Хук useActions"
-    src="/assets/images/2020-04-12-use-redux-with-react-hooks/1.min.png"
+    src="/assets/images/2020-04-12-use-redux-with-react-hooks/1.min.jpg"
     data-src="/assets/images/2020-04-12-use-redux-with-react-hooks/1.jpg">
     
 Как оказалось, изначально хук `useActions` был добавлен в альфу, но потом его выпилили из-за комментария Дена Абрамова ([раз](https://github.com/reduxjs/react-redux/issues/1252#issuecomment-488160930), [два](https://github.com/facebook/create-react-app/issues/6880#issuecomment-488158024)). Ден сказал о том, что паттерн *action creators as a props* добавляет лишние абстракции и сложность в мире хуков и привел хороший пример:
@@ -149,7 +149,7 @@ export const AwesomeReduxComponent = () => {
 <img
     class="lazyload"
     alt="connect hell"
-    src="/assets/images/2020-04-12-use-redux-with-react-hooks/4.min.png"
+    src="/assets/images/2020-04-12-use-redux-with-react-hooks/4.min.jpg"
     data-src="/assets/images/2020-04-12-use-redux-with-react-hooks/4.jpg">
 
 Каждый компонент, который использует *redux*, оказывается обернут в `Connect(ComponentName)`, тем самым увеличивая глубину дерева с компонентами.
@@ -252,7 +252,7 @@ function SneakersPage() {
 <img
     class="lazyload"
     alt="Изменение свойств у компонента"
-    src="/assets/images/2020-04-12-use-redux-with-react-hooks/2.min.png"
+    src="/assets/images/2020-04-12-use-redux-with-react-hooks/2.min.jpg"
     data-src="/assets/images/2020-04-12-use-redux-with-react-hooks/2.gif">
 
 Как дела с хуками? С хуками у нас следующая картина:
@@ -260,7 +260,7 @@ function SneakersPage() {
 <img
     class="lazyload"
     alt="Неинформативная информация о хуках"
-    src="/assets/images/2020-04-12-use-redux-with-react-hooks/3.min.png"
+    src="/assets/images/2020-04-12-use-redux-with-react-hooks/3.min.jpg"
     data-src="/assets/images/2020-04-12-use-redux-with-react-hooks/3.jpg">
 
 К сожалению, нет возможности просматривать текущие значения и изменять их как пропсы. Есть только понимание, что используются три *useSelector* и *useDispatch*. Как воркэраунд, вынести хуки в компонент высшего порядка, но в таком случае пропадает все элегантность.
