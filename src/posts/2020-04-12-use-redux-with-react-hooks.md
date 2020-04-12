@@ -28,7 +28,7 @@ layout: layouts/post.njk
 ```js
 class AwesomeComponent extends React.Component {
     state = {
-        counter: 0
+        counter: 0,
     };
 
     onClick = () => {
@@ -49,6 +49,8 @@ class AwesomeComponent extends React.Component {
 Сейчас этот компонент может быть переписан на хуки, например, так:
 
 ```js
+import { useState } from 'react';
+
 function AwesomeComponent() {
     const [count, setCount] = useState(0);
 
@@ -116,12 +118,12 @@ export function AwesomeReduxComponent(props) {
             <button onClick={incrementCount}>Add +1</button>
         </div>
     );
-};
+}
 
 const mapStateToProps = state => ({ count: state.counter.count });
 const mapDispatchToProps = { incrementCount };
 
-export default connect(mapStateToProps, mapDispatchToProps)(AwesomeReduxComponent)
+export default connect(mapStateToProps, mapDispatchToProps)(AwesomeReduxComponent);
 ```
 
 Теперь, с хуками это может выглядеть вот так:
@@ -140,7 +142,7 @@ export const AwesomeReduxComponent = () => {
             <p>Count: {count}</p>
             <button onClick={() => dispatch(incrementCount())}>Add +1</button>
         </div>
-  );
+    );
 };
 ```
 
@@ -163,20 +165,24 @@ export const AwesomeReduxComponent = () => {
  - `useSelector` использует по умолчанию строгое равенство для сравнения объектов, которые возвращает селектор (из-за этого в случае возврата нового объекта компонент постоянно будет перерисовываться) и нужно использовать свой метод для сравнения. Или можно написать свой хук:
  
  ```js
-import { useSelector, shallowEqual } from 'react-redux'
- 
+import { useSelector, shallowEqual } from 'react-redux';
+
 export function useShallowEqualSelector(selector) {
-    return useSelector(selector, shallowEqual)
+    return useSelector(selector, shallowEqual);
 }
 ```
 
+И использовать его:
+
 ```js
 export const AwesomeReduxComponent = () => {
-    // useShallowEqualSelector необходим, если селектор возвращает новый объект
-    const { count } = useShallowEqualSelector(state => { count: state.counter.count });
+    // Хук необходим, если селектор возвращает новый объект
+    const { count } = useShallowEqualSelector(state => {
+        count: state.counter.count;
+    });
     const dispatch = useDispatch();
 
-    return (...);
+    return <div />;
 };
 ```
 
@@ -184,11 +190,13 @@ export const AwesomeReduxComponent = () => {
 
 ```js
 export const AwesomeReduxComponent = React.memo(() => {
-    // useShallowEqualSelector необходим, если селектор возвращает новый объект
-    const { count } = useShallowEqualSelector(state => { count: state.counter.count });
+    // Хук необходим, если селектор возвращает новый объект
+    const { count } = useShallowEqualSelector(state => {
+        count: state.counter.count;
+    });
     const dispatch = useDispatch();
 
-    return (...);
+    return <div />;
 });
 ```
 
@@ -196,15 +204,17 @@ export const AwesomeReduxComponent = React.memo(() => {
 
 ```js
 export const AwesomeReduxComponent = React.memo(() => {
-    // useShallowEqualSelector необходим, если селектор возвращает новый объект
-    const { count } = useShallowEqualSelector(state => { count: state.counter.count });
+    // Хук необходим, если селектор возвращает новый объект
+    const { count } = useShallowEqualSelector(state => {
+        count: state.counter.count;
+    });
     const dispatch = useDispatch();
     const onClick = useCallback(
         () => dispatch(incrementCount()),
         [dispatch]
     );
 
-    return (...);
+    return <div />;
 });
 ```
 
@@ -217,7 +227,7 @@ function SneakersPage() {
     const data = useSelector(getShoes);
     const dispatch = useDispatch();
     const fetchShoes = React.useCallback(
-        (slug: string) => dispatch(fetchShoesActionCreator(slug)),
+        slug => dispatch(fetchShoesActionCreator(slug)),
         [dispatch]
     );
 
