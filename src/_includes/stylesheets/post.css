@@ -1,20 +1,88 @@
 @import './media.css';
 
 .post__emotions {
-  background: #000;
+  background: #0000000f;
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+.post_emotion {
+  display: inline-block;
+  position: relative;
+  height: 50px;
+  width: 50px;
+  background-size: cover;
+  margin: 0 10px;
+  cursor: pointer;
+
+  @media (--viewport-small) {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.post_emotion:hover {
+  opacity: 0.8;
+  animation: post_emotion_selected 1s ease-in-out 1;
+}
+
+.post_emotion__counter {
+  display: inline-block;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.93333);
+  font-weight: bold;
+  padding: 1px 5px;
+  border-radius: 4px;
+  position: absolute;
+  bottom: -7px;
+  right: -7px;
+  font-size: 13px;
+}
+
+.post_emotion__counter_empty {
+  display: none;
+}
+
+.post_emotion_type_shocked {
+  background-image: url('/assets/images/emotions/shocked.png');
+}
+
+.post_emotion_type_rage {
+  background-image: url('/assets/images/emotions/rage.png');
+}
+
+.post_emotion_type_like {
+  background-color: #df2640;
+  border-radius: 50%;
+  background-image: url('/assets/images/emotions/like.png');
+}
+
+.post_emotion_type_dislike {
+  background-color: #df2640;
+  border-radius: 50%;
+  background-image: url('/assets/images/emotions/dislike.png');
+}
+
+.post_emotion_type_love {
+  background-image: url('/assets/images/emotions/love.png');
+}
+
+.post_emotion_type_brains {
+  background-image: url('/assets/images/emotions/brains.png');
+}
+
+@keyframes post_emotion_selected {
+  0% { transform: rotateZ(0deg); }
+  30% { transform: rotateZ(15deg); }
+  60% { transform: rotateZ(-15deg); }
+  95% { transform: rotateZ(0deg); }
 }
 
 .post__readmore-title {
   padding-bottom: 20px;
-}
-
-.post_emotion {
-  width: 30px;
-  height: 30px;
-}
-
-.post__emotion_type_shocked {
-  background-image: url('/assets/images/emotions/0.png');
 }
 
 .post__tags {

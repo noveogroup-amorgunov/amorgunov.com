@@ -8,6 +8,7 @@ import scroll from './scroll';
 import { addHandlers, createBot } from './createBot';
 import Quiz from './quiz';
 import prepareExternalLinks from './prepareExternalLinks';
+import initPostReactions from './postReactions';
 
 const initHljs = () => {
   document.querySelectorAll('pre code').forEach(el => {
@@ -19,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
   prepareExternalLinks();
   lazyload();
   initHljs();
+  initPostReactions();
   mediumZoom(document.querySelectorAll('.post img'), { background: '#2f2f2ed6' });
 
   document.querySelectorAll('.quiz').forEach(el => {

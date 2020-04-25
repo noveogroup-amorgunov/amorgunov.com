@@ -28,7 +28,7 @@ module.exports = {
   entry: path.join(__dirname, '../src/_includes/javascript/app.js'),
   output: {
     path: path.join(__dirname, '../src/assets'),
-    filename: 'app.js',
+    filename: 'app.js'
 
     // Don't create hot-update files
     // @see https://github.com/gaearon/react-hot-loader/issues/456#issuecomment-316522465
@@ -47,7 +47,7 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          IS_DEV && 'css-hot-loader',
+          // IS_DEV && 'css-hot-loader',
           MiniCssExtractPlugin.loader,
           'css-loader',
           postcssLoader
@@ -56,9 +56,9 @@ module.exports = {
     ]
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
+    // new webpack.HotModuleReplacementPlugin(),
     new MiniCssExtractPlugin({
-      filename: 'app.css'
+      filename: `app.css`
     })
   ],
   optimization: {
