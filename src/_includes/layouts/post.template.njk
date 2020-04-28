@@ -1,7 +1,7 @@
 {% extends "layouts/default.njk" %}
 {% block templateClass %}tmpl-post{% endblock %}
 {% block bodyClass %}tmpl-post{% endblock %}
-{% block afterhead %}<link href="/assets/build/post.css?v=26656dcd8f8fe095975b" rel="stylesheet">{% endblock %}
+{% block afterhead %}<%= htmlWebpackPlugin.tags.headTags %>{% endblock %}
 {% block content %}
 <div class="post">
   <h1>{{ title }}</h1>
@@ -32,5 +32,5 @@
 {% block afterbody %}
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 <script src="/assets/highlight.js"></script>
-<script src="/assets/build/vendors~post.entry.js?v=580bbb1b3fed76a77a2d"></script><script src="/assets/build/post.entry.js?v=19d4bf1db2d7cdec6309"></script>
+<%= htmlWebpackPlugin.tags.bodyTags %>
 {% endblock %}

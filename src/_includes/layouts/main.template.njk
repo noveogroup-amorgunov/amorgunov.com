@@ -1,0 +1,6 @@
+{% extends "layouts/default.njk" %}
+{% block templateClass %}tmpl-page{% endblock %}
+{% block bodyClass %}tmpl-page{% endblock %}
+{% block afterhead %}<%= htmlWebpackPlugin.tags.headTags %>{% endblock %}
+{% block content %}{{ content | safe }}{% endblock %}
+{% block afterbody %}<%= htmlWebpackPlugin.tags.bodyTags %>{% endblock %}

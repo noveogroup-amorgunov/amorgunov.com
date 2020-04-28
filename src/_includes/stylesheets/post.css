@@ -99,7 +99,7 @@
 }
 
 .post__time {
-  color: #777;
+  color: #555;
   font-family: Arial, serif;
   font-size: 14px;
   margin-top: -10px;
@@ -121,7 +121,6 @@
 }
 
 .post h1 {
-  /* font-family: Lora, Arial, serif; */
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif;
   line-height: 1em;
 }

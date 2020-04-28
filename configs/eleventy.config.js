@@ -92,6 +92,11 @@ module.exports = function (eleventyConfig) {
   );
 
   eleventyConfig.setBrowserSyncConfig({
+    files: [
+      'src',
+      '!src/_includes/javascript/*',
+      '!src/_includes/stylesheets/*'
+    ],
     callbacks: {
       ready(err, browserSync) {
         const content404 = fs.readFileSync('_site/404.html');

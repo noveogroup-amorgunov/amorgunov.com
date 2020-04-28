@@ -1,9 +1,9 @@
 _site/
 node_modules/
 .idea
-src/assets/*.hot-update.json
-src/assets/*.hot-update.js
-src/assets/app.css
-src/assets/app.js
 .DS_Store
 temp/
+src/assets/build/
+src/_includes/layouts/main.njk
+src/_includes/layouts/post.njk
+
