@@ -13,8 +13,11 @@ self.addEventListener('install', e => {
       return cache.addAll([
         `/`,
         `/index.html`,
-        `/assets/app.css`,
-        `/assets/app.js`,
+        `/assets/build/main.css`,
+        `/assets/build/post.css`,
+        `/assets/build/main.entry.js`,
+        `/assets/build/post.entry.js`,
+        `/assets/build/vendors~post.entry.js`,
         `/assets/cache-polyfill.js`,
         `/assets/favicon.png`,
         `/assets/images/avatar.jpg`,
