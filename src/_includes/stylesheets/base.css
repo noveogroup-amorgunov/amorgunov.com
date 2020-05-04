@@ -27,6 +27,8 @@ body {
 }
 
 body.tmpl-post {
+  background: #fff;
+
   @media (--viewport-small) {
     padding: 0 15px;
   }
@@ -143,7 +145,8 @@ pre code.hljs {
   }
 }
 
-p code {
+p code,
+li code {
   background: #eee;
   padding: 1px 5px;
 }
@@ -157,8 +160,7 @@ img.lazyload {
 }
 
 blockquote {
-  margin: 0;
-  margin-left: -20px;
+  margin: 20px 0 0 -20px;
   padding: 15px 20px;
   font-style: italic;
   border-left: 4px solid #777;
@@ -217,10 +219,6 @@ h2 {
 
 h3 {
   padding-top: 1em;
-}
-
-body.tmpl-post {
-  background: #fff;
 }
 
 .arrow {

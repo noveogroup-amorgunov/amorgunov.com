@@ -12,10 +12,11 @@ tags:
 layout: layouts/post.njk
 ---
 
-Что такое лямбда и бессерверные технологии вы можете почитать в предыдущем материале: 
-[«Что такое serverless технологии»](/posts/2019-03-25-get-started-with-serverless-aws-lambda/).
+Данный выпуск - второй по serverless в блоге, и сегодня мы создадим бота в телеграме и напишем лямбду с помощью serverless-a для обработки сообщений. С другими постами по теме вы можете ознакомиться по ссылкам ниже:
 
-А сегодня мы создадим бота в телеграме и напишем лямбду с помощью serverless-a для обработки сообщений.
+- [«Часть 1. Что такое serverless технологии»](/posts/2019-03-25-get-started-with-serverless-aws-lambda/)
+- **«Часть 2. Создаем телеграм бота с помощью serverless на nodejs»**
+- [«Часть 3. Использование AWS Lambda с TypeScript»](/posts/2020-05-07-using-aws-lambda-with-typescript/)
 
 > Перед началом у вас должен быть аккаунт в AWS с админским доступом или специальный пользователь с нужными правами (при неверно выданных правах все может работать не так, как нужно); бесплатно создать его можно [тут](https://portal.aws.amazon.com/billing/signup#/start). И установлена Nodejs v8 и выше.
 
@@ -172,7 +173,7 @@ const telegram = require('./telegram');
 
 module.exports.processWebhook = async event => {
     const body = JSON.parse(event.body);
-    
+
     console.log(body); // Логируем body
 
     if (body && body.message) {
@@ -200,7 +201,7 @@ Serverless: POST /
 Serverless: Offline listening on http://localhost:3000
 ```
 
-Когда лямбда запущена, можно протестировать работу вебхука. Так как телеграм не может слать запросы на localhost, есть два варианта: самому сэмулировать запрос или проксировать запросы из внешнего мира в локалхост. 
+Когда лямбда запущена, можно протестировать работу вебхука. Так как телеграм не может слать запросы на localhost, есть два варианта: самому сэмулировать запрос или проксировать запросы из внешнего мира в локалхост.
 
 Первый вариант можно сделать, зная id чата с ботом; нужно выполнить curl запрос:
 
@@ -220,7 +221,7 @@ curl --header "Content-Type: application/json" \
 ```
 ./ngrok http 3000
 
-> Forwarding https://f97d1779.ngrok.io -> http://localhost:3000  
+> Forwarding https://f97d1779.ngrok.io -> http://localhost:3000
 ```
 
 Вы получите адрес, который будет проксировать запросы в лямбду, в моем примере `https://f97d1779.ngrok.io`.
@@ -242,7 +243,7 @@ curl --data "url=<INVOKE_URL>" "https://api.telegram.org/bot<TELEGRAM_ACCESS_TOK
 <p>
 <picture>
     <source data-srcset="/assets/images/2019-03-26-create-telegram-echo-bot-with-serverless/3.webp" type="image/webp">
-    <source data-srcset="/assets/images/2019-03-26-create-telegram-echo-bot-with-serverless/3.gif" type="image/gif"> 
+    <source data-srcset="/assets/images/2019-03-26-create-telegram-echo-bot-with-serverless/3.gif" type="image/gif">
     <img
         class="lazyload"
         src="/assets/images/2019-03-26-create-telegram-echo-bot-with-serverless/3.min.png"
@@ -280,7 +281,7 @@ curl --data "url=<INVOKE_URL>" "https://api.telegram.org/bot<TELEGRAM_ACCESS_TOK
 
 ### Безопасность
 
-У вас может возникнуть вопрос, а что, если кто-то будет отправлять вручную запрос с подставными данными? И в самом деле, сейчас зная url, предоставленный *api gateway*,мы можем без проблем запустить лямбду, хотя это должен делать только телеграм посредством вебхука. Есть два варианта решения: 
+У вас может возникнуть вопрос, а что, если кто-то будет отправлять вручную запрос с подставными данными? И в самом деле, сейчас зная url, предоставленный *api gateway*,мы можем без проблем запустить лямбду, хотя это должен делать только телеграм посредством вебхука. Есть два варианта решения:
 
 - Первый, в url добавить токен от бота, вместо того, чтобы хранить его в переменных окружения. В таком случае, только зная токен, можно будет работать с телеграмом.
 
@@ -290,7 +291,7 @@ curl --data "url=<INVOKE_URL>" "https://api.telegram.org/bot<TELEGRAM_ACCESS_TOK
 // Ваша функция для преобразования ip адреса в числовое представление
 // Например, https://stackoverflow.com/q/8105629
 function ipToNumber(string) {
-  // ... 
+  // ...
 }
 
 const { sourceIp } = event.requestContext.identity;

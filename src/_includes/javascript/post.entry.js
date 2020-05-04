@@ -11,7 +11,9 @@ import initCopyToClipboard from './modules/copy';
 
 console.log('post.entry.js');
 
-const initHljs = selectors => {
+const initHljs = _selectors => {
+  const selectors = _selectors || document.querySelectorAll('pre code');
+
   selectors.forEach(el => {
     hljs.highlightBlock(el); // eslint-disable-line no-undef
   });
@@ -26,9 +28,7 @@ const initQuiz = selectors => {
 };
 
 const initTerminalBot = selectors => {
-  selectors.forEach(el => {
-    bot.addHandlers(el.dataset.bot, bot.createBot(el));
-  });
+  selectors.forEach(el => bot.addHandlers(el.dataset.bot, bot.createBot(el)));
 };
 
 // eslint-disable-next-line max-statements
@@ -38,13 +38,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const $quizs = document.querySelectorAll('.quiz');
   const $codeBlocks = document.querySelectorAll('pre code');
 
+  initQuiz($quizs);
+  initTerminalBot($terminals);
+  initCopyToClipboard();
   prepareExternalLinks();
   lazyload();
   initHljs($codeBlocks);
   initPostReactions();
-  initCopyToClipboard();
-  initQuiz($quizs);
-  initTerminalBot($terminals);
   scroll();
   mediumZoom($postImages, { background: '#2f2f2ed6' });
 });

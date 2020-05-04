@@ -91,10 +91,11 @@
 
 .post a:not(.tag) {
   text-decoration: underline;
-  color: #2196f3;
+  color: #005aa1;
 
   &:hover {
     text-decoration: none;
+    color: #2196f3;
   }
 }
 

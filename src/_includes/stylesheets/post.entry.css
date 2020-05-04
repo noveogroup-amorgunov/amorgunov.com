@@ -5,6 +5,6 @@
 @import './base.css';
 @import './tag.css';
 @import './post.css';
+@import './quiz.css';
 @import './post/terminal.css';
 @import './post/highlight-github.css';
-@import './post/quiz.css';

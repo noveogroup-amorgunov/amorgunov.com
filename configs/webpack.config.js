@@ -37,7 +37,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, '../src/assets/build'),
     filename: '[name].entry.js?v=[contenthash]',
-    publicPath: '/assets/build'
+    publicPath: '/assets/build/'
   },
   module: {
     rules: [

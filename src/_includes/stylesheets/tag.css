@@ -2,7 +2,8 @@
   color: #fff;
   background: rgba(0, 0, 0, 0.77);
   border-radius: 3px;
-  padding: 0 3px;
+  padding: 12px 9px;
+  line-height: 45px;
   font-weight: bold;
   font-size: 14px;
   white-space: nowrap;
@@ -17,4 +18,9 @@
   &:hover {
     background: rgba(0, 0, 0, 0.55);
   }
+}
+
+.tag_min {
+  padding: 0 3px;
+  line-height: inherit;
 }

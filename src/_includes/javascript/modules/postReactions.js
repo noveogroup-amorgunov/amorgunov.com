@@ -1,3 +1,4 @@
+// eslint-disable-next-line max-len
 const REACTION_ENDPOINT = 'https://i7on6ck7ng.execute-api.us-east-2.amazonaws.com/dev/posts/{slug}/likes';
 
 export default function initPostReactions() {
