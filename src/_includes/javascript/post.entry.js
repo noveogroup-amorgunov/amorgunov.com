@@ -9,10 +9,13 @@ import prepareExternalLinks from './modules/prepareExternalLinks';
 import initPostReactions from './modules/postReactions';
 import initCopyToClipboard from './modules/copy';
 
-console.log('post.entry.js');
-
 const initHljs = _selectors => {
   const selectors = _selectors || document.querySelectorAll('pre code');
+  const hljsIsLoaded = 'hljs' in window;
+
+  if (!hljsIsLoaded) {
+    return setTimeout(() => initHljs(_selectors), 300);
+  }
 
   selectors.forEach(el => {
     hljs.highlightBlock(el); // eslint-disable-line no-undef

@@ -15,9 +15,14 @@ layout: layouts/post.njk
 
 Данный выпуск - третий по serverless технологиям в блоге, и сегодня мы поговорим о работе с TypeScript. С другими постами по теме вы можете ознакомиться по ссылкам ниже:
 
-- [«Часть 1. Что такое serverless технологии»](/posts/2019-03-25-get-started-with-serverless-aws-lambda/)
-- [«Часть 2. Создаем телеграм бота с помощью serverless на nodejs»](/posts/2019-03-26-create-telegram-echo-bot-with-serverless/)
-- **«Часть 3. Использование AWS Lambda с TypeScript»**
+<div class="post-series">
+    <h4>Серия статей:</h4>
+    <ol>
+        <li><a href="/posts/2019-03-25-get-started-with-serverless-aws-lambda/">Что такое serverless технологии</a></li>
+        <li><a href="/posts/2019-03-26-create-telegram-echo-bot-with-serverless/">Создаем телеграм бота с помощью serverless на nodejs</a></li>
+        <li>Использование AWS Lambda с TypeScript <em>(Этот пост)</em></li>
+    </ol>
+</div>
 
 Есть несколько способов для работы с TS в лямбдах: собирать TypeScript-исходники с помощью ts-node, собирать с помощью webpack или использовать плагин `serverless-plugin-typescript` при использовании фреймворка [serverless](https://serverless.com/).
 

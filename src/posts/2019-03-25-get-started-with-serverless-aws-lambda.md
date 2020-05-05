@@ -15,10 +15,14 @@ layout: layouts/post.njk
 
 Данный выпуск - первый по serverless в блоге, с другими постами по теме вы можете ознакомиться по ссылкам ниже:
 
-- **«Часть 1. Что такое serverless технологии»**
-- [«Часть 2. Создаем телеграм бота с помощью serverless на nodejs»](/posts/2019-03-26-create-telegram-echo-bot-with-serverless/)
-- [«Часть 3. Использование AWS Lambda с TypeScript»](/posts/2020-05-07-using-aws-lambda-with-typescript/)
-
+<div class="post-series">
+    <h4>Серия статей:</h4>
+    <ol>
+        <li>Что такое serverless технологии <em>(Этот пост)</em></li>
+       <li><a href="/posts/2019-03-26-create-telegram-echo-bot-with-serverless/">Создаем телеграм бота с помощью serverless на nodejs</a></li>
+        <li><a href="/posts/2020-05-07-using-aws-lambda-with-typescript/">Использование AWS Lambda с TypeScript</a></li>
+    </ol>
+</div>
 
 **Наш план на сегодня:**
 

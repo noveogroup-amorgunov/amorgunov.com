@@ -317,3 +317,31 @@
 .posts__item_type_telegram .posts__link {
   font-weight: normal;
 }
+
+.post-series {
+  background: #fef6ec;
+  margin: 0 0 1rem;
+  padding: 2rem;
+  counter-reset: post-series-counter;
+  border-radius: 8px;
+
+  & > ol {
+    margin: 0;
+    list-style: none;
+  }
+
+  & > ol li {
+    counter-increment: post-series-counter;
+
+    &::before {
+      color: #000;
+      font-weight: bold;
+      content: "Часть " counter(post-series-counter) ": ";
+    }
+  }
+
+  & > h4 {
+    font-size: 1.2em;
+    padding-bottom: 15px;
+  }
+}

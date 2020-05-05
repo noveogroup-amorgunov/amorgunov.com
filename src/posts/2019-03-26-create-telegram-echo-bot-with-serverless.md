@@ -14,9 +14,14 @@ layout: layouts/post.njk
 
 Данный выпуск - второй по serverless в блоге, и сегодня мы создадим бота в телеграме и напишем лямбду с помощью serverless-a для обработки сообщений. С другими постами по теме вы можете ознакомиться по ссылкам ниже:
 
-- [«Часть 1. Что такое serverless технологии»](/posts/2019-03-25-get-started-with-serverless-aws-lambda/)
-- **«Часть 2. Создаем телеграм бота с помощью serverless на nodejs»**
-- [«Часть 3. Использование AWS Lambda с TypeScript»](/posts/2020-05-07-using-aws-lambda-with-typescript/)
+<div class="post-series">
+    <h4>Серия статей:</h4>
+    <ol>
+        <li><a href="/posts/2019-03-25-get-started-with-serverless-aws-lambda/">Что такое serverless технологии</a></li>
+        <li>Создаем телеграм бота с помощью serverless на nodejs <em>(Этот пост)</em></li>
+        <li><a href="/posts/2020-05-07-using-aws-lambda-with-typescript/">Использование AWS Lambda с TypeScript</a></li>
+    </ol>
+</div>
 
 > Перед началом у вас должен быть аккаунт в AWS с админским доступом или специальный пользователь с нужными правами (при неверно выданных правах все может работать не так, как нужно); бесплатно создать его можно [тут](https://portal.aws.amazon.com/billing/signup#/start). И установлена Nodejs v8 и выше.
 
