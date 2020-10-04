@@ -30,6 +30,13 @@
     </main>
     {% include "components/footer.njk" %}
     {% block afterbody %}{% endblock %}
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-179522059-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-179522059-1');
+    </script>
     <script>
       if('serviceWorker' in navigator && location.host === 'amorgunov.com') {
         navigator.serviceWorker.register('/sw.js', { scope: '/' })
