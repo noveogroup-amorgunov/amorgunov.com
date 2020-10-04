@@ -3,6 +3,7 @@ title: "Как написать свой Virtual DOM"
 date: 2020-08-03
 time: 25
 description: "Напишем с нуля свою реализацию Virtual DOM"
+featuredImageThumbnail: "/assets/images/2020-08-03-create-own-virtual-dom/preview.jpg"
 tags:
   - tutorial
   - virtual dom
