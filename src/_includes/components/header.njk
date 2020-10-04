@@ -1,10 +1,24 @@
 <header class="header">
-  <div class="header__homepage">
+  <!--<div class="header__homepage">
     {%  if page.url != '/' %}<a href="/">← amorgunov</a>{%  endif %}
   </div>
   <div class="header__nav">
     {%- for nav in collections.nav -%}
       <span class="header__nav-item{% if nav.url == page.url %} header__nav-item_active{% endif %}"><a href="{{ nav.url | url }}">{{ nav.data.navtitle }}</a></span>
     {%- endfor -%}
+  </div>-->
+  <div class="header__homepage">
+      {%  if page.url != '/' %}<a class="header__logo" href="/"></a>{%  endif %}
+    </div>
+  <div class="header__menu"></div>
+  <div class="burger">
+    <div class="burger__overlay"></div>
+    <div class="burger__menu">
+       <a href="/" class="burger__menu-item burger__menu-item_logo">amorgunov.com</a>
+       <a href="/posts" class="burger__menu-item">Посты</a>
+       <a href="/tags" class="burger__menu-item">Список тегов</a>
+       <a href="/about" class="burger__menu-item">Об авторе</a>
+       <a href="https://t.me/amorgunov" rel="noreferrer" target="_blank" class="burger__menu-item">Телегам канал блога</a>
+    </div>
   </div>
 </header>

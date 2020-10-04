@@ -1,5 +1,5 @@
 .cv-page {
-  background: linear-gradient(90deg, #f9f9f9, #fff, #f9f9f9);
+  background: linear-gradient(90deg, #fff, #f9f9f9, #fff);
 
   &__section {
     padding: 20px 0;

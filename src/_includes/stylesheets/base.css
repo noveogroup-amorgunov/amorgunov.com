@@ -10,7 +10,7 @@
 body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif;
   -webkit-font-smoothing: antialiased;
-  background-color: #f9f9f9;
+  background-color: #fff;
   color: #333;
   padding: 0;
   margin: 0 auto;
@@ -69,6 +69,10 @@ a[rel~='external'] {
   flex: 1 0 auto;
   max-width: var(--content-max-width);
   width: 100%;
+
+  @media (--viewport-small) {
+    margin-top: 90px;
+  }
 }
 
 .main.tmpl-post {
@@ -289,6 +293,7 @@ h3 {
 ul {
   padding-inline-start: 40px;
   padding-left: 40px;
+  padding-bottom: 20px;
 }
 
 iframe {

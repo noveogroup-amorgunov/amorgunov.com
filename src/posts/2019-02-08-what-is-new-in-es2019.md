@@ -8,6 +8,7 @@ tags:
   - es2019
   - js
 layout: layouts/post.njk
+likes: 1
 ---
 > Каждый год выходит новая версия [ECMAScript](https://tc39.github.io/ecma262/) с предложениями, которые официально уже готовы.
 Это означает, что предложения, которые были приняты комитетом tc39 и достигли [stage 4](https://tc39.github.io/process-document/),
@@ -24,8 +25,8 @@ layout: layouts/post.njk
 
 ## Array.prototype.{flat,flatMap}
 
-Как JavaScript разработчики, вы возможно слышали о *smoosh-gate*. У некоторых людей из tc39 появилась идея [переименовать](https://github.com/tc39/proposal-flatMap/pull/56) `flat` в `smoosh` и `flatMap` в `smooshMap`. 
-Причиной этого был тот факт, что некоторые сайты, использующие довольно старую библиотеку MooTools (которая патчила свои методы), сломались бы. 
+Как JavaScript разработчики, вы возможно слышали о *smoosh-gate*. У некоторых людей из tc39 появилась идея [переименовать](https://github.com/tc39/proposal-flatMap/pull/56) `flat` в `smoosh` и `flatMap` в `smooshMap`.
+Причиной этого был тот факт, что некоторые сайты, использующие довольно старую библиотеку MooTools (которая патчила свои методы), сломались бы.
 
 К счастью, это предложение не нашло поддержки, и нам не нужно использовать smoosh (переводится как *раздавливать*) вместо `flat`.
 Эти методы доступны в Chrome v69 (V8 6.9) и  Node.js v11.
@@ -142,7 +143,7 @@ function parseJSON(text) {
 ```
 
 ## Symbol Description Accessor
- 
+
 > [Symbols](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Symbol) - это тип данных, представленный в ES2015, помогающий избегать конфликтов между именами свойств.
 Они могут быть использованы как идентификаторы для свойств объектов и гарантировать уникальный ключ.
 В основном символы используются внутри движка JavaScript, потому что они не итерируемы и заведомо не сломают старый код, так как уникальны.
@@ -154,8 +155,8 @@ function parseJSON(text) {
 Предложенное решение добавляет новое свойство (только для чтения) `description`, которое возвращает описание Symbol:
 
 ```javascript
-const symbol = Symbol('V8'); 
-   
+const symbol = Symbol('V8');
+
 console.log(symbol.toString()); /* Symbol(V8) */
 console.log(symbol.description); /* V8 */
 ```
@@ -171,4 +172,4 @@ console.log(symbol.description); /* V8 */
 `Array.prototype.flat` и `Array.prototype.flatMap` расширяют поддержку работы с массивами путем построения цепочек,
 `Object.fromEntries()` является логичным дополнением к `Object.entries()`. `Symbol#description` дополняет es6 symbols.
 
-В целом, ES2019 небольшой, но шаг в правильном направлении развития JavaScript. 
+В целом, ES2019 небольшой, но шаг в правильном направлении развития JavaScript.

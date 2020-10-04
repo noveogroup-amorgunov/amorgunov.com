@@ -7,6 +7,7 @@ tags:
   - javascript
   - codefest
 layout: layouts/post.njk
+likes: 2
 ---
 Пару месяцев назад прошла самая большая конференция за Уралом - [CodeFest&nbsp;X](https://2019.codefest.ru). На конференции собрались почти 3к специалистов, сотни докладов и море положительных эмоций. Возможно я когда-нибудь соберусь с силами и напишу самые интересные мысли и идеи, которые излагались спикерами.
 
@@ -62,7 +63,7 @@ console.log([] + 1 + 2 + '')
 console.log('' + 1 + 2 + '')
 ```
 
-Дальше уже проще, при сложении строки и числа, число преобразовывается к строке: 
+Дальше уже проще, при сложении строки и числа, число преобразовывается к строке:
 
 ```js
 '' + 1 => '' + '1' => '1'
@@ -109,9 +110,9 @@ a += 2;
 Интерпретатор всегда перемещает («поднимает») объявления функций и переменных в начало области видимости. Следующий фрагмент кода (⚠️ обратите внимание, что я использую var):
 
 ```
-function foo() { 
+function foo() {
     console.log(x);
-    var x = 1; 
+    var x = 1;
 }
 ```
 
@@ -121,14 +122,14 @@ function foo() {
 function foo() {
     var x;
     console.log(x); // undefined
-    x = 1; 
+    x = 1;
 }
 ```
 
 Но если запустить код из примера, то получим ошибку:
 
 ```
-console.log(a); // ReferenceError: a is not defined 
+console.log(a); // ReferenceError: a is not defined
 let a = 1;
 a += 2;
 ```
@@ -136,7 +137,7 @@ a += 2;
 <p>
 <picture>
     <source data-srcset="/assets/images/2019-06-29-review-js-quiz-codefest/2.webp" type="image/webp">
-    <source data-srcset="/assets/images/2019-06-29-review-js-quiz-codefest/2.gif" type="image/gif"> 
+    <source data-srcset="/assets/images/2019-06-29-review-js-quiz-codefest/2.gif" type="image/gif">
     <img
         alt="What?"
         class="lazyload"
@@ -267,7 +268,7 @@ while(queue.waitForMessage()){
 
 > Цикл отдает приоритет стеку вызовов, и сначала он обрабатывает все, что находит в нет, и, когда там ничего нет, он начинает обрабатывать очередь событий (*message queue*).
 
-Посмотреть в интерактивном примере как это работает можно посмотреть на демо примере Филиппа Робертса: http://latentflip.com/loupe/ и рекомендую видео от него же: https://www.youtube.com/watch?v=8aGhZQkoFbQ (Единственное, интерактивный пример не работает с промисами, так что имейте это ввиду). 
+Посмотреть в интерактивном примере как это работает можно посмотреть на демо примере Филиппа Робертса: http://latentflip.com/loupe/ и рекомендую видео от него же: https://www.youtube.com/watch?v=8aGhZQkoFbQ (Единственное, интерактивный пример не работает с промисами, так что имейте это ввиду).
 
 #### Микрозадачи
 
@@ -280,7 +281,7 @@ while(queue.waitForMessage()){
 <p>
 <picture>
     <source data-srcset="/assets/images/2019-06-29-review-js-quiz-codefest/4.webp" type="image/webp">
-    <source data-srcset="/assets/images/2019-06-29-review-js-quiz-codefest/4.gif" type="image/gif"> 
+    <source data-srcset="/assets/images/2019-06-29-review-js-quiz-codefest/4.gif" type="image/gif">
     <img
         alt="Микрозадачи vs макрозадачи?"
         class="lazyload"
@@ -422,7 +423,7 @@ const bar = {
 class Foo {
   constructor(prop) {
     this.bar = bar;
-    bar.prop = prop;    
+    bar.prop = prop;
     return bar;
   }
   print() {

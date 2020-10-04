@@ -1,6 +1,6 @@
 .tag {
-  color: #fff;
-  background: rgba(0, 0, 0, 0.77);
+  color: #000;
+  background: #eff32c;
   border-radius: 3px;
   padding: 12px 9px;
   line-height: 45px;
@@ -16,7 +16,7 @@
   }
 
   &:hover {
-    background: rgba(0, 0, 0, 0.55);
+    background-color: #f3de24;
   }
 }
 

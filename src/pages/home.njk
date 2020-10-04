@@ -5,18 +5,20 @@ title: Блог о веб-разработке
 description: Блог о веб-разработке, реакте, тайпскрипте и не только
 ---
 <div class="home">
-  <h1 class="home__title">Блог о веб-разработке</h1>
+  <h1 class="home__title" style="display: none;">Блог о веб-разработке</h1>
+  <a href="/" class="home__logo" aria-label="Логотип"></a>
   <div class="home__about">
-    Вы попали на блог о веб-разработке и не только. Здесь вы найдете много постов о <a class="tag tag_min" href="/tags/react">#реакте</a>, <a class="tag tag_min" href="/tags/typescript">#тайпскрипте</a>, <a class="tag tag_min" href="/tags/nodejs">#nodejs</a>.. в общем, все что связано с вебом. Автор блога, помимо разработки, работает тимлидом, и как только будет что рассказать интересного, будут посты по этой теме. В общем, приятного времяпровождения.
+    Пишу о <a class="home__about-tag" href="/tags/react">#реакте</a>, <a class="home__about-tag" href="/tags/typescript">#тайпскрипте</a>, <a class="home__about-tag" href="/tags/nodejs">#ноде</a>  и
+    обо всем том, что связанно с веб-разработкой.
   </div>
-  <h3 class="home__year">2020</h3>
   {% set postslist = collections.posts | head(-7) %}
   {% include "components/posts-home.njk" %}
 
-  <div class="home__more">
-    Больше постов вы найдете <a href="{{ '/posts/' | url }}">в архиве</a>.
-  </div>
-  <h3 class="home__year">Теги</h3>
+   <div class="home__about">
+        Остальные посты вы найдете <a href="{{ '/posts/' | url }}">в архиве</a>. А еще больше заметок и материалов вы сможете найти в телеграм канале <strong><a href="https://t.me/amorgunov" rel="noreferrer" target="_blank">t.me/amorgunov</a></strong>
+   </div>
+
+  <div class="home__year">Теги</div>
   {% for tag in collections.tagList %}
     {% set tagUrl %}/tags/{{ tag }}/{% endset %}
     <a href="{{ tagUrl | url }}" class="tag">{{ tag }}</a>

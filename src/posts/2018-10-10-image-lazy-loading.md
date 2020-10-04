@@ -9,10 +9,11 @@ tags:
   - js
   - optimization
 layout: layouts/post.njk
+likes: 0
 ---
 На одном из рабочих проектов я решил посмотреть сколько данных приходит на клиент при первой загрузке.
 Для этого можно зайти во вкладку `Network` в девтулс, перезагрузить страницу со сбросом кэша и перейти в раздел `Image`.
-Несмотря на то, что изображений на сайте немного, результаты были следующие: 
+Несмотря на то, что изображений на сайте немного, результаты были следующие:
 
 <img
     class="lazyload"
@@ -26,7 +27,7 @@ layout: layouts/post.njk
 <p>
 <picture>
     <source data-srcset="/assets/images/2018-10-10-image-lazy-loading/2.webp" type="image/webp">
-    <source data-srcset="/assets/images/2018-10-10-image-lazy-loading/2.gif" type="image/gif"> 
+    <source data-srcset="/assets/images/2018-10-10-image-lazy-loading/2.gif" type="image/gif">
     <img
         class="lazyload
         src="/assets/images/2018-10-10-image-lazy-loading/2.min.png"
@@ -41,7 +42,7 @@ layout: layouts/post.njk
 <p>
 <picture>
     <source data-srcset="/assets/images/2018-10-10-image-lazy-loading/f.webp" type="image/webp">
-    <source data-srcset="/assets/images/2018-10-10-image-lazy-loading/f.gif" type="image/gif"> 
+    <source data-srcset="/assets/images/2018-10-10-image-lazy-loading/f.gif" type="image/gif">
     <img
         class="lazyload
         src="/assets/images/2018-10-10-image-lazy-loading/f.min.png"
@@ -91,11 +92,11 @@ layout: layouts/post.njk
 
 function throttle(func, timeout) {
     let inThrottle = false;
-  
+
     return function() {
         const args = arguments;
         const context = this;
-    
+
         if (!inThrottle) {
             inThrottle = true;
             func.apply(context, args);
@@ -107,15 +108,15 @@ function throttle(func, timeout) {
 function lazyload() {
     const windowHeight = window.innerHeight;
     const images = document.querySelectorAll('img.lazyload');
-    
+
     /* Оффсет нужен, что подгружать изображение немного раньше, чем оно появится во вьюпорте */
     const offset = 100;
-  
+
     images.forEach(image => {
         const boundingRect = image.getBoundingClientRect();
         const yPosition = boundingRect.top - windowHeight;
         const yPositionBottom = boundingRect.bottom;
-  
+
         /* Если вверх изображения находится в пределах 100px от низа viewport-а,
            и низ изображения находится в пределах 100px от верха viewport-а */
         if (yPosition <= offset && yPositionBottom >= -offset) {
@@ -123,7 +124,7 @@ function lazyload() {
             if (image.getAttribute('data-src')) {
                 image.src = image.getAttribute('data-src');
             }
-        
+
             /* Ожидаем пока новое изображение не загрузится */
             image.addEventListener('load', function() {
                 /* Удаляем lazyload класс */
@@ -151,11 +152,11 @@ throttledLazyLoad();
 import './lazyload';
 ```
 
-Либо воспользоваться библиотекой [Paul-Browne/lazyestload.js](https://github.com/Paul-Browne/lazyestload.js), которая делает тоже самое, но так же умеет обрабатывать атрибут srсset и тег picture. 
+Либо воспользоваться библиотекой [Paul-Browne/lazyestload.js](https://github.com/Paul-Browne/lazyestload.js), которая делает тоже самое, но так же умеет обрабатывать атрибут srсset и тег picture.
 <p>
 <picture>
     <source data-srcset="/assets/images/2018-10-10-image-lazy-loading/3.webp" type="image/webp">
-    <source data-srcset="/assets/images/2018-10-10-image-lazy-loading/3.gif" type="image/gif"> 
+    <source data-srcset="/assets/images/2018-10-10-image-lazy-loading/3.gif" type="image/gif">
     <img
         class="lazyload
         src="/assets/images/2018-10-10-image-lazy-loading/3.min.png"
@@ -242,7 +243,7 @@ async function optimizeImages() {
     class="lazyload"
     data-src="/assets/images/2018-10-10-image-lazy-loading/4.png"
     src="/assets/images/2018-10-10-image-lazy-loading/4.min.png" />
-    
+
 <img
     class="lazyload"
     data-src="/assets/images/2018-10-10-image-lazy-loading/5.png"
@@ -280,12 +281,12 @@ use: [
 <p>
 <picture>
     <source data-srcset="/assets/images/2018-10-10-image-lazy-loading/7.webp" type="image/webp">
-    <source data-srcset="/assets/images/2018-10-10-image-lazy-loading/7.gif" type="image/gif"> 
+    <source data-srcset="/assets/images/2018-10-10-image-lazy-loading/7.gif" type="image/gif">
     <img
         class="lazyload
         src="/assets/images/2018-10-10-image-lazy-loading/7.min.png"
         data-src="/assets/images/2018-10-10-image-lazy-loading/7.gif">
-</picture>    
+</picture>
 </p>
 <div class="image-text">Два оптимизированных изображений, только слева - прогрессивное, справа нет.<br />Вес у изображений одинаковый, эмуляция fast 3g</div>
 

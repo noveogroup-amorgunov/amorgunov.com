@@ -10,6 +10,7 @@ tags:
   - typescript
   - tutorial
 layout: layouts/post.njk
+likes: 2
 ---
 Пик популярности ботов уже прошел, но они продолжают быть довольно полезными, и все больше пользователей начинает использовать ботов для самых различных целей, начиная от простых, которые выдают смешную гифку по запросу пользователя, и заканчивая ботами, которые могут выключить свет в квартире после вашей голосовой команды.
 
@@ -112,11 +113,11 @@ npm i --save-dev @types/colors @types/koa-compose @types/node @types/axios
 
 Если человек начинает общаться с ботом, создается сессия (Session), в которой хранится состояние пользователя (SessionState, подобно стэйту в реакте, представляет собой key-value хранилище) и данные о пользователе, доступные боту (например, имя или данные полученные в ходе переписки). Сессию можно хранить во временнем кеше, в базе данных и т.д. Сегодня мы напишем общий интерфейс для хранения сессий и реализуем очень простой класс MemorySessionStore.
 
-Обработчики сообщений (Handlers) поочередно будут обрабатывать сообщение (обычные функции, которые на вход принимают Context - объект, содержащий сессию и сообщение) и отправлять ответ пользователю (одно или несколько сообщений), а возможен вариант без ответа пользователю. Обработчики работают подобно middleware-ам в express-е. Так же каждый обработчик принимает вторым параметром функцию `next`, после вызова который начнет свое выполнение следующий обработчик. Если next не вызвать (подобно разрыву связанной цепочки), то выполнение обработчиков прекращается. 
+Обработчики сообщений (Handlers) поочередно будут обрабатывать сообщение (обычные функции, которые на вход принимают Context - объект, содержащий сессию и сообщение) и отправлять ответ пользователю (одно или несколько сообщений), а возможен вариант без ответа пользователю. Обработчики работают подобно middleware-ам в express-е. Так же каждый обработчик принимает вторым параметром функцию `next`, после вызова который начнет свое выполнение следующий обработчик. Если next не вызвать (подобно разрыву связанной цепочки), то выполнение обработчиков прекращается.
 
 <img
   class="lazyload"
-  data-src="/assets/images/2018-09-30-create-universe-bot-nodejs/2.png" 
+  data-src="/assets/images/2018-09-30-create-universe-bot-nodejs/2.png"
   src="/assets/images/2018-09-30-create-universe-bot-nodejs/2-preview.jpg">
 
 Пример использования echo-бота, которого мы будем реализовывать, будет выглядить следующим образом:
@@ -128,9 +129,9 @@ const bot = new Bot({ connector }); /* Создаем бота */
 /* Обработчик для обработки всех сообщений */
 bot.use(async ({ session, message }, next) => {
     const text = message.getText(); /* Получаем сообщение пользователя */
-    
+
     await session.send(`You said: ${text}`); /* Отсылаем его обратно */
-    
+
     next();
 });
 ```
@@ -160,7 +161,7 @@ src             Исходный код
 ```
 ## Часть 3. Проектирование интерфейсов
 
-Начнем мы с не написания кода, а с реализации интерфейсов и типов. Опишем все сущности, их поля и методы без их реализации (Реализуем с следующем пункте). 
+Начнем мы с не написания кода, а с реализации интерфейсов и типов. Опишем все сущности, их поля и методы без их реализации (Реализуем с следующем пункте).
 
 #### Интерфейс пользователя
 
@@ -191,7 +192,7 @@ export interface IMessageProps {
     sender: MessageSender;
 }
 
-export interface IMessage {    
+export interface IMessage {
     data: IMessageProps;
 
     getText(): string;
@@ -257,29 +258,29 @@ export interface ISession {
     /* Cсылка на бота нужна, чтобы отправлять сообщение пользователю
        из обработчиков: session.send(msg) */
     bot: IBot;
-    
+
     /* Cостояние сессии (пользователя) */
     state: ISessionState;
-    
+
     /* Начальное состояние пользователя (Например, если мы делаем список задач,
        то `initialState` может выглядеть как `{ todos: [] }`) */
     initialState: ISessionState;
-    
+
     /* Если сессия не найдена в хранилище, то она будет создана и
        параметр isNew изначально будет равен `true`.
        Как только бот ответит пользователю, `isNew` меняет значение на `false`.
        Удобно использовать для приветсвенных сообщений для новых юзеров. */
     isNew: boolean;
-    
+
     /* Метод вернет имя пользователя */
     getUsername(): string;
-    
+
     /* Отправка пользователю сообщения */
     send(message: any, options?: any): Promise<any>;
-    
+
     /* Сброс состояния на начальное */
     resetState(): void;
-    
+
     /* Установка нового состояния */
     setState(state: ISessionState): void;
 }
@@ -321,7 +322,7 @@ import { ISessionState } from './ISessionState';
 export interface IBotContext {
     session: ISession;
     message: IMessage;
-    
+
     /* Это переменная хранит в себе результат метода match с регулярным сообщением
        Указанном при инициализации обработчика, в примере todo-list станет более понятно */
     params?: object;
@@ -329,35 +330,35 @@ export interface IBotContext {
 
 export type BotHandler = (context: IBotContext, next?: () => void) => void;
 
-export interface IBot { 
+export interface IBot {
 
     /* Начальное состояние каждой сессии пользователя */
     initialState: ISessionState;
-    
+
     /* Массив с обработчиками */
     handlers: BotHandler[];
-    
+
     /* Хранилище сессией (В нашем случае в памяти) */
     sessionStore: ISessionStore;
-    
+
     /* Канал или коннектор */
     connector: IConnector;
-    
+
     /* Метод для получения или создания новой сессии */
     getSession(message: IMessage): Promise<ISession>;
-    
+
     /* Обработка нового сообщения от пользователя и запуск обработчиков */
     processMessage(message: IMessage): void;
-    
+
     /* Запуск обработчиков */
     processHandlers(handlers: BotHandler[], context: IBotContext): any;
-    
+
     /* Добавление нового обработчика */
     use(patternOrHandler: BotHandler | RegExp | string, handler?: BotHandler): any;
 }
 ```
 
-Фух, мы проделали большую работы, и можно переходить к реализации всех наших интерфейсов. 
+Фух, мы проделали большую работы, и можно переходить к реализации всех наших интерфейсов.
 
 ## Часть 4. Реализация
 
@@ -467,7 +468,7 @@ export default class ConsoleConnector extends EventEmitter implements IConnector
 }
 ```
 
-#### Session 
+#### Session
 
 Класс `Session` довольно простой, в нем мы реализуем все методы и поля, которые мы рассматривали ранее.
 При создании инстанса мы устанавливаем начальное состояние (initialState), сохраняем ссылку на бота.
@@ -570,7 +571,7 @@ export default class MemorySessionStore implements ISessionStore {
 
 #### Bot
 
-Вот мы и подошли к самому последнему и важному классу - Bot. 
+Вот мы и подошли к самому последнему и важному классу - Bot.
 В конструкторе получаем объект `IConnector`, создаем инстанс `MemorySessionStore` и подписываемся на получение новых сообщений из коннектора.
 
 ```js
@@ -811,11 +812,11 @@ const sleep = timeout => new Promise(resolve => setTimeout(resolve, timeout));
    а просто замеряет время обработки запроса */
 bot.use(async (ctx, next) => {
     const start = Date.now();
-    
+
     await next();
-    
+
     const end = Math.round((Date.now() - start) / 1000);
-    
+
     console.log(`Request is handled for about ${end}sec`);
 });
 
@@ -823,9 +824,9 @@ bot.use(async (ctx, next) => {
 bot.use(async (ctx) => {
     /* Генерируем таймаут случайным образом */
     const timeout = Math.round(Math.random() * 10) * 1000;
-    
+
     await sleep(timeout);
-    
+
     ctx.session.send(`timeout ${timeout}ms`);
 });
 ```
@@ -853,7 +854,7 @@ bot.initialState = { todos: [] };
 bot.use('/list', async ({session}) => {
     const { todos } = session.state;
     const msg = todos.length > 0 ? todos.join('\n') : 'No todos!';
-    
+
     await session.send(msg);
 });
 
@@ -866,7 +867,7 @@ bot.use('/clear', async ({session}) => {
 /* Добавляем новую задачу в список задач */
 bot.use(/\/add (.+)/, async ({session, message}) => {
     const [newTodo] = message.params;
-    
+
     session.setState({ todos: [...session.state.todos, newTodo] });
     await session.send(`Todo: ${newTodo} added!`);
 });
@@ -920,7 +921,7 @@ function getApiEndpoind(q) {
 
 async function getGifUrlByKeywords(keywords) {
     const response = await axios.get(getApiEndpoind(keywords));
-    
+
     return response.data.data[0].images.fixed_height.url;
 }
 

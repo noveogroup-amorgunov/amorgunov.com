@@ -28,12 +28,11 @@
 }
 
 .footer__powered {
-  text-align: right;
+  text-align: center;
+  flex-grow: 1;
 
   @media (--viewport-small) {
-    flex-grow: 0;
     margin-top: 10px;
-    text-align: center;
   }
 }
 

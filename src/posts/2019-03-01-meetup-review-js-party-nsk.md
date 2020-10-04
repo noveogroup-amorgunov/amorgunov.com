@@ -9,6 +9,7 @@ tags:
   - animation
 layout: layouts/post.njk
 bg: /assets/images/2019-03-01-meetup-review-js-party-nsk/1.jpg
+likes: 1
 ---
 Вчера я сходил на очередной местный митап, в Новосибирске, который в этот раз проводил Яндекс (это уже пятый Javascript Party в Нск от Яндекса, страничка митапа, на которой возможно появятся ссылки на видеозаписи и презентации: https://events.yandex.ru/events/meetings/28-02-2019/). Вообще, я люблю формат митапов, они бесплатны, не занимают целый день в отличии от конференций, можно спокойно сходить после работы, пообщаться с ребятами и конечно же узнать что-то новенькое. А Яндекс реально проводит эвенты на высоком уровне (и нет, я это говорю не потому, что я работаю тут).
 
@@ -171,7 +172,7 @@ class MyComponent extends Component {...}
 
 /* Заменить на */
 
-class MyComponent extends PureComponent {...} 
+class MyComponent extends PureComponent {...}
 ```
 
 Подробнее почитать можно [в официальной документации](https://reactjs.org/docs/react-api.html#reactpurecomponent).

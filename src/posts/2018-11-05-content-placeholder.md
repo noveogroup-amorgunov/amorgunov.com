@@ -10,8 +10,9 @@ tags:
   - ux
   - spa
 layout: layouts/post.njk
+likes: 2
 ---
-Сегодня я хочу рассказать о довольно интересном подходе, который называется **content placeholder**. 
+Сегодня я хочу рассказать о довольно интересном подходе, который называется **content placeholder**.
 Порой возникает ситуация, когда нужно подгрузить какие-нибудь данные на страницу. В этом период времени пользователю необходимо ждать какое-то время.
 Но мы можем уменьшить это ощущение ожидания. Как? Предоставляя пользователю некое представление о том, как будет выглядеть страница,
 когда контент подгрузится.
@@ -24,13 +25,13 @@ layout: layouts/post.njk
     data-src="/assets/images/2018-11-05-content-placeholder/2.png" />
 
 Этот способ намного лучше обычного спиннера, потому что он показывает сразу, как будет располагаться контент. Это так же отлично подходит для *offline first* приложений.
-И еще один аргумент за использование этого подхода, его сейчас используют все: ютуб, инстаграм, фейсбук, медиум, вайбер, можно перечислять и перечислять. 
+И еще один аргумент за использование этого подхода, его сейчас используют все: ютуб, инстаграм, фейсбук, медиум, вайбер, можно перечислять и перечислять.
 
 Типичная реализация на одном из веб-приложений, в котором я принимал участие:
 
 <picture>
     <source data-srcset="/assets/images/2018-11-05-content-placeholder/1.webp" type="image/webp">
-    <source data-srcset="/assets/images/2018-11-05-content-placeholder/1.gif" type="image/gif"> 
+    <source data-srcset="/assets/images/2018-11-05-content-placeholder/1.gif" type="image/gif">
     <img
         class="lazyload
         src="/assets/images/2018-11-05-content-placeholder/1.min.png"
@@ -59,7 +60,7 @@ interface RectProps {
 
 const Rect: StatelessComponent<RectProps> = (props: RectProps) => {
     const { width, height, type = 'default' } = props;
-    
+
     return (
         <div style={{ width, height }} className={class_({ type })} />
     );
@@ -75,7 +76,7 @@ export default Rect;
 
 ```css
 .rect { animation: reсt-pulse 1.5s infinite; }
-.rect_type_default { background: #e6e6e6; } 
+.rect_type_default { background: #e6e6e6; }
 .rect_type_black { background: #aaa; }
 
 @keyframes reсt-pulse {
@@ -147,7 +148,7 @@ render() {
 /* ... */
 render() {
     const items = Array(this.props.itemsCount).fill(0);
-    
+
     return items.map(...)
 }
 ```

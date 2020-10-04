@@ -10,6 +10,7 @@ tags:
   - hooks
   - tutorial
 layout: layouts/post.njk
+likes: 16
 ---
 
 Сейчас идет эра клиентских веб-приложений. React, Vue, Angular и другие подобные фреймворки захватили веб. Очень многие проекты, где есть логика на стороне клиента, а она есть чуть ли не на каждом сайте, начинают писаться именно с использованием данных решений.
@@ -74,7 +75,7 @@ function Header(props) {
     <div>
       Current location: {props.location}
     </div>
-  ); 
+  );
 }
 
 export default withRouter(Header);
@@ -147,7 +148,7 @@ export default class CookiesProvider extends Component {
     static defaultProps = {
         manager: new ClientManager()
     };
-      
+
     render() {
         const { manager, children } = this.props;
 
@@ -248,7 +249,7 @@ function CookiesNotification(props) {
     // Пропсы из withCookies
     const { cookies, setCookie } = props;
 
-    // если кука есть, то просто не рендерим кнопку 
+    // если кука есть, то просто не рендерим кнопку
     if (cookies[COOKIE_KEY]) {
         return null;
     }
@@ -306,13 +307,13 @@ app
 function render(req, res) {
     // Передаем req и res в менеджер для работы с куками на сервере
     const cookieManager = new ServerCookiesManager(req, res);
-    
+
     const jsx = (
         <CookiesProvider manager={cookieManager}>
             <App />
         </CookiesProvider>
     );
-    
+
     // ...
 }
 ```

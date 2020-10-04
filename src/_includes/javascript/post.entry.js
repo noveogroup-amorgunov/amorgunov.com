@@ -8,6 +8,7 @@ import Quiz from './modules/quiz';
 import prepareExternalLinks from './modules/prepareExternalLinks';
 import initPostReactions from './modules/postReactions';
 import initCopyToClipboard from './modules/copy';
+import initBurgerMenu from './modules/burger';
 
 const initHljs = _selectors => {
   const selectors = _selectors || document.querySelectorAll('pre code');
@@ -41,6 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const $quizs = document.querySelectorAll('.quiz');
   const $codeBlocks = document.querySelectorAll('pre code');
 
+  initBurgerMenu();
   initQuiz($quizs);
   initTerminalBot($terminals);
   initCopyToClipboard();

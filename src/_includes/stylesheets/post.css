@@ -162,8 +162,13 @@
   .posts__item:nth-child(3) {
     width: calc(33% - 10px);
   }
+
+  @media (--viewport-small) {
+    width: 100%;
+  }
 }
 
+/*
 .posts_home {
   .posts__item:nth-child(1) {
     width: calc(65% - 10px);
@@ -191,17 +196,19 @@
     order: 2;
   }
 }
+*/
 
 .posts__item {
   position: relative;
-  background-color: #ffeb3b;
+  background-color: #eff32c;
   margin: 5px;
   border-radius: 15px;
   font-size: 14px;
-  padding: 20px 20px 40px;
-  min-height: 130px;
+  padding: 20px;
+  min-height: 150px;
   width: calc(50% - 10px);
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
   box-sizing: border-box;
   transition: all 0.2s ease;
   word-break: break-word;
@@ -209,11 +216,8 @@
   background-position: center;
 
   @media (--viewport-small) {
-    /* width: 100% !important; */
-
     font-size: 13px;
-    padding: 10px 10px 40px;
-    min-height: 120px;
+    min-height: 140px;
   }
 }
 
@@ -240,10 +244,11 @@
   }
 
   @media (--viewport-small) {
-    max-width: 80px;
+    max-width: 85px;
   }
 }
 
+/*
 .posts__item:nth-child(1) {
   width: calc(65% - 10px);
 }
@@ -265,7 +270,7 @@
 .posts__item:nth-child(11) {
   width: calc(33% - 10px);
 }
-
+*/
 .posts__item_theme_light .posts__link {
   display: inline-block;
   background: #fffa;
@@ -280,10 +285,17 @@
   font-weight: bold;
   display: block;
   color: #383838;
+  font-size: 16px;
+  padding-top: 5px;
 }
 
 .posts__link:hover {
   opacity: 0.8;
+}
+
+.posts__desc {
+  padding: 10px 0;
+  flex-grow: 2;
 }
 
 .posts__date {
@@ -344,4 +356,30 @@
     font-size: 1.2em;
     padding-bottom: 15px;
   }
+}
+
+.direct-link {
+  float: left;
+  text-decoration: none !important;
+  color: #666 !important;
+
+  &:hover {
+    color: #aaa;
+  }
+}
+
+.code-path {
+  font-size: 13px;
+  margin-bottom: -15px;
+  margin-left: 5px;
+  font-family: "Menlo", "Meslo LG", monospace;
+  color: #555;
+}
+
+.post__like {
+  background-image: url("/assets/like.svg");
+  padding-left: 20px;
+  font-weight: bold;
+  background-size: 16px 16px;
+  background-repeat: no-repeat;
 }

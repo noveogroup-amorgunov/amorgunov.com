@@ -10,6 +10,7 @@ tags:
   - devtools
   - optimization
 layout: layouts/post.njk
+likes: 2
 ---
 В настоящий момент я работаю над внутренним проектом для создания промо-страниц, который активно развивается и растет. Огромное количество собранных промо-страниц и целых сайтов, куча сэкономленных человеко-часов на разработку промок, которые собираются с помощью нашего конструктора, и огромная кодовая база. Несмотря на высокий уровень и профессиональный подход разработчиков, код ревью и современные технологии, в быстрорастущих проектах возникают проблемы из-за не всегда оптимальных архитектурных подходов, а порой из-за небольших локальных решений, которые изначально кажутся вполне логичными.
 
@@ -104,7 +105,7 @@ applyMiddleware(/* thunkMiddleware */, userTimingMiddleware)
 
 ## Избегайте формирование данных в render
 
-Далее я просто начал смотреть результаты анализа после ввода символа в инпут и увидел следующую картину: 
+Далее я просто начал смотреть результаты анализа после ввода символа в инпут и увидел следующую картину:
 
 <img
   class="lazyload image_size_xl"
@@ -170,7 +171,7 @@ class Component extends React.Component {
     render() {
         const { highlightedNodes } = this.props;
         const highlightedIds = highlightedNodes.map(node => node.id);
-    
+
         return (<div>...</div>);
     }
 }
@@ -185,10 +186,10 @@ class Component extends React.Component {
     state = {
         highlightedIds: this.props.highlightedNodes.map(node => node.id)
     };
-    
+
     static getDerivedStateFromProps(props, state) {
         const highlightedIds = props.highlightedNodes.map(node => node.id);
-    
+
         // Если highlightedNodes был обновлен, возвращаем новое состояние
         if (!isEqual(highlightedIds, state.highlightedIds)) {
           return {
@@ -224,7 +225,7 @@ class Component extends React.Component {
 }
 ```
 
-Метод getHighlightedIds будет заново итерироваться по массиву только в том случае, если проп highlightedNodes будет обновлен. По этой теме можете почитать [топик из официальной документации React](https://ru.reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html#what-about-memoization). 
+Метод getHighlightedIds будет заново итерироваться по массиву только в том случае, если проп highlightedNodes будет обновлен. По этой теме можете почитать [топик из официальной документации React](https://ru.reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html#what-about-memoization).
 
 ## Избегайте dangerouslySetInnerHTML
 
@@ -301,9 +302,9 @@ onKeyUp = (event) => {
 ```js
 class List extends React.Component {
     render() {
-        return nodes.map(node => this._renderNode(node));    
+        return nodes.map(node => this._renderNode(node));
     }
-    
+
     _renderNode(node) {}
 }
 ```
@@ -342,7 +343,7 @@ class ListNode extends React.PureComponent {
 ```js
 _renderNode(node) {
     const handleDoubleClick = this._getNodeDoubleClickHandler(node);
-    
+
     // ...
 }
 
@@ -358,7 +359,7 @@ _getNodeDoubleClickHandler(node) {
 ```js
 class ListNode extends React.PureComponent {
     // ...
-    
+
     _handleDoubleClick = () => {
         const { node } = this.props;
         // ...
