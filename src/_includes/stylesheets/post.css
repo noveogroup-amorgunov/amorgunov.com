@@ -163,8 +163,10 @@
     width: calc(33% - 10px);
   }
 
-  @media (--viewport-small) {
-    width: 100% !important;
+  .posts__item {
+    @media (--viewport-small) {
+      width: 100% !important;
+    }
   }
 }
 
