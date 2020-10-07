@@ -18,6 +18,8 @@ jobs:
         run: npm install
       - name: Update post likes
         run: npm run update-post-likes
+      - name: Create report file
+        run: date +%s > src/report.txt
       - name: echo git changes
         run: git status
       - name: Commit changes
@@ -26,6 +28,6 @@ jobs:
           author_name: noveogroup-amorgunov
           author_email: noveogroupamorgunov@gmail.com
           message: "Update likes"
-          add: "*.md"
+          add: src
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
