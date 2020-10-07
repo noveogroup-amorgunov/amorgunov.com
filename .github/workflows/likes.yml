@@ -18,6 +18,8 @@ jobs:
         run: npm install
       - name: Update post likes
         run: npm run update-post-likes
+      - name: echo git changes
+        run: git status
       - name: Commit changes
         uses: EndBug/add-and-commit@v5
         with:
