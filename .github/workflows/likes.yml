@@ -21,8 +21,8 @@ jobs:
       - name: Commit changes
         uses: EndBug/add-and-commit@v5
         with:
-          author_name: amorgunov bot
-          author_email: bot@amorgunov.com
+          author_name: noveogroup-amorgunov
+          author_email: noveogroupamorgunov@gmail.com
           message: "Update likes"
           add: "*.md"
         env:
