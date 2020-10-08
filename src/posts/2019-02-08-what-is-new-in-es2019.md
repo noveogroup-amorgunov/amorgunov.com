@@ -8,7 +8,7 @@ tags:
   - es2019
   - js
 layout: layouts/post.njk
-likes: 1
+likes: 2
 ---
 > Каждый год выходит новая версия [ECMAScript](https://tc39.github.io/ecma262/) с предложениями, которые официально уже готовы.
 Это означает, что предложения, которые были приняты комитетом tc39 и достигли [stage 4](https://tc39.github.io/process-document/),
