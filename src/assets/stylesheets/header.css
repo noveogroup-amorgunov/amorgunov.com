@@ -13,8 +13,14 @@
     position: fixed;
     padding: 30px 20px 10px 20px;
     background: #fff;
+
+    /* box-shadow: 0 20px 30px -30px rgba(0, 0, 0, .5); */
     z-index: 2;
   }
+}
+
+.medium-zoom--opened .header {
+  z-index: 0;
 }
 
 .header__homepage {
@@ -22,7 +28,7 @@
 }
 
 .header__logo {
-  background-image: url(/assets/logo.jpg);
+  background-image: url(/assets/images/logo.jpg);
   background-size: cover;
   width: 30px;
   height: 36px;
@@ -42,7 +48,7 @@
 }
 
 .header__menu {
-  background-image: url("/assets/menu.svg");
+  background-image: url("/assets/images/menu.svg");
   width: 24px;
   height: 24px;
   background-size: cover;
@@ -100,7 +106,7 @@
     padding-left: 40px;
     font-weight: bold;
     border-bottom: 1px solid #eee;
-    background-image: url(/assets/logo.jpg);
+    background-image: url(/assets/images/logo.jpg);
     background-size: 30px 36px;
     background-repeat: no-repeat;
   }

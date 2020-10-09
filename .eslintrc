@@ -1,0 +1,50 @@
+{
+  "extends": [
+    "plugin:prettier/recommended",
+    "airbnb-typescript/base",
+    "airbnb-base",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
+  "plugins": ["prettier"],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "rules": {
+    "prettier/prettier": ["error"],
+    "import/no-extraneous-dependencies": ["error", {
+      "devDependencies": [
+        "configs/**",
+        ".scripts/**",
+        "**/__tests__/**"
+      ],
+      "optionalDependencies": false
+    }],
+    "import/prefer-default-export": "off",
+    "import/no-default-export": "error",
+    "comma-dangle": "off",
+    "@typescript-eslint/comma-dangle": "off",
+    "import/extensions": "off",
+    "no-param-reassign": "off",
+    "consistent-return": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "arrow-parens": ["error", "as-needed"],
+    "@typescript-eslint/space-before-function-paren": "off",
+    "space-before-function-paren": ["error", {
+      "anonymous": "always",
+      "named": "never",
+      "asyncArrow": "always"
+    }]
+  },
+  "env": {
+    "es6": true,
+    "browser": true
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  }
+}

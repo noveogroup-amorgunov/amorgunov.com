@@ -33,7 +33,7 @@ likes: 2
     <source data-srcset="/assets/images/2018-11-05-content-placeholder/1.webp" type="image/webp">
     <source data-srcset="/assets/images/2018-11-05-content-placeholder/1.gif" type="image/gif">
     <img
-        class="lazyload
+        class="lazyload"
         src="/assets/images/2018-11-05-content-placeholder/1.min.png"
         data-src="/assets/images/2018-11-05-content-placeholder/1.gif">
 </picture>

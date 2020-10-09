@@ -1,6 +1,6 @@
-import ClipboardJS from 'clipboard';
+import * as ClipboardJS from 'clipboard';
 
-export default function initCopyToClipboard() {
+export function initCopyToClipboard() {
   document.querySelectorAll('.copy-btn').forEach(el => {
     const clipboard = new ClipboardJS(el);
 

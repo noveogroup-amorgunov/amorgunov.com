@@ -378,7 +378,7 @@
 }
 
 .post__like {
-  background-image: url("/assets/like.svg");
+  background-image: url("/assets/images/like.svg");
   padding-left: 20px;
   font-weight: bold;
   background-size: 16px 16px;
