@@ -5,7 +5,7 @@
 }
 
 .home__logo {
-  background-image: url("/assets/logo.jpg");
+  background-image: url("/assets/images/logo.jpg");
   background-size: cover;
   width: 120px;
   height: 144px;

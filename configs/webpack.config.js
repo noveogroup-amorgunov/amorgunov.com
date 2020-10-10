@@ -1,9 +1,8 @@
 const path = require('path');
-// const webpack = require('webpack');
 const TerserJSPlugin = require('terser-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const postcssCustomMedia = require('postcss-custom-media');
 const postcssImport = require('postcss-import');
 const postcssNested = require('postcss-nested');
@@ -12,7 +11,7 @@ const postcssReporter = require('postcss-reporter');
 const postcssCssnext = require('postcss-cssnext');
 
 const IS_DEV = process.env.NODE_ENV !== 'production';
-const $js = path.join(__dirname, '../src/_includes/javascript/');
+const $js = path.join(__dirname, '../src/assets/javascript/');
 const $template = path.join(__dirname, '../src/_includes/layouts/');
 
 const postcssLoader = {
@@ -24,39 +23,36 @@ const postcssLoader = {
       postcssNested(),
       postcssPresetEnv(),
       postcssReporter(),
-      postcssCssnext()
-    ]
-  }
+      postcssCssnext(),
+    ],
+  },
 };
 
 module.exports = {
   entry: {
-    main: path.join($js, 'main.entry.js'),
-    post: path.join($js, 'post.entry.js')
+    main: path.join($js, 'main.entry.ts'),
+    post: path.join($js, 'post.entry.ts'),
   },
   output: {
     path: path.join(__dirname, '../src/assets/build'),
     filename: '[name].entry.js?v=[contenthash]',
-    publicPath: '/assets/build/'
+    publicPath: '/assets/build/',
   },
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
+        test: /\.tsx?$/,
         exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader'
-        }
+        use: { loader: 'babel-loader' },
       },
       {
         test: /\.css$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-          postcssLoader
-        ].filter(Boolean)
-      }
-    ]
+        use: [MiniCssExtractPlugin.loader, 'css-loader', postcssLoader].filter(Boolean),
+      },
+    ],
+  },
+  resolve: {
+    extensions: ['*', '.js', '.jsx', '.json', '.ts', '.tsx'],
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -64,25 +60,25 @@ module.exports = {
       inject: false,
       minify: !IS_DEV,
       filename: path.join($template, 'main.njk'),
-      template: path.join($template, 'main.template.njk')
+      template: path.join($template, 'main.template.njk'),
     }),
     new HtmlWebpackPlugin({
       chunks: ['post'],
       inject: false,
       minify: !IS_DEV,
       filename: path.join($template, 'post.njk'),
-      template: path.join($template, 'post.template.njk')
+      template: path.join($template, 'post.template.njk'),
     }),
     new MiniCssExtractPlugin({
-      filename: '[name].css?v=[contenthash]'
-    })
+      filename: '[name].css?v=[contenthash]',
+    }),
   ],
-  // devtool: 'eval-source-map',
+  devtool: IS_DEV ? 'cheap-module-source-map' : 'source-map',
   optimization: {
     minimizer: IS_DEV ? [] : [new TerserJSPlugin(), new OptimizeCSSAssetsPlugin()],
     minimize: !IS_DEV,
     splitChunks: {
-      chunks: 'all'
-    }
-  }
+      chunks: 'all',
+    },
+  },
 };

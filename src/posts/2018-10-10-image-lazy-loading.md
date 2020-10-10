@@ -29,7 +29,7 @@ likes: 0
     <source data-srcset="/assets/images/2018-10-10-image-lazy-loading/2.webp" type="image/webp">
     <source data-srcset="/assets/images/2018-10-10-image-lazy-loading/2.gif" type="image/gif">
     <img
-        class="lazyload
+        class="lazyload"
         src="/assets/images/2018-10-10-image-lazy-loading/2.min.png"
         data-src="/assets/images/2018-10-10-image-lazy-loading/2.gif">
 </picture>
@@ -44,7 +44,7 @@ likes: 0
     <source data-srcset="/assets/images/2018-10-10-image-lazy-loading/f.webp" type="image/webp">
     <source data-srcset="/assets/images/2018-10-10-image-lazy-loading/f.gif" type="image/gif">
     <img
-        class="lazyload
+        class="lazyload"
         src="/assets/images/2018-10-10-image-lazy-loading/f.min.png"
         data-src="/assets/images/2018-10-10-image-lazy-loading/f.gif">
 </picture>
@@ -158,7 +158,7 @@ import './lazyload';
     <source data-srcset="/assets/images/2018-10-10-image-lazy-loading/3.webp" type="image/webp">
     <source data-srcset="/assets/images/2018-10-10-image-lazy-loading/3.gif" type="image/gif">
     <img
-        class="lazyload
+        class="lazyload"
         src="/assets/images/2018-10-10-image-lazy-loading/3.min.png"
         data-src="/assets/images/2018-10-10-image-lazy-loading/3.gif">
 </picture>
@@ -283,7 +283,7 @@ use: [
     <source data-srcset="/assets/images/2018-10-10-image-lazy-loading/7.webp" type="image/webp">
     <source data-srcset="/assets/images/2018-10-10-image-lazy-loading/7.gif" type="image/gif">
     <img
-        class="lazyload
+        class="lazyload"
         src="/assets/images/2018-10-10-image-lazy-loading/7.min.png"
         data-src="/assets/images/2018-10-10-image-lazy-loading/7.gif">
 </picture>

@@ -1,4 +1,4 @@
-export default () => {
+export function scroll() {
   const upContainer = document.querySelector('.post-layer__up');
   let lastScrolledY = 0;
 
@@ -32,4 +32,4 @@ export default () => {
       }
     }
   });
-};
+}

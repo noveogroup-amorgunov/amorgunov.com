@@ -1,4 +1,4 @@
-export default function initBurgerMenu() {
+export function initBurgerMenu() {
   const $burgerControl = document.querySelector('.header__menu');
   const $burgerOverlay = document.querySelector('.burger__overlay');
   const $burgerMenu = document.querySelector('.burger__menu');
