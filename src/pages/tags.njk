@@ -10,15 +10,15 @@ pagination:
     - posts
 layout: layouts/main.njk
 renderData:
-  title: Протегировано “{{ tag }}”
+  title: Посты с тегом «{{ tag }}»
 permalink: /tags/{{ tag }}/
 ---
-<h1>Протегировано “{{ tag }}”</h1>
+<h1>Посты с тегом «{{ tag }}»</h1>
 
-{% set postslist = collections[ tag ] %}
-{% include "components/posts.njk" %}
+{% PostList {
+  items: collections[tag]
+} %}
 
 <div class="more">
   <p>Смотрите <a href="{{ '/tags/' | url }}">все теги</a>.</p>
 </div>
-

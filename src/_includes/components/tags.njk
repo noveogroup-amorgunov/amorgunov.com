@@ -1,6 +1,0 @@
-{% for tag in tags | reverse %}
-  {%- if tag != "posts" -%}
-    {% set tagUrl %}/tags/{{ tag }}/{% endset %}
-    <a href="{{ tagUrl | url }}" class="tag">{{ tag }}</a>
-  {%- endif -%}
-{% endfor %}

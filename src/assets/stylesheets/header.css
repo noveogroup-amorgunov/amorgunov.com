@@ -61,6 +61,7 @@
 }
 
 .burger__menu {
+  display: none;
   position: fixed;
   top: 0;
   width: 85%;
@@ -73,6 +74,10 @@
   transition-duration: 300ms;
   transform: translateX(100%);
   padding: 20px;
+}
+
+.loaded .burger__menu {
+  display: block;
 }
 
 .burger__menu_opened {

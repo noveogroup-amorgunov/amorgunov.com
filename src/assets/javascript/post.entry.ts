@@ -44,6 +44,8 @@ const initTerminalBot = (nodes: NodeListOf<HTMLDivElement>) => {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
+  document.body.classList.add('loaded');
+
   const $postImages = document.querySelectorAll('.post img');
   const $terminals: NodeListOf<HTMLDivElement> = document.querySelectorAll('.terminal');
   const $quizs: NodeListOf<HTMLDivElement> = document.querySelectorAll('.quiz');

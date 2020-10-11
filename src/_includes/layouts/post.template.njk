@@ -9,18 +9,20 @@
     <time datetime="{{date | htmlDateString }}">{{ date | readableDate}}</time>
   </div>
 
-  <div class="post__tags">
-    {% set tags = tags %}
-    {% include "components/tags.njk" %}
-  </div>
+  {% TagList {
+    items: tags,
+    sectionClassName: 'post__tags'
+  } %}
 
   {{ content | safe }}
 </div>
 <div class="post__emotions"></div>
 <div class="post__readmore">
   <h3 class="post__readmore-title">Вам может быть интересно</h3>
-  {% set postslist = collections.posts | relatedPosts(page.url, tags, 3) %}
-  {% include "components/posts.njk" %}
+
+  {% PostList {
+    items: collections.posts | relatedPosts(page.url, tags, 3)
+  } %}
 </div>
 <div class="post-layer__up">
   <div class="post-layer__back">

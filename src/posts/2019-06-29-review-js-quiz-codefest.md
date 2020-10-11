@@ -49,7 +49,7 @@ likes: 4
 
 ## Разбор
 
-### 1
+## 1
 
 Что выведет console.log?
 
@@ -77,7 +77,7 @@ console.log('' + 1 + 2 + '')
 
 ---
 
-### 2
+## 2
 
 Что выведется в консоль:
 
@@ -305,22 +305,26 @@ while(queue.waitForMessage()){
 Что выведет console.log?
 
 ```js
-console.log(typeof typeof 1 / 0);
+console.log(typeof typeof (1 / 0));
 ```
 
-Маленький пример, но не менее интересный. С учетом приоритетов операторов (табличку можно посмотреть [тут](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Operator_Precedence)), сначала начнет выполнение внешний `typeof`, который запустит выполнение внутреннего `typeof`, который в свою очередь выполнит `1 / 0`, значение которого будет равно `NaN`, т.е. получаем
+Маленький пример, но не менее интересный. С учетом приоритетов операторов (табличку можно посмотреть [тут](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Operator_Precedence)), сначала выполнится выражение внутри скобок, далее typeof-ы. Результат выполнения `1 / 0` будет равен `Infinity`, т.е. получаем
 
 ```js
-console.log(typeof typeof NaN);
+console.log(typeof typeof Infinity);
 ```
 
-NaN принадлежит типу number, следовательно имеем:
+`Infinity` принадлежит типу number, следовательно имеем:
 
 ```js
 console.log(typeof 'number');
 ```
 
-Далее думаю вы и сами догадались, что typeof от строки (а `"number"` это строка) вернет "string".
+Далее думаю вы и сами догадались, что `typeof` от строки (а `"number"` это строка) вернет "string".
+
+> Если бы скобок не было, то ответ был бы другим. Сначала выполнились typeof-ы (так как у них приоритет выше, чем у оператора деления) и в итоге мы получили выражение `"string" / 0`, которое после выполнения вернет `NaN`.
+
+<br/>
 
 ---
 
