@@ -11,16 +11,18 @@ description: Блог о веб-разработке, реакте, тайпск
     Пишу о <a class="home__about-tag" href="/tags/react">#реакте</a>, <a class="home__about-tag" href="/tags/typescript">#тайпскрипте</a>, <a class="home__about-tag" href="/tags/nodejs">#ноде</a>  и
     обо всем том, что связанно с веб-разработкой.
   </div>
-  {% set postslist = collections.posts | head(-7) %}
-  {% include "components/posts-home.njk" %}
+
+  {% PostList {
+    items: collections.posts | head(-7),
+    showQuiz: true
+  } %}
 
    <div class="home__about">
         Остальные посты вы найдете <a href="{{ '/posts/' | url }}">в архиве</a>. А еще больше заметок и материалов вы сможете найти в телеграм канале <strong><a href="https://t.me/amorgunov" rel="noreferrer" target="_blank">t.me/amorgunov</a></strong>
    </div>
 
-  <div class="home__year">Теги</div>
-  {% for tag in collections.tagList %}
-    {% set tagUrl %}/tags/{{ tag }}/{% endset %}
-    <a href="{{ tagUrl | url }}" class="tag">{{ tag }}</a>
-  {% endfor %}
+  {% TagList {
+    items: collections.tagList,
+    showTitle: true
+  } %}
 </div>

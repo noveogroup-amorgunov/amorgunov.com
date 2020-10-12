@@ -4,7 +4,6 @@ permalink: /tags/
 ---
 <h1>Теги</h1>
 
-{% for tag in collections.tagList %}
-  {% set tagUrl %}/tags/{{ tag }}/{% endset %}
-  <a href="{{ tagUrl | url }}" class="tag">{{ tag }}</a>
-{% endfor %}
+{% TagList {
+  items: collections.tagList
+} %}

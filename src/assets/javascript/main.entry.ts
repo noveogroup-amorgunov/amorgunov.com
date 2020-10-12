@@ -13,6 +13,8 @@ const initQuiz = (nodes: NodeListOf<HTMLDivElement>) => {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
+  document.body.classList.add('loaded');
+
   const $quizs: NodeListOf<HTMLDivElement> = document.querySelectorAll('.quiz');
 
   initBurgerMenu();

@@ -13,6 +13,10 @@ permalink: /posts/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumbe
 
 <h1>Архив постов</h1>
 
-{% set postslist = pagination.items | reverse %}
-{% include "components/posts.njk" %}
-{% include "components/pagination.njk" %}
+{% PostList {
+  items: pagination.items | reverse
+} %}
+
+{% Pagination {
+  pagination: pagination
+} %}

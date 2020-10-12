@@ -6,6 +6,7 @@
     <meta name="yandex-verification" content="e1570293e78bfd37" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="preconnect" href="https://www.google-analytics.com">
     <meta name="theme-color" content="#ffffff" />
     <meta name="robots" content="index,follow" />
     <title>{{ renderData.title or title or metadata.title }}</title>
@@ -24,11 +25,11 @@
     {% block afterhead %}{% endblock %}
   </head>
   <body class="{% block bodyClass %}{% endblock %}">
-    {% include "components/header.njk" %}
+    {% include "partials/header.njk" %}
     <main class="main {% block templateClass %}{% endblock %}">
       {% block content %}{% endblock %}
     </main>
-    {% include "components/footer.njk" %}
+    {% include "partials/footer.njk" %}
     {% block afterbody %}{% endblock %}
     <script defer src="https://www.googletagmanager.com/gtag/js?id=UA-179522059-1"></script>
     <script>
@@ -45,7 +46,6 @@
           .then(function(registration) {
             console.debug('Service Worker Registered');
           });
-
         navigator.serviceWorker.ready.then(function(registration) {
           console.debug('Service Worker Ready');
         });

@@ -28,7 +28,7 @@
       "answers": ["AECBD", "AEBCD", "ACDBE", "AECDB", "CDAEB"]
     },
     {
-      "content": "<strong>{counter}</strong> Что выведет console.log?<br/><pre><code class='language-js hljs javascript'>console.log(typeof typeof 1 / 0);</code></pre>",
+      "content": "<strong>{counter}</strong> Что выведет console.log?<br/><pre><code class='language-js hljs javascript'>console.log(typeof typeof (1 / 0));</code></pre>",
       "answers": ["Ошибка", "string", "number", "NaN"]
     },
     {

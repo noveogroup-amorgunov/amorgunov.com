@@ -1,8 +1,6 @@
 @import './media.css';
 @import './variables.css';
 
-/* Footer */
-
 .footer {
   margin: 40px 0 20px;
   width: 100%;
@@ -14,16 +12,6 @@
 
   @media (--viewport-small) {
     flex-direction: column;
-  }
-}
-
-.footer__social {
-  flex-grow: 1;
-  margin-top: 10px;
-
-  @media (--viewport-small) {
-    flex-grow: 0;
-    text-align: center;
   }
 }
 

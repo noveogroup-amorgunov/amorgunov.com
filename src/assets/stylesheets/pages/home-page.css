@@ -1,5 +1,9 @@
 @import '../media.css';
 
+.home {
+  margin-bottom: 60px;
+}
+
 .home__more {
   padding: 20px 0;
 }
@@ -41,23 +45,7 @@
   font-weight: bold;
 }
 
-.home {
-  margin-bottom: 60px;
-}
-
-.home__photo {
-  width: 120px;
-  border-radius: 120px;
-  margin-right: 30px;
-  float: left;
-
-  @media (--viewport-small) {
-    float: none;
-  }
-}
-
-.home__title,
-.home__year {
+.home__title {
   font-size: 39px;
   padding-bottom: 10px;
 

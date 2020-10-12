@@ -1,9 +1,13 @@
 const fs = require('fs');
-const { DateTime } = require('luxon');
 const pluginRss = require('@11ty/eleventy-plugin-rss');
 const markdownIt = require('markdown-it');
 const markdownItAnchor = require('markdown-it-anchor');
 const htmlmin = require('html-minifier');
+
+const components = require(`../src/_includes/components`);
+const filters = require(`../src/_includes/filters`);
+
+const tagListCollection = require(`../src/_includes/collections/tagList`);
 
 const htmlMinOptions = {
   collapseWhitespace: true,
@@ -26,111 +30,54 @@ const markdownItAnchorOptions = {
   permalinkSymbol: '#',
 };
 
-function getTagList(collection) {
-  const tagSet = new Set();
-  const skippedTag = ['all', 'nav', 'post', 'posts'];
-
-  collection.getAll().forEach(item => {
-    if ('tags' in item.data) {
-      item.data.tags
-        .filter(tagItem => !skippedTag.includes(tagItem))
-        .forEach(tag => tagSet.add(tag));
-    }
-  });
-
-  return [...tagSet];
-}
-
-module.exports = function (eleventyConfig) {
-  // Needed to prevent eleventy from ignoring changes to `webpack.njk`
+module.exports = function (config) {
+  // Needed to prevent eleventy from ignoring changes to webpack layouts
   // since it is in our `.gitignore`
-  eleventyConfig.setUseGitIgnore(false);
+  config.setUseGitIgnore(false);
 
-  eleventyConfig.addPlugin(pluginRss);
+  config.addPlugin(pluginRss);
 
-  eleventyConfig.setDataDeepMerge(true);
+  config.setDataDeepMerge(true);
 
-  eleventyConfig.addLayoutAlias('post', 'layouts/post.njk');
+  config.addLayoutAlias('post', 'layouts/post.njk');
 
-  eleventyConfig.addFilter('version', value => {
-    const version = process.env.COMMIT_REF || 'dev';
+  config.addCollection('tagList', tagListCollection);
 
-    return `${value}${version}`;
-  });
+  config.addFilter('version', filters.version);
+  config.addFilter('readableDate', filters.readableDate);
+  config.addFilter('readableDateShort', filters.readableDateShort);
+  config.addFilter('random', filters.swapListItem);
+  config.addFilter('relatedPosts', filters.relatedPosts);
+  config.addFilter('toJSON', filters.toJSON);
+  config.addFilter('htmlDateString', filters.htmlDateString);
+  config.addFilter('head', filters.head);
 
-  eleventyConfig.addFilter('readableDate', dateObj => {
-    return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toFormat('dd/LL/yyyy');
-  });
+  config.addShortcode('TagList', components.TagList);
+  config.addShortcode('PostList', components.PostList);
+  config.addShortcode('Pagination', components.Pagination);
 
-  eleventyConfig.addFilter('readableDateShort', dateObj => {
-    return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toFormat('dd/LL');
-  });
+  config.addPassthroughCopy('src/assets/build');
+  config.addPassthroughCopy('src/assets/images');
+  config.addPassthroughCopy('src/assets/cache-polyfill.js');
+  config.addPassthroughCopy('src/assets/highlight.js');
+  config.addPassthroughCopy('src/assets/js-quiz-1.json');
+  config.addPassthroughCopy('src/assets/favicon.png');
+  config.addPassthroughCopy('src/_redirects');
+  config.addPassthroughCopy('src/manifest.json');
 
-  eleventyConfig.addFilter('random', (arr, n) => {
-    return arr.sort(() => Math.random() - Math.random()).slice(0, n);
-  });
-
-  eleventyConfig.addFilter('relatedPosts', (arr, pageUrl, tags, n) => {
-    const relatedPosts = [...arr];
-
-    relatedPosts.forEach(post => {
-      post.related = 0;
-
-      (post.data.tags || []).forEach(tag => {
-        if (tags.includes(tag)) {
-          post.related += 1;
-        }
-      });
-    });
-
-    return relatedPosts
-      .filter(post => post.url !== pageUrl)
-      .sort((a, b) => b.related - a.related)
-      .slice(0, n);
-  });
-
-  eleventyConfig.addFilter('toJSON', obj => {
-    return JSON.stringify(obj);
-  });
-
-  // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
-  eleventyConfig.addFilter('htmlDateString', dateObj => {
-    return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toFormat('yyyy-LL-dd');
-  });
-
-  // Get the first `n` elements of a collection.
-  eleventyConfig.addFilter('head', (array, n) => {
-    if (n < 0) {
-      return array.slice(n);
-    }
-
-    return array.slice(0, n);
-  });
-
-  eleventyConfig.addCollection('tagList', getTagList);
-
-  eleventyConfig.addPassthroughCopy('src/assets/build');
-  eleventyConfig.addPassthroughCopy('src/assets/images');
-  eleventyConfig.addPassthroughCopy('src/assets/cache-polyfill.js');
-  eleventyConfig.addPassthroughCopy('src/assets/highlight.js');
-  eleventyConfig.addPassthroughCopy('src/assets/js-quiz-1.json');
-  eleventyConfig.addPassthroughCopy('src/assets/favicon.png');
-  eleventyConfig.addPassthroughCopy('src/_redirects');
-  eleventyConfig.addPassthroughCopy('src/manifest.json');
-
-  eleventyConfig.setLibrary(
+  config.setLibrary(
     'md',
     markdownIt(markdownItOptions).use(markdownItAnchor, markdownItAnchorOptions)
   );
 
   // Minify eleventy pages in production
   if (process.env.NODE_ENV === 'production') {
-    eleventyConfig.addTransform('html-min', (content, outputPath) =>
+    config.addTransform('html-min', (content, outputPath) =>
       outputPath.endsWith('.html') ? htmlmin.minify(content, htmlMinOptions) : content
     );
   }
 
-  eleventyConfig.setBrowserSyncConfig({
+  config.setBrowserSyncConfig({
     reloadDelay: 2000,
     files: ['src', '!src/_includes/javascript/*', '!src/_includes/stylesheets/*'],
     callbacks: {
