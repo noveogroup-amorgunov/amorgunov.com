@@ -9,9 +9,10 @@ description: ""
 tags:
   - {tagName}
 layout: layouts/post.njk
+likes: 0
 ---`;
 
-const [, , title, slug] = process.argv;
+const [, , title, slug, argDate] = process.argv;
 
 if (!title) {
   throw new Error(
@@ -24,15 +25,17 @@ const formattedSlug = slug || title
   .toLowerCase()
   .replace(/[^a-z0-9а-яё]/g, '-');
 
-const date = DateTime
-  .fromJSDate(new Date(), { zone: 'utc' })
-  .toFormat('yyyy-LL-dd');
+const date = argDate
+  ? DateTime.fromISO(argDate)
+  : DateTime.fromJSDate(new Date(), { zone: 'utc' })
 
-const fileName = `${date}-${formattedSlug}`;
+const formattedDate = date.toFormat('yyyy-LL-dd');
+
+const fileName = `${formattedDate}-${formattedSlug}`;
 const path = `./src/posts/${fileName}.md`;
 const content = template
   .replace('{title}', title)
-  .replace('{date}', date);
+  .replace('{date}', formattedDate);
 
 fs.mkdirSync(`./src/assets/images/${fileName}`);
 fs.writeFileSync(path, content, err => {

@@ -10,9 +10,9 @@ Create new post:
 Usage:
 
 ```bash
-npm run create-post <title> <slug>
-npm run create-post "Awesome title" "awesome-slug"
-npm run create-post "Awesome title" # Slug is auto-generated
+npm run create-post <title> <slug?> <date?>
+npm run create-post "Awesome title" "awesome-slug" "2019-12-22"
+npm run create-post "Awesome title" # Slug is auto-generated and date is current
 ```
 
 ## Optimize images
@@ -24,5 +24,5 @@ Usage:
 
 ```bash
 npm run optimize-image <image-folder>
-npm run optimize-image 2020-01-28-how-write-tests-in-nodejs.md
+npm run optimize-image 2020-01-28-how-write-tests-in-nodejs
 ```

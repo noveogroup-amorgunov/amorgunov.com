@@ -23,7 +23,11 @@ async function getLikes(slug) {
   const url = `https://i7on6ck7ng.execute-api.us-east-2.amazonaws.com/dev/posts/${slug}/likes`;
   const { data } = await axios(url);
 
-  return data.love + data.like;
+  // Get likes
+  // return data.love + data.like;
+
+  // Get all reactions
+  return Object.values(data).reduce((acc, r) => acc + r, 0);
 }
 
 async function updatePostLikes(file) {

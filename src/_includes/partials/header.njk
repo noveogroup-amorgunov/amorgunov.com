@@ -1,6 +1,6 @@
 <header class="header">
   <!--<div class="header__homepage">
-    {%  if page.url != '/' %}<a href="/">← amorgunov</a>{%  endif %}
+    {% if page.url != '/' %}<a href="/">← amorgunov</a>{% endif %}
   </div>
   <div class="header__nav">
     {%- for nav in collections.nav -%}
@@ -8,7 +8,7 @@
     {%- endfor -%}
   </div>-->
   <div class="header__homepage">
-      {%  if page.url != '/' %}<a class="header__logo" href="/"></a>{%  endif %}
+      {% if page.url != '/' %}<a class="header__logo" href="/"></a>{% endif %}
     </div>
   <div class="header__menu"></div>
   <div class="burger">
