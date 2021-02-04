@@ -8,7 +8,7 @@ tags:
   - aws lambda
   - serverless
 layout: layouts/post.njk
-likes: 9
+likes: 10
 ---
 Всем привет!
 
