@@ -8,7 +8,7 @@ tags:
   - tutorial
   - virtual dom
 layout: layouts/post.njk
-likes: 71
+likes: 72
 ---
 Всем привет! Сегодня нас ждет удивительное приключение реализации виртуального DOM-a с нуля.
 
