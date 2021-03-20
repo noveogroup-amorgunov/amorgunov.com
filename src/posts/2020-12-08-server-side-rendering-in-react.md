@@ -10,7 +10,7 @@ tags:
   - ssr
   - tutorial
 layout: layouts/post.njk
-likes: 26
+likes: 27
 ---
 
 ## Tl;dr
