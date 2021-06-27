@@ -2,7 +2,7 @@
 title: "Typescript challenge: flatArray"
 date: 2021-06-14
 time: 5
-description: "Напишем типы для функции flatArray, которая делаем массив плоским"
+description: "Напишем типы для функции flatArray, которая делает массив плоским"
 featuredImageThumbnail: "/assets/images/2021-06-14-typescript-challenge-flat-array/preview.jpg"
 tags:
   - typescript
