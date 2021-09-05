@@ -9,10 +9,9 @@ const puppeteer = require('puppeteer');
 const {ImagePool} = require('@squoosh/lib');
 const {argv} = require('yargs');
 
-// const slug = `2021-06-14-typescript-challenge-flat-array`;
 const dirPath = `./src/assets/images/${argv.slug}/`;
 
-const port = 7563;
+const port = process.env.PORT || 7563;
 const endpoint = `http://localhost:${port}`; 
 
 function runServer() {

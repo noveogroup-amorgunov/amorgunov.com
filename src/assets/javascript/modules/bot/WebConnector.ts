@@ -1,9 +1,9 @@
 /* eslint-disable no-underscore-dangle, class-methods-use-this, @typescript-eslint/ban-ts-comment */
 
 import * as ee from 'event-emitter';
-import { Message } from '@typebot/core/lib/core/Message';
-import { IConnector } from '@typebot/core/lib/connectors/IConnector';
-import { IMessage, MessageSender } from '@typebot/core/lib/core/IMessage';
+import {Message} from '@typebot/core/lib/core/Message';
+import {IConnector} from '@typebot/core/lib/connectors/IConnector';
+import {IMessage, MessageSender} from '@typebot/core/lib/core/IMessage';
 
 export interface IWebConnector extends IConnector {
   send: (message: IMessage) => Promise<void>;
@@ -13,7 +13,7 @@ export interface IWebConnector extends IConnector {
 // @ts-ignore
 export class WebConnector implements IConnector {
   static _getUser() {
-    return { id: 'user', name: 'Console User' };
+    return {id: 'user', name: 'Console User'};
   }
 
   getConnectorName() {
@@ -45,7 +45,7 @@ export class WebConnector implements IConnector {
     this.emit(
       'receiveMessage',
       new Message({
-        rawData: { text },
+        rawData: {text},
         user: WebConnector._getUser(),
         sessionKey: 'web-console',
         // @ts-ignore

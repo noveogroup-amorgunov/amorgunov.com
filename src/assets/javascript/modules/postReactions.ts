@@ -39,7 +39,7 @@ function getReaction(postReactionWrapperEl: HTMLDivElement) {
 function setReaction(type: string, postReactionWrapperEl: HTMLDivElement) {
   const params = {
     method: 'POST',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    headers: {'Content-Type': 'application/x-www-form-urlencoded'},
     body: `{"reactionId":"${type}"}`, // , "testSourceIp": "192.168.0.1"}`
   };
 
@@ -59,7 +59,7 @@ export function initPostReactions() {
   getReaction(postReactionWrapperEl);
 
   postReactionWrapperEl.addEventListener('click', (event: MouseEvent) => {
-    const { target } = event;
+    const {target} = event;
 
     if (!target || !(target as HTMLDivElement).dataset.type) {
       return;

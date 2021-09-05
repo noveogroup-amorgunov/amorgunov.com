@@ -1,5 +1,5 @@
 function isExternalLink(url = '') {
-  const { host } = document.location;
+  const {host} = document.location;
   return url.startsWith('http') && !url.includes(host);
 }
 

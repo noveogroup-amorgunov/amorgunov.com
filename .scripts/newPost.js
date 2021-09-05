@@ -62,6 +62,6 @@ if (!fs.existsSync(path)) {
 
 console.log(`Post was created in ${path}`)
 
-console.log(`Next run command: node .scripts/generatePreview --slug=${fileName}`);
+console.log(`Next command to run: node .scripts/generatePreview --slug=${fileName}`);
 
 // spawnSync(`node ./generatePreview --slug=${fileName}`);
