@@ -37,7 +37,7 @@
     "@types/clipboard": "2.0.1",
     "@types/event-emitter": "0.3.3",
     "@typescript-eslint/eslint-plugin": "4.4.0",
-    "axios": "0.20.0",
+    "axios": "0.21.2",
     "babel-eslint": "10.0.1",
     "babel-loader": "8.0.5",
     "common-tags": "1.8.0",
