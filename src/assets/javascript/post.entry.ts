@@ -1,18 +1,18 @@
 import mediumZoom from 'medium-zoom';
-import { initBurgerMenu } from './modules/burger';
-import { lazyload } from './modules/lazyload';
-import { initCopyToClipboard } from './modules/copy';
-import { Quiz } from './modules/quiz';
-import { scroll } from './modules/scroll';
-import { prepareExternalLinks } from './modules/prepareExternalLinks';
-import { initPostReactions } from './modules/postReactions';
+import {initBurgerMenu} from './modules/burger';
+import {lazyload} from './modules/lazyload';
+import {initCopyToClipboard} from './modules/copy';
+import {Quiz} from './modules/quiz';
+import {scroll} from './modules/scroll';
+import {prepareExternalLinks} from './modules/prepareExternalLinks';
+import {initPostReactions} from './modules/postReactions';
 import * as bot from './modules/bot/createBot';
 
 import '../stylesheets/post.entry.css';
 
 declare global {
   interface Window {
-    hljs: { highlightBlock: (el: HTMLElement) => void };
+    hljs: {highlightBlock: (el: HTMLElement) => void};
   }
 }
 
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initBurgerMenu();
   lazyload();
   initCopyToClipboard();
-  mediumZoom($postImages, { background: '#2f2f2ed6' });
+  mediumZoom($postImages, {background: '#2f2f2ed6'});
   initQuiz($quizs);
   initHljs($codeBlocks);
   initTerminalBot($terminals);

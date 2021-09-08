@@ -66,4 +66,4 @@ window.addEventListener('orientationChange', throttledLazyLoad);
 window.lazyload = lazyload;
 lazyload();
 
-export { lazyload };
+export {lazyload};

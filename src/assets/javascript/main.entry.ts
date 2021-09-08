@@ -1,6 +1,6 @@
-import { initBurgerMenu } from './modules/burger';
-import { initCopyToClipboard } from './modules/copy';
-import { Quiz } from './modules/quiz';
+import {initBurgerMenu} from './modules/burger';
+import {initCopyToClipboard} from './modules/copy';
+import {Quiz} from './modules/quiz';
 
 import '../stylesheets/main.entry.css';
 

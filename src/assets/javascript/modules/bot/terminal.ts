@@ -33,7 +33,7 @@ export class Terminal {
 
   $cmd: HTMLDivElement;
 
-  constructor(el: HTMLDivElement, { text = '' } = {}) {
+  constructor(el: HTMLDivElement, {text = ''} = {}) {
     this.el = el;
     this.lines = [];
     this.text = text;

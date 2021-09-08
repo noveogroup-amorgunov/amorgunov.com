@@ -42,7 +42,7 @@ export class Quiz {
   constructor(opts: IOptions, nodeEl: HTMLElement) {
     this.opts = opts;
     this.nodeEl = nodeEl;
-    this.state = { ...defaultState };
+    this.state = {...defaultState};
   }
 
   loadData() {
@@ -66,7 +66,7 @@ export class Quiz {
 
   changeStep(event: Event) {
     if (this.state.currentStep === this.data.steps.length - 1) {
-      this.state = { ...defaultState, answers: [] };
+      this.state = {...defaultState, answers: []};
       this.nodeEl.innerHTML = '';
       this.render();
 
@@ -85,7 +85,7 @@ export class Quiz {
 
     currentStepEl.classList.add('quiz__step_current');
 
-    const { idx } = (event.currentTarget as HTMLDivElement).dataset;
+    const {idx} = (event.currentTarget as HTMLDivElement).dataset;
 
     if (typeof idx !== 'undefined') {
       this.state.answers.push(idx);

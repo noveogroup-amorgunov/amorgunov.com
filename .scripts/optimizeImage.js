@@ -2,11 +2,13 @@ const path = require('path');
 const lqip = require('lqip');
 const fs = require('fs');
 const { promisify } = require('util');
+const { ImagePool } = require('@squoosh/lib');
+const {argv} = require('yargs');
 
 const writeFile = promisify(fs.writeFile);
 const readdir = promisify(fs.readdir);
 
-const [, , slug] = process.argv;
+const {slug, replace} = argv;
 
 if (!slug) {
   throw new Error(
@@ -25,28 +27,74 @@ if (!folderIsExists) {
   );
 }
 
-async function optimizeImage() {
-  try {
-    const files = await readdir(inputPath);
+function shouldPrerareFile(file) {
+  const [fileName, extension] = file.split('.');
 
-    for (const file of files) {
-      const [fileName, extension] = file.split('.');
+  if (file ==='preview.jpg') {
+    return false;
+  }
+  
+  if (!/(png|jpg|jpeg)$/.test(extension)) {
+    return false;
+  }
 
-      if (['min', 'gif'].includes(extension)) {
-        continue;
-      }
+  if (['min', 'gif', 'out'].includes(extension)) {
+    return false;
+  }
+  
+  return true;
+}
 
-      const raw = await lqip.base64(path.join(`${inputPath}${file}`));
-      const base64Data = raw.replace(/^data:image\/(png|gif|jpeg);base64,/, '');
-      const outputFilename = path.join(outputPath, `${fileName}.min.${extension}`);
+async function createPreview(file) {
+  const [fileName, extension] = file.split('.');
 
-      await writeFile(outputFilename, base64Data, 'base64');
-    }
-  } catch (err) {
-    console.error(err);
+  const raw = await lqip.base64(path.join(`${inputPath}${file}`));
+  const base64Data = raw.replace(/^data:image\/(png|gif|jpeg);base64,/, '');
+  const outputFilename = path.join(outputPath, `${fileName}.min.${extension}`);
+
+  await writeFile(outputFilename, base64Data, 'base64');
+}
+
+async function compressImage(file, imagePool) {
+  const [fileName, extension] = file.split('.');
+  const originPath = path.join(`${inputPath}${file}`);
+  const image = imagePool.ingestImage(originPath);
+
+  const encodeOptions = {
+      mozjpeg: {},
+      jxl: {
+          quality: 90,
+      },
+  };
+  
+  await image.encode(encodeOptions);
+
+  const rawEncodedImage = (await image.encodedWith.mozjpeg).binary;
+
+  fs.writeFileSync(path.join(`${inputPath}${fileName}.out.jpg`), rawEncodedImage);
+  
+  if (replace) {
+    fs.unlinkSync(originPath);
   }
 }
 
-optimizeImage().then(() => {
-  console.log('Images were optimize successfully');
-});
+async function optimizeImage() {
+  const imagePool = new ImagePool();
+  const files = await readdir(inputPath);
+
+  for (const file of files) {
+    if (!shouldPrerareFile(file)) {
+      continue;
+    }
+
+    await createPreview(file);
+    await compressImage(file, imagePool);
+  }
+
+  await imagePool.close();
+}
+
+optimizeImage()
+  .then(() => console.log('Images were optimize successfully'))
+  .catch(err => console.error(err))
+  .finally(() => process.exit(0));
