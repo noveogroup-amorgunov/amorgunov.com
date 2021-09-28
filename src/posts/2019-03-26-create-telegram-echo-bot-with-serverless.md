@@ -52,12 +52,13 @@ likes: 6
 
 Структура проекта выглядит следующим образом:
 
-```
-  .env            - Переменная с токеном для телеграма
-  handler.js      - Лямбда функция
-  package.json    - Зависимости
-  serverless.yml  - Конфигурационный файл serverless
-  telegram.js     - Модуль для работы с telegram api
+```treeview
+.
+├── .env  (Переменная с токеном для телеграма)
+├── handler.js (Лямбда-функция)
+├── package.json (Зависимости)
+├── serverless.yml (Конфигурационный файл serverless)
+└── telegram.js (Модуль для работы с telegram api)
 ```
 
 В реальных проектах структуру обычно делают следующим образом: создают `src` для всех исходников и уже внутри находятся директория `handler`, `config` и т.д. Внутри `handler` размещают саму лямбду. Но в нашем случае у нас довольно простая лямбда, поэтому используем плоскую структуру.
@@ -66,7 +67,7 @@ likes: 6
 
 Установим фреймворк [serverless](https://serverless.com/) с двумя плагинами: для запуска функции без деплоя и для загрузки переменных окружения из среды. Библиотека `axios` понадобится нам для запросов к телеграму, которая предоставляет удобное request-api.
 
-```
+```bash
 npm init --yes
 npm i --save axios
 npm i --save-dev serverless serverless-dotenv-plugin serverless-offline
@@ -88,7 +89,7 @@ npm i --save-dev serverless serverless-dotenv-plugin serverless-offline
 
 Содержимое файла `.env` выглядит следующим образом:
 
-```
+```env
 TELEGRAM_TOKEN=<TELEGRAM_ACCESS_TOKEN>
 ```
 
@@ -196,7 +197,7 @@ module.exports.processWebhook = async event => {
 
 Запускаем локально лямбду командой `npm run local`, в терминале будет показан следующий текст:
 
-```
+```bash
 Serverless: DOTENV: Loading environment variables from .env:
 Serverless:      - TELEGRAM_TOKEN
 Serverless: Starting Offline: dev/us-east-2.
@@ -211,7 +212,7 @@ Serverless: Offline listening on http://localhost:3000
 
 Первый вариант можно сделать, зная id чата с ботом; нужно выполнить curl запрос:
 
-```
+```bash
 curl --header "Content-Type: application/json" \
   --request POST \
   --data '{ "message": { "chat": { "id": 329857150 }, "text": "Hello, bot" } }' \
@@ -224,7 +225,7 @@ curl --header "Content-Type: application/json" \
 
 Для реализации второго варианта нам понадобится [ngrok](https://ngrok.com/), CLI-библиотека, которая позволяет организовать удаленный доступ до localhost, выдав динамический адрес с SSL (https). После установки запустите ngrok следующей командой:
 
-```
+```bash
 ./ngrok http 3000
 
 > Forwarding https://f97d1779.ngrok.io -> http://localhost:3000
@@ -234,13 +235,13 @@ curl --header "Content-Type: application/json" \
 
 После этого необходимо установить Webhook для вашего бота. Для этого выполните команду
 
-```
+```bash
 curl --data "url=<INVOKE_URL>" "https://api.telegram.org/bot<TELEGRAM_ACCESS_TOKEN>/setWebhook"
 ```
 
 Где `<INVOKE_URL>`, адрес, выданный ngrok-ом. После выполнения запроса вы должны получить следующее сообщение:
 
-```
+```json
 {"ok":true,"result":true,"description":"Webhook was set"}
 ```
 

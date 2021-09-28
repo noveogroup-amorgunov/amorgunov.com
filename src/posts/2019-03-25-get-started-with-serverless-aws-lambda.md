@@ -117,13 +117,13 @@ module.exports.handler = (event, context, callback) => {
 
 Создадим лямбду, которая отрендерит нашу HTML-страницу. Первым делом установим глобально фреймворк:
 
-```
+```bash
 npm install -g serverless
 ```
 
 Далее создадим директорию для нового проекта и сгенерируем лямбду по уже готовому шаблону. Разработчики «Serverless» сделали возможность создавать сервисы из шаблонов, создав все необходимые файлы. В данном случае я использую темплейт *aws-nodejs*, который создаст функцию и конфигурационный файл `serverless.yml`:
 
-```
+```bash
 mkdir lambda-demo
 cd lambda-demo
 sls create --template aws-nodejs
@@ -173,7 +173,7 @@ functions:
 
 В больших проектах значение stage обычно равно `${env:AWS_STAGE, '${opt:stage, 'dev'}'}` (либо просто `${opt:stage, 'dev'}`), что позволяет считывать значение stage как с переменной окружения, так и с консоли (причем по умолчанию он будет установлен в `dev`):
 
-```
+```bash
 // Деплой функции на другой стейджинг
 sls deploy --stage test
 ```
@@ -182,19 +182,18 @@ sls deploy --stage test
 
 Для запуска функции локально можно воспользоваться следующей командой:
 
-```
+```bash
 serverless invoke local --function hello
 ```
 
 В результате в ответ мы увидим результат работы функции:
 
-```
+```json
 {
     "statusCode": 200,
     "headers": { "Content-Type": "text/html;charset=UTF-8" },
     "body": "<html><h1>Hello, Lambda</h1></html>"
 }
-
 ```
 
 Конечно мы бы хотели увидеть не код страницы, а саму страницу. Для этого нужно задеплоить функцию, или можно запустить локально с помощью плагина `serverless-offline`, который запустит вашу лямбду на каком-нибудь порту.
@@ -203,13 +202,13 @@ serverless invoke local --function hello
 
 Запускаем:
 
-```
+```bash
 sls deploy
 ```
 
 В результате в консоли мы увидим следующее:
 
-```
+```bash
 Serverless: Packaging service...
 Serverless: Excluding development dependencies...
 Serverless: Creating Stack...
@@ -242,7 +241,7 @@ layers:
 
 И у нас есть открытый наружу url, по которому можно вызвать нашу лямбду:
 
-```
+```bash
 curl https://XXXXXXX.execute-api.us-east-2.amazonaws.com/dev/hello
 ```
 
@@ -255,7 +254,7 @@ curl https://XXXXXXX.execute-api.us-east-2.amazonaws.com/dev/hello
 
 Или мы можем запустить лямбду напрямую и вывести результат работы в консоль с помощью команды `invoke`:
 
-```
+```bash
 serverless invoke --function hello --log
 ```
 
@@ -279,7 +278,7 @@ serverless invoke --function hello --log
 
 Когда лямбду захочется удалить, достаточно выполнить:
 
-```
+```bash
 sls remove
 ```
 
