@@ -4,6 +4,28 @@ const markdownIt = require('markdown-it');
 const markdownItAnchor = require('markdown-it-anchor');
 const htmlmin = require('html-minifier');
 
+const NOT_LINE_NUMBERS_LANG = ['treeview', 'bash', 'json', 'env'];
+
+const HTML_ESCAPE_TEST_RE = /[&<>"]/;
+const HTML_ESCAPE_REPLACE_RE = /[&<>"]/g;
+const HTML_REPLACEMENTS = {
+  '&': '&amp;',
+  '<': '&lt;',
+  '>': '&gt;',
+  '"': '&quot;'
+};
+
+function replaceUnsafeChar(ch) {
+  return HTML_REPLACEMENTS[ch];
+}
+
+function escapeHtml(str) {
+  if (HTML_ESCAPE_TEST_RE.test(str)) {
+    return str.replace(HTML_ESCAPE_REPLACE_RE, replaceUnsafeChar);
+  }
+  return str;
+}
+
 const components = require(`../src/_includes/components`);
 const filters = require(`../src/_includes/filters`);
 
@@ -22,6 +44,11 @@ const markdownItOptions = {
   html: true,
   breaks: false,
   linkify: true,
+  highlight: function (str, meta = 'default') {
+    const [lang, turnOffLineNumbers] = meta.split('##');
+    const noLineNumbersClass = turnOffLineNumbers === '1' || NOT_LINE_NUMBERS_LANG.includes(lang) ? 'no-line-numbers' : '';
+    return `<pre class="language-${lang} ${noLineNumbersClass}"><code class="language-${lang}">${escapeHtml(str)}</code></pre>`;
+  }
 };
 
 const markdownItAnchorOptions = {
@@ -59,9 +86,10 @@ module.exports = function (config) {
   config.addPassthroughCopy('src/assets/build');
   config.addPassthroughCopy('src/assets/images');
   config.addPassthroughCopy('src/assets/cache-polyfill.js');
-  config.addPassthroughCopy('src/assets/highlight.js');
+  config.addPassthroughCopy('src/assets/prism.js');
   config.addPassthroughCopy('src/assets/js-quiz-1.json');
-  config.addPassthroughCopy('src/assets/favicon.png');
+  config.addPassthroughCopy('src/assets/images/192.png');
+  config.addPassthroughCopy('src/assets/images/512.png');
   config.addPassthroughCopy('src/_redirects');
   config.addPassthroughCopy('src/manifest.json');
 

@@ -1,6 +1,6 @@
 {% extends "layouts/default.njk" %}
 {% block templateClass %}tmpl-post{% endblock %}
-{% block bodyClass %}tmpl-post{% endblock %}
+{% block bodyClass %}tmpl-post line-numbers{% endblock %}
 {% block afterhead %}<%= htmlWebpackPlugin.tags.headTags %>{% endblock %}
 {% block content %}
 <div class="post">
@@ -32,6 +32,6 @@
 </div>
 {% endblock %}
 {% block afterbody %}
-<script defer src="/assets/highlight.js"></script>
+<script defer src="/assets/prism.js"></script>
 <%= htmlWebpackPlugin.tags.bodyTags %>
 {% endblock %}
