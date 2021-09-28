@@ -43,7 +43,7 @@ likes: 22
 - Получите AWS Credentials ([почитать подробнее](https://serverless.com/framework/docs/providers/aws/guide/credentials/), где их получить)
 - Добавьте credentials в `~/.aws/credentials`:
 
-```
+```env
 [default]
 aws_access_key_id = <ACCESS_KEY_ID>
 aws_secret_access_key = <SECRET_ACCESS_KEY>
@@ -81,7 +81,7 @@ npm i --save axios
 
 Данные о погоде будем брать из [API Weatherstack](https://weatherstack.com/), для работы которого нужен `API_KEY` (для его получения достаточно зарегистрироваться). Ключ нужно положить в `.env` файл. Содержимое этого файла выглядит следующим образом:
 
-```
+```env
 WEATHERSTACK_API_KEY=<API_KEY>
 ```
 
@@ -189,7 +189,7 @@ export type HttpResponse = Promise<APIGatewayProxyResult>;
 
 А что касается `HttpEventRequest`, могут возникнуть вопросы. Сейчас рассмотрим проблему и приведенный выше способ решения. В базовом типе `APIGatewayProxyEvent` свойство `pathParameters` описано следующим образом:
 
-```
+```##1
 pathParameters: { [name: string]: string } | null;
 ```
 
@@ -206,19 +206,19 @@ pathParameters: { [name: string]: string } | null;
 
 1. Использовать "!", что указать TypeScript, что pathParameters не равен null:
 
-```ts
+```ts##1
 const { city } = event.pathParameters!;
 ```
 
 2. С помощью встроенного хелпера `Omit`, который удаляет из типа переданный ключ, удалить из типа `APIGatewayProxyEvent` свойство `pathParameters` и добавить его отдельным типом с использованием дженерика. Такой тип можно использовать вот так:
 
-```ts
+```ts##1
 const event: HttpEventRequest = {...};
 ```
 
 Если не ожидается использование `pathParameters` (параметр будет равен null) или вот так:
 
-```ts
+```ts##1
 const event: HttpEventRequest<{ city: string }> = {...};
 ```
 
@@ -410,7 +410,7 @@ export async function handler(event: HttpEventRequest<{ city: string }>): HttpRe
 
 Теперь можно еще раз запустить функцию локально и сделать запросы в браузерной строке для возврата погоды:
 
-```
+```##1
 http://localhost:3000/dev/weather/{city}/current
 ```
 

@@ -150,14 +150,15 @@ bot.use(async ({ session, message }, next) => {
 В текущей реализации можно выделить три сущности: `Bot`, `Message`, `Session`, реализацией которых мы и займемся. Так же напишем два интерейса `ConsoleConnector` для получения и отправки сообщений в консоль, как смешно бы это не звучало, и `MemorySessionStore` для хранения сессий пользователей в памяти.
 В конце у нас будет вот такая структура проекта:
 
-```
-examples        Примеры работы
-lib             Скомпилированные исходники в javascript
-src             Исходный код
-  connectors    Каналы (коннекторы)
-  core          Ядро бота (Bot, Message и Session)
-  stores        Хранилища сессий
-  index.js      Импорт и экспорт всех компонент
+```treeview
+.
+├── examples (Примеры работы)
+├── lib (Скомпилированные исходники в javascript)
+└── src (Исходный код)
+    ├── connectors (Каналы (коннекторы))
+    ├── core (Ядро бота (Bot, Message и Session))
+    ├── stores (Хранилища сессий)
+    └── index.js (Импорт и экспорт всех компонент)
 ```
 ## Часть 3. Проектирование интерфейсов
 
@@ -665,7 +666,7 @@ bot.use(/\/yo (.+)/, async ({ session, message }) => {
 
 Так же, если используется регулярное выражение, то все найденные "части" будут добавлены в `ctx.params`. Например в примере выше:
 
-```
+```bash
 > /yo bro
 ctx.message.params = ['bro']
 ```
@@ -758,7 +759,7 @@ export {
 
 ## Часть 5. Примеры работы
 
-Приступим к самому интересному, к примерам! Все примеры можно найти на [noveogroup-amorgunov/typebot/expamples](https://github.com/noveogroup-amorgunov/typebot/tree/tutorial/examples).
+Приступим к самому интересному, к примерам! Все примеры можно найти на [noveogroup-amorgunov/typebot/examples](https://github.com/noveogroup-amorgunov/typebot/tree/tutorial/examples).
 
 Для начала соберем typescript в js, выполнив `npm run build`.
 Для создания всех ботов будет использована конструкция (которая уже встречалась в самом начале статьи):
@@ -908,7 +909,7 @@ No todos!
 
 Самый интересный бот из представленных, который возвращает гифку по ключевому слову. Для поиска гифок будем использовать сервис https://developers.giphy.com/, в котором нужно зарегистрироваться для получения токена.
 
-Первым делом напишим
+Первым делом напишим функцию для загрузки и извлечении ссылки на изображение:
 
 ```js
 const axios = require('axios');
@@ -927,6 +928,8 @@ async function getGifUrlByKeywords(keywords) {
 
 module.exports = { getGifUrlByKeywords };
 ```
+
+Далее команду для запроса гифки:
 
 ```js
 const { ConsoleConnector, Bot } = require('../../lib');

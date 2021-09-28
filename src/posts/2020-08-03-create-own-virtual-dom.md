@@ -38,7 +38,7 @@ likes: 87
 ```html
 <div id="app">
  Hello world
-</div
+</div>
 ```
 
 Виртуальное представление может выглядеть следующим образом:
@@ -103,7 +103,7 @@ console.log(vNode);
 
 В результате мы получим следующий объект:
 
-```
+```##1
 Object
     tagName: "div"
     props: Object
@@ -128,7 +128,7 @@ console.log(vNode);
 
 И посмотрим на вывод в терминале:
 
-```
+```##1
 Object
     tagName: "div"
     props: Object
