@@ -70,6 +70,14 @@ module.exports = function (config) {
 
   config.addCollection('tagList', tagListCollection);
 
+  config.addCollection("posts_en", function (collection) {
+    return collection.getFilteredByGlob("./src/en/posts/*.md");
+  });
+
+  config.addCollection("posts_ru", function (collection) {
+    return collection.getFilteredByGlob("./src/ru/posts/*.md");
+  });
+
   config.addFilter('version', filters.version);
   config.addFilter('readableDate', filters.readableDate);
   config.addFilter('readableDateShort', filters.readableDateShort);

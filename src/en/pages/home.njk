@@ -1,0 +1,17 @@
+---
+layout: layouts/main.njk
+permalink: /en/index.html
+title: Блог о веб-разработке
+description: Блог о веб-разработке, реакте, тайпскрипте и не только
+---
+<div class="home">
+  en version
+
+  {% PostList {
+    items: collections.posts_en | head(-7)
+  } %}
+
+   <div class="home__about">
+        Остальные посты вы найдете <a href="{{ '/posts/' | url }}">в архиве</a>. А еще больше заметок и материалов вы сможете найти в телеграм канале <strong><a href="https://t.me/amorgunov" rel="noreferrer" target="_blank">t.me/amorgunov</a></strong>
+   </div>
+</div>
