@@ -2,12 +2,33 @@
 @import './variables.css';
 
 .post__emotions {
-  background: #0000000f;
+  position: relative;
   margin-bottom: 20px;
   padding: 15px;
-  border-radius: 15px;
   display: flex;
   justify-content: center;
+  gap: 4px;
+  height: 78px;
+}
+
+.post__emotions_error::after {
+  color: red;
+  content: 'Вы уже голосовали, переголосовать, увы, нельзя';
+  position: absolute;
+  bottom: 0;
+  font-size: 14px;
+}
+
+.post__emotions-item_empty {
+  display: inline-block;
+  background: #eee;
+  border-radius: 5px;
+  padding: 5px 10px;
+  line-height: 30px;
+  font-weight: bold;
+  font-size: 14px;
+  width: 54px;
+  height: 41px;
 }
 
 .post_emotion {
@@ -45,34 +66,6 @@
 
 .post_emotion__counter_empty {
   display: none;
-}
-
-.post_emotion_type_shocked {
-  background-image: url('/assets/images/emotions/shocked.png');
-}
-
-.post_emotion_type_rage {
-  background-image: url('/assets/images/emotions/rage.png');
-}
-
-.post_emotion_type_like {
-  background-color: #df2640;
-  border-radius: 50%;
-  background-image: url('/assets/images/emotions/like.png');
-}
-
-.post_emotion_type_dislike {
-  background-color: #df2640;
-  border-radius: 50%;
-  background-image: url('/assets/images/emotions/dislike.png');
-}
-
-.post_emotion_type_love {
-  background-image: url('/assets/images/emotions/love.png');
-}
-
-.post_emotion_type_brains {
-  background-image: url('/assets/images/emotions/brains.png');
 }
 
 @keyframes post_emotion_selected {

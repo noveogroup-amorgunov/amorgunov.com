@@ -82,6 +82,7 @@
   &__like-icon {
     background-image: url("/assets/images/fire.svg");
     padding-left: 20px;
+    padding-bottom: 1px;
     font-weight: bold;
     background-size: 16px 16px;
     background-repeat: no-repeat;
