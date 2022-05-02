@@ -8,7 +8,6 @@ const postcssImport = require('postcss-import');
 const postcssNested = require('postcss-nested');
 const postcssPresetEnv = require('postcss-preset-env');
 const postcssReporter = require('postcss-reporter');
-const postcssCssnext = require('postcss-cssnext');
 
 const IS_DEV = process.env.NODE_ENV !== 'production';
 const $js = path.join(__dirname, '../src/assets/javascript/');
@@ -17,14 +16,15 @@ const $template = path.join(__dirname, '../src/_includes/layouts/');
 const postcssLoader = {
   loader: 'postcss-loader',
   options: {
-    plugins: [
-      postcssImport(),
-      postcssCustomMedia(),
-      postcssNested(),
-      postcssPresetEnv(),
-      postcssReporter(),
-      postcssCssnext(),
-    ],
+    postcssOptions: {
+      plugins: [
+        postcssImport(),
+        postcssCustomMedia(),
+        postcssNested(),
+        postcssPresetEnv(),
+        postcssReporter(),
+      ],
+    },
   },
 };
 
