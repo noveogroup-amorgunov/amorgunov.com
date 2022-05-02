@@ -2,6 +2,9 @@
   "private": true,
   "name": "amorgunov-com",
   "version": "1.0.0",
+  "engines": {
+    "node": "16.13.0"
+  },
   "scripts": {
     "start": "NODE_ENV=development run-p -l start:*",
     "start:webpack": "webpack --mode development --watch --config configs/webpack.config.js",
