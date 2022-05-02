@@ -88,8 +88,6 @@ module.exports = function (config) {
   config.addPassthroughCopy('src/assets/cache-polyfill.js');
   config.addPassthroughCopy('src/assets/prism.js');
   config.addPassthroughCopy('src/assets/js-quiz-1.json');
-  config.addPassthroughCopy('src/assets/images/192.png');
-  config.addPassthroughCopy('src/assets/images/512.png');
   config.addPassthroughCopy('src/_redirects');
   config.addPassthroughCopy('src/manifest.json');
 

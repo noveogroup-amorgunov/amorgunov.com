@@ -1,6 +1,6 @@
 const path = require('path');
 const TerserJSPlugin = require('terser-webpack-plugin');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const postcssCustomMedia = require('postcss-custom-media');
@@ -47,7 +47,15 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', postcssLoader].filter(Boolean),
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            // Files has just copied by 11ty
+            options: { url: false, sourceMap: true },
+          },
+          postcssLoader
+        ].filter(Boolean),
       },
     ],
   },
@@ -75,7 +83,7 @@ module.exports = {
   ],
   devtool: IS_DEV ? 'cheap-module-source-map' : 'source-map',
   optimization: {
-    minimizer: IS_DEV ? [] : [new TerserJSPlugin(), new OptimizeCSSAssetsPlugin()],
+    minimizer: IS_DEV ? [] : [new TerserJSPlugin(), new CssMinimizerPlugin()],
     minimize: !IS_DEV,
     splitChunks: {
       chunks: 'all',
