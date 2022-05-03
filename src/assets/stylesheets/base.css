@@ -260,6 +260,11 @@ ul {
   padding-top: 20px;
 }
 
+p + ul,
+h2 + ul {
+  padding-top: 0;
+}
+
 iframe {
   @media (--viewport-small) {
     width: 100%;

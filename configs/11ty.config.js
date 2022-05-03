@@ -61,8 +61,13 @@ module.exports = function (config) {
   // Needed to prevent eleventy from ignoring changes to webpack layouts
   // since it is in our `.gitignore`
   config.setUseGitIgnore(false);
-
-  config.addPlugin(pluginRss);
+  
+  if (process.env.NODE_ENV === "production") {
+    config.addPlugin(pluginRss);
+  } else {
+    config.ignores.add('./src/pages/feed.njk');
+    config.ignores.add('./src/pages/sitemap.xml.njk');
+  }
 
   config.setDataDeepMerge(true);
 
