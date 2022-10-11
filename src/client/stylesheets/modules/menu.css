@@ -2,6 +2,11 @@
   z-index: 5;
 }
 
+body:not(.loaded) .menu {
+  display: none;
+  opacity: 0;
+}
+
 .menu__overlay {
   position: fixed;
   bottom: 0;

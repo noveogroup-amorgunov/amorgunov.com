@@ -62,7 +62,6 @@ function renderItems(reactions: Reactions, wrapperEl: HTMLDivElement) {
 function getReaction(slug: string) {
   return fetch(REACTION_ENDPOINT.replace('{slug}', slug))
     .then(response => response.json())
-    .then(result => ({...result, party: 0, partyPopper: 0}))
     .catch(err => console.error(err));
 }
 
