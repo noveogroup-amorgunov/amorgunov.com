@@ -8,7 +8,7 @@ tags:
   - tutorial
   - hyperapp
   - typescript
-layout: layouts/post.njk
+layout: layouts/post.hbs
 likes: 4
 ---
 

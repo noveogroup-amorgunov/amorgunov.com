@@ -3,12 +3,12 @@
   "name": "Блог о веб-разработке",
   "icons": [
     {
-      "src": "/assets/images/192.png",
+      "src": "/assets/favicon192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "/assets/images/512.png",
+      "src": "/assets/favicon512.png",
       "type": "image/png",
       "sizes": "512x512"
     }

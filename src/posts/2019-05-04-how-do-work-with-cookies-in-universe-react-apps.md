@@ -9,7 +9,7 @@ tags:
   - cookies
   - hooks
   - tutorial
-layout: layouts/post.njk
+layout: layouts/post.hbs
 likes: 57
 ---
 

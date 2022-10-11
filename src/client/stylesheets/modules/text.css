@@ -1,0 +1,44 @@
+.text {
+  line-height: 1.1;
+}
+
+.text_type_h1 {
+  font-weight: 700;
+  font-size: 36px;
+  position: relative;
+}
+
+.text_type_h2 {
+  font-weight: 700;
+  font-size: 28px;
+}
+
+.text_type_h3 {
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.text_type_h4 {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.text_type_caption {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.text_type_captionStrong {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.text_type_body {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.text_type_bodyStrong {
+  font-size: 16px;
+  font-weight: 700;
+}

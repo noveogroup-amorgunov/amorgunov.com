@@ -1,0 +1,9 @@
+<div class="project-list">
+  {{#each (reverse projects) as |project|}}
+    <a href="{{project.url}}" class="project-list__card">
+      {{#> components/text as="h3" type="h3" class="project-list__card-title"}}
+        {{project.title}}
+      {{/ components/text}}
+    </a>
+  {{/each}}
+</div>

@@ -9,7 +9,7 @@ tags:
   - typescript
   - ssr
   - tutorial
-layout: layouts/post.njk
+layout: layouts/post.hbs
 likes: 75
 ---
 

@@ -9,7 +9,7 @@ tags:
   - api
   - jest
   - best practices
-layout: layouts/post.njk
+layout: layouts/post.hbs
 likes: 24
 ---
 

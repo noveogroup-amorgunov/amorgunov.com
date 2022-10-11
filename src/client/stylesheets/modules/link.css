@@ -1,0 +1,10 @@
+a.link {
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  color: var(--color-grey1);
+
+  &:hover {
+    color: var(--color-dark);
+  }
+}

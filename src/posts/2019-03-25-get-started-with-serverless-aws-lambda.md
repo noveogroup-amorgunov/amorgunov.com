@@ -7,7 +7,7 @@ tags:
   - nodejs
   - aws lambda
   - serverless
-layout: layouts/post.njk
+layout: layouts/post.hbs
 likes: 20
 ---
 Всем привет!

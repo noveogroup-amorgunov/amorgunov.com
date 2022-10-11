@@ -8,7 +8,7 @@ tags:
   - react
   - redux
   - hooks
-layout: layouts/post.njk
+layout: layouts/post.hbs
 likes: 177
 ---
 

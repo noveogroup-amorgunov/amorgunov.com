@@ -1,0 +1,29 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  height: 30px;
+}
+
+.header__logo {
+  display: block;
+  width: 42px;
+  height: 27px;
+  background-image: url(/assets/favicon192.png);
+  background-repeat: no-repeat;
+  background-size: 42px;
+  background-position-y: -10px;
+}
+
+.header__menu-toggler {
+  display: block;
+  width: 19px;
+  height: 19px;
+  background-image: url(/assets/images/icons/menu.svg);
+  background-repeat: no-repeat;
+
+  &:hover {
+    background-color: var(--color-grey4);
+    border-radius: 4px;
+  }
+}

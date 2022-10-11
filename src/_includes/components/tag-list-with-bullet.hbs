@@ -1,0 +1,11 @@
+<div class="tag-list">
+  {{#each tags as |tag|}}
+    {{#not (eq tag.tag "posts")}}
+      <a href="{{{ append "/tags/" tag.tag}}}" class="tag">
+        {{#> components/text as="span" type="bodyStrong" class=""}}
+          {{tag.tag}} • {{tag.posts}}
+        {{/ components/text}}
+      </a>
+    {{/not}}
+  {{/each}}
+</div>

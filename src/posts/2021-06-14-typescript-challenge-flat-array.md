@@ -7,7 +7,7 @@ featuredImageThumbnail: "/assets/images/2021-06-14-typescript-challenge-flat-arr
 tags:
   - typescript
   - typings
-layout: layouts/post.njk
+layout: layouts/post.hbs
 likes: 9
 ---
 

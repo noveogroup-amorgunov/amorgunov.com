@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    {{> components/head }}
+    <%= htmlWebpackPlugin.tags.headTags %>
+  </head>
+  <body>
+    <div class="page{{#if pageType}} page_type_{{pageType}}{{/if}}">
+      <div class="page__container">
+        {{> components/header }}
+        <div class="page__content">
+          {{{content}}}
+        </div>
+        {{> components/footer }}
+        {{> components/menu }}
+      </div>
+    </div>
+    <%= htmlWebpackPlugin.tags.bodyTags %>
+    {{> components/scripts }}
+  </body>
+</html>

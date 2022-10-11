@@ -7,7 +7,7 @@ tags:
   - eleventy
   - blog
   - netlify
-layout: layouts/post.njk
+layout: layouts/post.hbs
 likes: 6
 ---
 

@@ -7,7 +7,7 @@ featuredImageThumbnail: "/assets/images/2020-08-03-create-own-virtual-dom/previe
 tags:
   - tutorial
   - virtual dom
-layout: layouts/post.njk
+layout: layouts/post.hbs
 likes: 100
 ---
 Всем привет! Сегодня нас ждет удивительное приключение реализации виртуального DOM-a с нуля.

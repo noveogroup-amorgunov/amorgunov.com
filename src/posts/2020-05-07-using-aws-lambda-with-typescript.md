@@ -8,7 +8,7 @@ tags:
   - aws lambda
   - typescript
   - serverless
-layout: layouts/post.njk
+layout: layouts/post.hbs
 likes: 25
 ---
 
