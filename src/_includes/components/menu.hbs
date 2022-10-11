@@ -16,8 +16,7 @@
       {{#> components/text type="captionStrong" class="menu__block-header"}}
         {{#> components/link href="#"}}Последние посты{{/ components/link}}
       {{/ components/text}}
-
-      {{> components/post-list popular="1" column="1" posts=(head (reverse collections.posts) -2)}}
+      {{> components/post-list popular="1" column="1" posts=(head collections.posts 2)}}
     </div>
   </div>
 </div>

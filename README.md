@@ -10,7 +10,7 @@ Hey! Here you find source files for my personal blog built with [**_11ty_**](htt
 
 ## Site pages
 
-![](https://github.com/noveogroup-amorgunov/amorgunov.com/raw/master/src/assets/images/preview.png)
+![](https://github.com/noveogroup-amorgunov/amorgunov.com/raw/master/src/assets/images/preview-github.png)
 
 You can see all pages on [https://amorgunov.com](https://amorgunov.com)
 
@@ -20,6 +20,9 @@ You can see all pages on [https://amorgunov.com](https://amorgunov.com)
 nvm use
 
 npm install
+
+# generate templates for 11ty
+npm run build:webpack
 
 # start webpack and 11ty watchers
 npm run start

@@ -1,4 +1,4 @@
 http://goofy-mahavira-337816.netlify.com/* http://amorgunov.com/:splat 301!
 /post/* /posts/:splat 301!
-/posts /blog
-/tags/js /tags/javascript
+/posts /blog 301!
+/tags/js /tags/javascript 301!
