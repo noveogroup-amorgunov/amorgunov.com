@@ -23,7 +23,7 @@ jobs:
         with:
           author_name: noveogroup-amorgunov
           author_email: noveogroupamorgunov@gmail.com
-          message: "Update likes"
+          message: "content: Update reactions"
           add: src
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
