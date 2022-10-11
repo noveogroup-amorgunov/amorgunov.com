@@ -22,7 +22,7 @@
   padding-top: 48px;
 
   @media (--viewport-mobile) {
-    width: 28px;
+    padding-top: 28px;
   }
 }
 
