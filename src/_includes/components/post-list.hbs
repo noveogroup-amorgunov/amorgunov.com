@@ -1,4 +1,4 @@
-<div class="post-list{{#if popular}} post-list_popular{{/if}}{{#if column}} post-list_column{{/if}}">
+<div class="post-list{{#if popular}} post-list_popular{{/if}}{{#if compact}} post-list_compact{{/if}}">
   {{#each (reverse posts) as |post|}}
     <a href="{{post.url}}" class="post-list__card{{#if post.data.bg}} post-list__card_light{{/if}}"{{#if post.data.bg}} style="background-image: url('{{post.data.bg}}')"{{/if}}>
       {{#> components/text as="h3" type="h3" class="post-list__card-title"}}

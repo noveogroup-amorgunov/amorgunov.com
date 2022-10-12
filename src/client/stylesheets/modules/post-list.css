@@ -10,12 +10,13 @@
     grid-template-columns: repeat(1, minmax(0, 1fr));
   }
 
-  &_column {
-    grid-template-columns: repeat(1, minmax(0, 1fr));
+  &_compact {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
   }
 }
 
-.post-list_popular:not(.post-list_column) {
+.post-list_popular:not(.post-list_compact) {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 
   @media (--viewport-mobile) {
@@ -43,6 +44,10 @@ a.post-list__card {
 
   .post-list_popular &:hover {
     background-color: var(--color-primaryPressed);
+  }
+
+  .post-list_compact & {
+    padding: 0 16px 16px;
   }
 
   &:hover {
@@ -73,6 +78,10 @@ a.post-list__card {
   margin-bottom: 4px;
   color: var(--color-dark);
   word-break: break-word;
+
+  .post-list_compact & {
+    font-size: 18px;
+  }
 }
 
 .post-list__card-title a {
