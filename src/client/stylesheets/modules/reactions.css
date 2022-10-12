@@ -1,0 +1,77 @@
+.reactions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  padding: 24px;
+  border-radius: 35px;
+  background: var(--color-grey3);
+}
+
+.reaction {
+  position: relative;
+
+  &_active {
+    animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+}
+
+.reaction__image {
+  position: relative;
+  filter: grayscale(1);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+
+  .reaction:hover & {
+    transform: scale(0.9);
+  }
+
+  .reaction_active & {
+    filter: grayscale(0);
+  }
+}
+
+.reaction__counter {
+  border-radius: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  background-color: var(--color-primary);
+
+  .reaction_active & {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+  }
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}

@@ -1,0 +1,20 @@
+<section class="pagination-container">
+  <nav class="pagination">
+    {{#if pagination.nextPageLink}}
+      {{#> components/text type="body"}}
+        {{#> components/link class="pagination__item" rel="prev" href=(append "/blog/page/" (JSONstringify (plus pagination.pageNumber 1)))}}К старым постам{{/ components/link}}
+      {{/ components/text}}
+    {{/if}}
+    {{#if pagination.previousPageLink}}
+      {{#if (eq pagination.pageNumber 1)}}
+      {{#> components/text type="body"}}
+        {{#> components/link class="pagination__item" rel="next" href="/blog"}}К новым{{/ components/link}}
+      {{/ components/text}}
+      {{else}}
+        {{#> components/text type="body"}}
+          {{#> components/link class="pagination__item" rel="next" href=(append "/blog/page/" (JSONstringify (plus pagination.pageNumber -1)))}}К новым{{/ components/link}}
+        {{/ components/text}}
+      {{/if}}
+    {{/if}}
+  </nav>
+</section>

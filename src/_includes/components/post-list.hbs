@@ -1,0 +1,18 @@
+<div class="post-list{{#if popular}} post-list_popular{{/if}}{{#if compact}} post-list_compact{{/if}}">
+  {{#each (reverse posts) as |post|}}
+    <a href="{{post.url}}" class="post-list__card{{#if post.data.bg}} post-list__card_light{{/if}}"{{#if post.data.bg}} style="background-image: url('{{post.data.bg}}')"{{/if}}>
+      {{#> components/text as="h3" type="h3" class="post-list__card-title"}}
+        {{post.data.title}}
+      {{/ components/text}}
+      {{#> components/text as="div" type="captionStrong" class="post-list__card-date"}}
+        {{readableDate post.date}}
+      {{/ components/text}}
+      {{#> components/text as="div" class="post-list__card-annotation"}}
+        {{post.data.description}}
+      {{/ components/text}}
+      <div class="post-list__card-likes" title="Количество реакций на пост">
+        {{post.data.likes}}
+      </div>
+    </a>
+  {{/each}}
+</div>

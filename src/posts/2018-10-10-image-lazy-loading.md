@@ -6,9 +6,9 @@ time: 7
 tags:
   - image
   - lazyload
-  - js
+  - javascript
   - optimization
-layout: layouts/post.njk
+layout: layouts/post.hbs
 likes: 4
 ---
 На одном из рабочих проектов я решил посмотреть сколько данных приходит на клиент при первой загрузке.

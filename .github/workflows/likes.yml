@@ -13,7 +13,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v1
         with:
-          node-version: 12.x
+          node-version: 16.x
       - name: Install dependencies
         run: npm install
       - name: Update post likes
@@ -23,7 +23,7 @@ jobs:
         with:
           author_name: noveogroup-amorgunov
           author_email: noveogroupamorgunov@gmail.com
-          message: "Update likes"
+          message: "content: Update reactions"
           add: src
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

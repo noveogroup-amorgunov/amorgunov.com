@@ -5,9 +5,9 @@ time: 6
 description:
 tags:
   - meetup
-  - js
+  - javascript
   - animation
-layout: layouts/post.njk
+layout: layouts/post.hbs
 bg: /assets/images/2019-03-01-meetup-review-js-party-nsk/1.jpg
 likes: 2
 ---

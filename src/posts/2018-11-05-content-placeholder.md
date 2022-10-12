@@ -9,7 +9,7 @@ tags:
   - javascript
   - ux
   - spa
-layout: layouts/post.njk
+layout: layouts/post.hbs
 likes: 4
 ---
 Сегодня я хочу рассказать о довольно интересном подходе, который называется **content placeholder**.

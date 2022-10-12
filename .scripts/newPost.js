@@ -41,7 +41,7 @@ description: ""
 featuredImageThumbnail: "/assets/images/{date}-{slug}/preview.jpg"
 tags:
   - {tagName}
-layout: layouts/post.njk
+layout: layouts/post.hbs
 likes: 0
 ---`;
 

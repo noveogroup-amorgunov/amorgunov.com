@@ -1,0 +1,15 @@
+---
+layout: layouts/next.hbs
+permalink: /javascript-quiz/
+title: Квиз на знание javascript-а
+description: 13 интересных вопросов, которые затрагивают многие темы, как работает javascript
+---
+
+{{#> components/text type="h1" as="h1"}}Квиз по JavaScript{{/ components/text}}
+
+<div class="quiz" data-opts='{"dataUrl": "/assets/js-quiz-1.json", "preview": true}'></div>
+<div class="copy-btn" data-clipboard-text="https://amorgunov.com/javascript-quiz">
+  <a href="javascript:void(0);">Скопировать ссылку на квиз</a>
+</div>
+<br/>
+Разбор каждого вопроса квиза доступен <a href="/posts/2019-06-29-review-js-quiz-codefest/">здесь</a>.

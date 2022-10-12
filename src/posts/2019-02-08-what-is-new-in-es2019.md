@@ -6,8 +6,8 @@ time: 5
 tags:
   - nodejs
   - es2019
-  - js
-layout: layouts/post.njk
+  - javascript
+layout: layouts/post.hbs
 likes: 2
 ---
 > Каждый год выходит новая версия [ECMAScript](https://tc39.github.io/ecma262/) с предложениями, которые официально уже готовы.

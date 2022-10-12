@@ -3,7 +3,6 @@ node_modules/
 .idea
 .DS_Store
 temp/
-src/assets/build/
-src/_includes/layouts/main.njk
-src/_includes/layouts/post.njk
-
+src/client/build/
+src/_includes/layouts/next.hbs
+src/_includes/layouts/post.hbs

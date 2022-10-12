@@ -9,8 +9,8 @@ tags:
   - typescript
   - ssr
   - tutorial
-layout: layouts/post.njk
-likes: 75
+layout: layouts/post.hbs
+likes: 88
 ---
 
 ## Tl;dr

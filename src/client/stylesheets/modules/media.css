@@ -1,0 +1,2 @@
+@custom-media --viewport-mobile (width <= 82ch);
+@custom-media --viewport-large-screen (width >= 1200px);

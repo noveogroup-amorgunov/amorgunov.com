@@ -1,0 +1,22 @@
+<div class="menu">
+  <div class="menu__overlay"></div>
+  <div class="menu__content">
+    <div class="menu__header">  
+      <a href="/" class="menu__logo"></a>
+      <a href="#" class="menu__toggler"></a>
+    </div>
+    <div class="menu__block">
+      {{#> components/text type="captionStrong" class="menu__block-header"}}
+        {{#> components/link href="#"}}Популярные теги{{/ components/link}}
+      {{/ components/text}}
+
+      {{> components/tag-list-with-bullet tags=(reverse (head collections.tagsWithPostsCount -8))}}
+    </div>
+    <div class="menu__block">
+      {{#> components/text type="captionStrong" class="menu__block-header"}}
+        {{#> components/link href="#"}}Последние посты{{/ components/link}}
+      {{/ components/text}}
+      {{> components/post-list popular="1" compact="1" posts=(reverse (head collections.posts 4))}}
+    </div>
+  </div>
+</div>

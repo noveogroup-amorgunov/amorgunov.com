@@ -1,0 +1,19 @@
+/* Base */
+@import './modules/media.css';
+@import './modules/colors.css';
+@import './modules/page.css';
+@import './modules/base.css';
+
+/* Common components */
+@import './modules/text.css';
+@import './modules/link.css';
+@import './modules/header.css';
+@import './modules/footer.css';
+@import './modules/menu.css';
+@import './modules/tags-list.css';
+@import './modules/post-list.css';
+
+/* Page components */
+@import './modules/project-list.css';
+@import './modules/pagination.css';
+@import './modules/quiz.css';

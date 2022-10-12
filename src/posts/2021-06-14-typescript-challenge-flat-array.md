@@ -7,8 +7,8 @@ featuredImageThumbnail: "/assets/images/2021-06-14-typescript-challenge-flat-arr
 tags:
   - typescript
   - typings
-layout: layouts/post.njk
-likes: 9
+layout: layouts/post.hbs
+likes: 12
 ---
 
 Я уже давно пишу на тайпскрипте, но продолжаю открывать для себя новые возможности, подходы к написанию кода и проблемы компилятора. Чтобы аккумулировать новые знания, решил сделать серию постов по типизации различных функций и модулей в TypeScript.

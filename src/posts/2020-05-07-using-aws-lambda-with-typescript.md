@@ -8,8 +8,8 @@ tags:
   - aws lambda
   - typescript
   - serverless
-layout: layouts/post.njk
-likes: 25
+layout: layouts/post.hbs
+likes: 27
 ---
 
 Сегодня мы создадим облачную функцию на TypeScript, которая будет возвращать текущую погоду для переданного города («weather app» на лямбдах), рассмотрим основные моменты работы, покроем код тестами и задеплоим функцию в AWS Lambda.

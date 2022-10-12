@@ -1,0 +1,25 @@
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 4px;
+  padding: 8px 0;
+}
+
+a.tag {
+  position: relative;
+  line-height: 1.5;
+  padding: 4px 12px;
+  border-radius: 20px;
+  background-color: var(--color-grey3);
+  color: var(--color-dark);
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+
+  &:hover {
+    background-color: var(--color-grey2);
+    border-radius: 20px;
+    transform: scale(0.9);
+  }
+}

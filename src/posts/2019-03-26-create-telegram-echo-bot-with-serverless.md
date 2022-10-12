@@ -9,8 +9,8 @@ tags:
   - serverless
   - telegram
   - tutorial
-layout: layouts/post.njk
-likes: 7
+layout: layouts/post.hbs
+likes: 9
 ---
 
 Данный выпуск - второй по serverless в блоге, и сегодня мы создадим бота в телеграме и напишем лямбду с помощью serverless-a для обработки сообщений. С другими постами по теме вы можете ознакомиться по ссылкам ниже:
