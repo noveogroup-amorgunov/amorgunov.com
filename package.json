@@ -3,7 +3,7 @@
   "name": "amorgunov-com",
   "version": "1.0.0",
   "engines": {
-    "node": "16.13.0"
+    "node": "16.x"
   },
   "scripts": {
     "start": "NODE_ENV=development run-p -l start:*",
@@ -71,9 +71,9 @@
     "prettier": "2.7.1",
     "rimraf": "3.0.2",
     "source-map-explorer": "2.5.0",
-    "stylelint": "13.7.2",
-    "stylelint-config-recommended": "2.1.0",
-    "stylelint-config-standard": "18.2.0",
+    "stylelint": "14.14.0",
+    "stylelint-config-recommended": "9.0.0",
+    "stylelint-config-standard": "29.0.0",
     "terser-webpack-plugin": "2.3.6",
     "typescript": "4.6.4",
     "webpack": "5.72.0",

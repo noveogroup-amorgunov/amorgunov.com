@@ -1,19 +1,19 @@
 /* Base */
-@import './modules/media.css';
-@import './modules/colors.css';
-@import './modules/page.css';
-@import './modules/base.css';
+@import url("./modules/media.css");
+@import url("./modules/colors.css");
+@import url("./modules/page.css");
+@import url("./modules/base.css");
 
 /* Common components */
-@import './modules/text.css';
-@import './modules/link.css';
-@import './modules/header.css';
-@import './modules/footer.css';
-@import './modules/menu.css';
-@import './modules/tags-list.css';
-@import './modules/post-list.css';
+@import url("./modules/text.css");
+@import url("./modules/link.css");
+@import url("./modules/header.css");
+@import url("./modules/footer.css");
+@import url("./modules/menu.css");
+@import url("./modules/tags-list.css");
+@import url("./modules/post-list.css");
 
 /* Page components */
-@import './modules/project-list.css';
-@import './modules/pagination.css';
-@import './modules/quiz.css';
+@import url("./modules/project-list.css");
+@import url("./modules/pagination.css");
+@import url("./modules/quiz.css");

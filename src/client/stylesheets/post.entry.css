@@ -1,20 +1,20 @@
 /* Base */
-@import './modules/media.css';
-@import './modules/colors.css';
-@import './modules/page.css';
-@import './modules/base.css';
+@import url("./modules/media.css");
+@import url("./modules/colors.css");
+@import url("./modules/page.css");
+@import url("./modules/base.css");
 
 /* Common components */
-@import './modules/text.css';
-@import './modules/link.css';
-@import './modules/header.css';
-@import './modules/footer.css';
-@import './modules/menu.css';
-@import './modules/tags-list.css';
-@import './modules/post-list.css';
+@import url("./modules/text.css");
+@import url("./modules/link.css");
+@import url("./modules/header.css");
+@import url("./modules/footer.css");
+@import url("./modules/menu.css");
+@import url("./modules/tags-list.css");
+@import url("./modules/post-list.css");
 
 /* Post components */
-@import './modules/post.css';
-@import './modules/reactions.css';
-@import './modules/terminal.css';
-@import './modules/prism.css';
+@import url("./modules/post.css");
+@import url("./modules/reactions.css");
+@import url("./modules/terminal.css");
+@import url("./modules/prism.css");
