@@ -15,15 +15,18 @@ jobs:
         with:
           node-version: 16.x
       - name: Install dependencies
+        working-directory: ./.scripts
         run: npm install
       - name: Update post likes
+        working-directory: ./.scripts
         run: npm run update-post-likes
       - name: Commit changes
         uses: EndBug/add-and-commit@v5
         with:
           author_name: noveogroup-amorgunov
           author_email: noveogroupamorgunov@gmail.com
-          message: "content: Update reactions"
+          message: "Update post likes"
           add: src
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  
