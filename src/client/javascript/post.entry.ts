@@ -6,6 +6,7 @@ import {initCopyToClipboard as registerCopyToClipboard} from './modules/copy';
 import {scroll as registerScrollTop} from './modules/scroll';
 import {prepareExternalLinks as registerExternalLinks} from './modules/prepareExternalLinks';
 import {registerTerminals} from './modules/bot/createBot';
+import {registerShare} from './modules/share';
 
 import '../stylesheets/post.entry.css';
 
@@ -23,4 +24,5 @@ document.addEventListener('DOMContentLoaded', () => {
   registerExternalLinks();
   registerScrollTop();
   registerTerminals($terminals);
+  registerShare();
 });
