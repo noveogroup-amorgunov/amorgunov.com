@@ -32,7 +32,7 @@ async function getLikes(slug) {
 
 async function updatePostLikes(file) {
   const data = fs.readFileSync(file, 'utf-8');
-  const slug = file.replace(/.*src\/posts\/(.*)\.md/i, '$1');
+  const slug = file.replace(/src\/posts\/(.*)\.md/i, '$1');
   const likes = await getLikes(slug);
 
   const fixedData = data.replace(/likes: (\d+)/gi, `likes: ${likes}`);
@@ -43,5 +43,5 @@ async function updatePostLikes(file) {
 }
 
 Promise
-  .all(walk('../src/posts', /\.md$/).map(updatePostLikes))
+  .all(walk('./src/posts', /\.md$/).map(updatePostLikes))
   .then(() => console.log('Done'));

@@ -1,5 +1,6 @@
 .share {
   position: fixed;
+  display: none;
   bottom: 20px;
   right: 20px;
   background: var(--color-dark);
@@ -8,6 +9,11 @@
   padding: 8px;
   width: 24px;
   height: 24px;
+  cursor: pointer;
+
+  @media (--viewport-mobile) {
+    display: block;
+  }
 }
 
 .share__icon {
