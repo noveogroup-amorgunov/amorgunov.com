@@ -1,0 +1,24 @@
+.share {
+  position: fixed;
+  display: none;
+  bottom: 20px;
+  right: 20px;
+  background: var(--color-dark);
+  color: var(--color-white);
+  border-radius: 50%;
+  padding: 8px;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+
+  @media (--viewport-mobile) {
+    display: block;
+  }
+}
+
+.share__icon {
+  background-image: url("/assets/images/icons/share.svg");
+  width: 24px;
+  height: 24px;
+  margin-left: -1px;
+}
