@@ -1,5 +1,5 @@
-module.exports = value => {
+module.exports = () => {
   const version = process.env.COMMIT_REF || 'dev';
 
-  return `${value}${version}`;
+  return version;
 };

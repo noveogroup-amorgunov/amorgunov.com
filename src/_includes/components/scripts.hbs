@@ -8,7 +8,7 @@
   }
 </script>
 <script>
-  if('serviceWorker' in navigator && location.host === 'amorgunov.com') {
+  if('serviceWorker' in navigator && "{{version}}" !== 'dev') {
     navigator.serviceWorker.register('/sw.js', { scope: '/' })
       .then(function(registration) {
         console.debug('Service Worker Registered');
