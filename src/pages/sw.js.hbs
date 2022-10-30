@@ -4,7 +4,7 @@ excludeFromSitemap: true
 ---
 importScripts('assets/cache-polyfill.js');
 
-const APP_VERSION = '{{version "v"}}';
+const APP_VERSION = '{{version}}';
 const CACHE_NAME = `amorgunov-${APP_VERSION}`;
 
 self.addEventListener('install', e => {
@@ -13,14 +13,14 @@ self.addEventListener('install', e => {
       return cache.addAll([
         `/`,
         `/index.html`,
-        `/client/build/main.css`,
+        `/client/build/next.css`,
         `/client/build/post.css`,
-        `/client/build/main.entry.js`,
+        `/client/build/next.entry.js`,
         `/client/build/post.entry.js`,
         `/assets/cache-polyfill.js`,
-        `/assets/images/192.png`,
-        `/assets/images/512.png`,
-        `/assets/images/avatar.jpg`,
+        `/assets/favicon.png`,
+        `/assets/favicon192.png`,
+        `/assets/favicon512.png`,
         `/assets/prism.js`,
         `/offline.html`
       ]).then(() => self.skipWaiting());
