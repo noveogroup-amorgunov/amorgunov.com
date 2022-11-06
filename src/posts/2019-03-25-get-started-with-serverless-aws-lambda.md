@@ -8,7 +8,7 @@ tags:
   - aws lambda
   - serverless
 layout: layouts/post.hbs
-likes: 21
+likes: 22
 ---
 Всем привет!
 
