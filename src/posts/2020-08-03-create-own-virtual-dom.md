@@ -8,7 +8,7 @@ tags:
   - tutorial
   - virtual dom
 layout: layouts/post.hbs
-likes: 104
+likes: 106
 ---
 Всем привет! Сегодня нас ждет удивительное приключение реализации виртуального DOM-a с нуля.
 
