@@ -22,7 +22,7 @@ likes: 0
 <img
   class="lazyload"
   alt="Пирамида тестирования"
-  src="/assets/images/2022-05-05-testing-in-frontend/2.min.png"
+  src="/assets/images/2023-04-01-testing-trophy/2.min.png"
   data-src="/assets/images/2023-04-01-testing-trophy/2.out.jpg"
 />
 
@@ -42,7 +42,7 @@ likes: 0
 <img
   class="lazyload"
   alt="Пирамида тестирования устарела"
-  src="/assets/images/2022-05-05-testing-in-frontend/4.min.png"
+  src="/assets/images/2023-04-01-testing-trophy/4.min.png"
   data-src="/assets/images/2023-04-01-testing-trophy/4.out.jpg"
 />
 
@@ -52,7 +52,7 @@ likes: 0
 <img
   class="lazyload image_size_xl"
   alt="Трофей тестирования"
-  src="/assets/images/2022-05-05-testing-in-frontend/3.min.png"
+  src="/assets/images/2023-04-01-testing-trophy/3.min.png"
   data-src="/assets/images/2023-04-01-testing-trophy/3.out.jpg"
 />
 
@@ -85,7 +85,7 @@ describe('sum', () => {
 <img
   class="lazyload"
   alt="Слой статических тестов"
-  src="/assets/images/2022-05-05-testing-in-frontend/10.min.png"
+  src="/assets/images/2023-04-01-testing-trophy/10.min.png"
   data-src="/assets/images/2023-04-01-testing-trophy/10.out.jpg"
 />
 
@@ -96,7 +96,7 @@ describe('sum', () => {
 <img
   class="lazyload"
   alt="Слой юнит тестов"
-  src="/assets/images/2022-05-05-testing-in-frontend/5.min.png"
+  src="/assets/images/2023-04-01-testing-trophy/5.min.png"
   data-src="/assets/images/2023-04-01-testing-trophy/5.out.jpg"
 />
 
@@ -129,7 +129,7 @@ describe('sum', () => {
 <img
   class="lazyload"
   alt="Слой E2E тестов"
-  src="/assets/images/2022-05-05-testing-in-frontend/6.min.png"
+  src="/assets/images/2023-04-01-testing-trophy/6.min.png"
   data-src="/assets/images/2023-04-01-testing-trophy/6.out.jpg"
 />
 
@@ -144,7 +144,7 @@ describe('sum', () => {
 <img
   class="lazyload"
   alt="Интеграционные тесты"
-  src="/assets/images/2022-05-05-testing-in-frontend/7.min.png"
+  src="/assets/images/2023-04-01-testing-trophy/7.min.png"
   data-src="/assets/images/2023-04-01-testing-trophy/7.out.jpg"
 />
 
@@ -179,7 +179,7 @@ describe('sum', () => {
 <img
   class="lazyload"
   alt="Кастомный слой со скриншотными тестами"
-  src="/assets/images/2022-05-05-testing-in-frontend/8.min.png"
+  src="/assets/images/2023-04-01-testing-trophy/8.min.png"
   data-src="/assets/images/2023-04-01-testing-trophy/8.out.jpg"
 />
 
@@ -190,7 +190,7 @@ describe('sum', () => {
 <img
   class="lazyload"
   alt="Скриншот из сторибука"
-  src="/assets/images/2022-05-05-testing-in-frontend/12.min.png"
+  src="/assets/images/2023-04-01-testing-trophy/12.min.png"
   data-src="/assets/images/2023-04-01-testing-trophy/12.out.jpg"
 />
 <div class="image-text">Скриншот сторибука из одного моего проекта</div>
@@ -202,7 +202,7 @@ describe('sum', () => {
 <img
   class="lazyload image_size_xl"
   alt="Финальная версия трофея тестирования"
-  src="/assets/images/2022-05-05-testing-in-frontend/9.min.png"
+  src="/assets/images/2023-04-01-testing-trophy/9.min.png"
   data-src="/assets/images/2023-04-01-testing-trophy/9.out.jpg"
 />
 
@@ -213,7 +213,7 @@ describe('sum', () => {
 <img
   class="lazyload image_size_xl"
   alt="А какой трофей тестирования у вас?"
-  src="/assets/images/2022-05-05-testing-in-frontend/11.min.png"
+  src="/assets/images/2023-04-01-testing-trophy/11.min.png"
   data-src="/assets/images/2023-04-01-testing-trophy/11.out.jpg"
 />
 <div class="image-text">А какой трофей тестирования у вас?</div>
