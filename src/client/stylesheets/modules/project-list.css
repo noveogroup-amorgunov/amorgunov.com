@@ -15,9 +15,9 @@ a.project-list__card {
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   padding: 16px 20px;
-  min-height: 150px;
+  min-height: 200px;
   color: var(--color-white);
   background-color: var(--color-dark);
   background-size: cover;
@@ -34,4 +34,8 @@ a.project-list__card {
   color: var(--color-white);
   line-height: 1;
   padding-top: 0;
+
+  .light & {
+    color: var(--color-dark);
+  }
 }
