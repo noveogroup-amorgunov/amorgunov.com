@@ -4,7 +4,7 @@
 
 # amorgunov.com
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/763b6aa3-7b4a-47fe-9c14-ee98f17d9580/deploy-status)](https://app.netlify.com/sites/goofy-mahavira-337816/deploys) ![Like status](https://github.com/noveogroup-amorgunov/amorgunov.com/actions/workflows/likes.yml/badge.svg)
+[![Netlify Status](https://img.shields.io/netlify/763b6aa3-7b4a-47fe-9c14-ee98f17d9580?style=flat&colorA=000000&colorB=000000)](https://app.netlify.com/sites/nukeapp/deploys) ![Like action](https://img.shields.io/github/actions/workflow/status/noveogroup-amorgunov/amorgunov.com/likes.yml?branch=master&style=flat&colorA=000000&colorB=000000)
 
 Hey! Here you find source files for my personal blog built with [**_11ty_**](https://www.11ty.io/), [**_webpack_**](https://webpack.js.org/) and hosted by [**_Netlify_**](https://netlify.com/).
 
