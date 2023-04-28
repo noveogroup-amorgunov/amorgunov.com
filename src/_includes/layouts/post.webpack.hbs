@@ -14,6 +14,11 @@
             {{#> components/text type="captionStrong"}}
               <time datetime="{{htmlDateString date}}">{{readableDate date}}</time>
             {{/ components/text}}
+            {{#if updateDate}}
+              {{#> components/text type="captionStrong"}}
+                (обновлено: <time datetime="{{htmlDateString updateDate}}">{{readableDate updateDate}}</time>)
+              {{/ components/text}}
+            {{/if}}
           </div>
           {{> components/tag-list tags=tags}}
           <div class="post__content">
