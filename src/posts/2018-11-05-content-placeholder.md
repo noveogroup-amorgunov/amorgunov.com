@@ -62,7 +62,7 @@ const Rect: StatelessComponent<RectProps> = (props: RectProps) => {
     const { width, height, type = 'default' } = props;
 
     return (
-        <div style={{ width, height }} className={class_({ type })} />
+        <div style={ { width, height } } className={class_({ type })} />
     );
 };
 

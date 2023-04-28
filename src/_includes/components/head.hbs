@@ -6,12 +6,12 @@
 <link rel="preconnect" href="https://www.google-analytics.com">
 <meta name="theme-color" content="#fff" />
 <meta name="robots" content="index,follow" />
-<title>{{#if renderData.title}}{{renderData.title}}{{else}}{{#if title}}{{title}}{{else}}{{ metadata.title}}{{/if}}{{/if}}</title>
-<meta name="description" content="{{#if renderData.description}}{{renderData.description}}{{else}}{{#if description}}{{description}}{{else}}{{ metadata.description}}{{/if}}{{/if}}">
+<title>{{#if title}}{{title}}{{else}}{{ metadata.title}}{{/if}}</title>
+<meta name="description" content="{{#if description}}{{description}}{{else}}{{ metadata.description}}{{/if}}">
 <meta property="og:url" content="{{metadata.url}}{{page.url}}">
-<meta property="og:title" content="{{#if renderData.title}}{{renderData.title}}{{else}}{{#if title}}{{title}}{{else}}{{ metadata.title}}{{/if}}{{/if}}">
+<meta property="og:title" content="{{#if title}}{{title}}{{else}}{{ metadata.title}}{{/if}}">
 <meta property="og:site_name" content="{{metadata.title}}">
-<meta property="og:description" content="{{#if renderData.description}}{{renderData.description}}{{else}}{{#if description}}{{description}}{{else}}{{ metadata.description}}{{/if}}{{/if}}">
+<meta property="og:description" content="{{#if description}}{{description}}{{else}}{{ metadata.description}}{{/if}}">
 <meta property="og:image" content="{{metadata.url}}{{#if featuredImageThumbnail}}{{featuredImageThumbnail}}{{else}}{{metadata.featuredImageThumbnail}}{{/if}}">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ru">
