@@ -223,3 +223,12 @@ pre code.hljs {
   font-weight: 700;
   font-size: 14px;
 }
+
+.apple-divider {
+  background-image: url("/assets/images/divider.gif");
+  background-size: cover;
+  width: 60px;
+  height: 60px;
+  background-position: center center;
+  margin: 16px auto;
+}
