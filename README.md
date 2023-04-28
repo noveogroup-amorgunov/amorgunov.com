@@ -1,5 +1,3 @@
-![](./src/assets/favicon@dark.png#gh-dark-mode-only)![](./src/assets/favicon.png#gh-light-mode-only)
-
 # amorgunov.com
 
 [![Netlify Status](https://img.shields.io/netlify/763b6aa3-7b4a-47fe-9c14-ee98f17d9580?style=flat&colorA=000000&colorB=000000)](https://app.netlify.com/sites/nukeapp/deploys) ![Like action](https://img.shields.io/github/actions/workflow/status/noveogroup-amorgunov/amorgunov.com/likes.yml?branch=master&style=flat&colorA=000000&colorB=000000)
