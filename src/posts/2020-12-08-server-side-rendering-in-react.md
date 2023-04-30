@@ -10,7 +10,7 @@ tags:
   - ssr
   - tutorial
 layout: layouts/post.hbs
-likes: 108
+likes: 109
 ---
 
 ## Tl;dr
