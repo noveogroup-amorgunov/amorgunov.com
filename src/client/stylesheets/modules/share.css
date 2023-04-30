@@ -21,4 +21,8 @@
   width: 24px;
   height: 24px;
   margin-left: -1px;
+
+  [data-theme="dark"] & {
+    filter: invert(1);
+  }
 }

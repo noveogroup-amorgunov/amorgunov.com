@@ -78,11 +78,14 @@ html[data-theme="dark"] img {
   filter: brightness(0.8) contrast(1.2);
 }
 
+html[data-theme="dark"] img.inverting {
+  filter: invert(100%) hue-rotate(180deg);
+}
+
 .post img.inverting {
   mix-blend-mode: multiply;
 
   html[data-theme="dark"] & {
-    filter: invert(100%) hue-rotate(180deg);
     mix-blend-mode: screen;
   }
 }
