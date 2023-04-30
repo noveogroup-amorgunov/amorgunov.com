@@ -9,21 +9,38 @@
   display: block;
   width: 42px;
   height: 27px;
-  background-image: url(/assets/favicon192.png);
+  background-image: url("/assets/favicon192.png");
   background-repeat: no-repeat;
   background-size: 42px;
   background-position-y: -10px;
+
+  html[data-theme="dark"] & {
+    filter: invert(0.9);
+  }
+}
+
+.header__right {
+  display: flex;
+  gap: 16px;
 }
 
 .header__menu-toggler {
   display: block;
   width: 19px;
   height: 19px;
-  background-image: url(/assets/images/icons/menu.svg);
+  background-image: url("/assets/images/icons/menu.svg");
   background-repeat: no-repeat;
+}
 
-  &:hover {
-    background-color: var(--color-grey4);
-    border-radius: 4px;
+.header__theme-toggler {
+  display: block;
+  width: 23px;
+  height: 23px;
+  background-image: url("/assets/images/icons/sun.svg");
+  background-repeat: no-repeat;
+  margin-top: -2px;
+
+  html[data-theme="dark"] & {
+    background-image: url("/assets/images/icons/moon.svg");
   }
 }

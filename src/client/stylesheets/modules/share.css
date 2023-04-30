@@ -3,8 +3,8 @@
   display: none;
   bottom: 20px;
   right: 20px;
-  background: var(--color-dark);
-  color: var(--color-white);
+  background: var(--text-color);
+  color: var(--background-color);
   border-radius: 50%;
   padding: 8px;
   width: 24px;

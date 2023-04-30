@@ -7,8 +7,11 @@ import {scroll as registerScrollTop} from './modules/scroll';
 import {prepareExternalLinks as registerExternalLinks} from './modules/prepareExternalLinks';
 import {registerTerminals} from './modules/bot/createBot';
 import {registerShare} from './modules/share';
+import {registerThemeToggler, syncTheme} from './modules/theme';
 
 import '../stylesheets/post.entry.css';
+
+syncTheme();
 
 document.addEventListener('DOMContentLoaded', () => {
   document.body.classList.add('loaded');
@@ -25,4 +28,5 @@ document.addEventListener('DOMContentLoaded', () => {
   registerScrollTop();
   registerTerminals($terminals);
   registerShare();
+  registerThemeToggler();
 });

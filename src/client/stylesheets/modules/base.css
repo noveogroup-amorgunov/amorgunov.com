@@ -5,8 +5,8 @@
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5em;
-  background-color: var(--color-white);
-  color: var(--color-dark);
+  background-color: var(--background-color);
+  color: var(--text-color);
   color-scheme: light dark;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -23,7 +23,7 @@
 hr {
   border: 0;
   height: 3px;
-  background-color: var(--color-grey3);
+  background-color: var(--secondary-background-color);
 }
 
 .page__content:not(.post) > h1,
@@ -37,7 +37,7 @@ h3 {
 
 a {
   text-decoration: none;
-  color: var(--color-grey1);
+  color: var(--secondary-text-color);
 }
 
 pre {
@@ -61,4 +61,28 @@ ol {
 
 .section {
   padding: 16px 0;
+}
+
+.icon {
+  html[data-theme="dark"] & {
+    filter: invert(1);
+  }
+
+  &:hover {
+    background-color: var(--outline-color);
+    border-radius: 4px;
+  }
+}
+
+html[data-theme="dark"] img {
+  filter: brightness(0.8) contrast(1.2);
+}
+
+.post img.inverting {
+  mix-blend-mode: multiply;
+
+  html[data-theme="dark"] & {
+    filter: invert(100%) hue-rotate(180deg);
+    mix-blend-mode: screen;
+  }
 }

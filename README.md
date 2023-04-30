@@ -19,7 +19,7 @@ You can see all pages on [https://amorgunov.com](https://amorgunov.com)
 - Likes post system (using *github actions* and *AWS Lambda*)
 - CLI scripts to create posts and optimize images
 - Lazy loading image like *Medium.com*
-- [ ] Dark theme
+- Dark theme
 - [ ] I18n mode
 
 ## Development
@@ -35,6 +35,10 @@ npm run build:webpack
 # start webpack and 11ty watchers
 npm run start
 ```
+
+## Troubleshoots
+
+- Add dark theme to `manifest.json` when it will be supported (see https://github.com/w3c/manifest/issues/975)
 
 ## License
 

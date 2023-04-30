@@ -8,9 +8,9 @@ https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javasc
 
  code[class*="language-"],
  pre[class*="language-"] {
-	 color: black;
+	 color: var(--text-color);
 	 background: none;
-	 text-shadow: 0 1px white;
+	 text-shadow: 0 1px var(--background-color);
 	 font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
 	 font-size: 16px;
 	 text-align: left;
@@ -61,7 +61,7 @@ https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javasc
  
  :not(pre) > code[class*="language-"],
  pre[class*="language-"] {
-	 background: #f0f0f5;
+	 background: var(--code-background-color);
  }
  
  /* Inline code */
@@ -112,7 +112,7 @@ https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javasc
  .style .token.string {
 	 color: #9a6e3a;
 	 /* This background color was intended by the author of this theme. */
-	 background: hsla(0, 0%, 100%, .5);
+	 background: var(--code-outline-color);
  }
  
  .token.atrule,
@@ -193,7 +193,7 @@ https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javasc
 		 vertical-align: .3em;
 		 border-radius: 999px;
 		 text-shadow: none;
-		 box-shadow: 0 1px white;
+		 box-shadow: 0 1px var(--background-color);
 	 }
  
 	 .line-highlight[data-end]:after {
@@ -347,9 +347,17 @@ pre > code.diff-highlight .token.inserted:not(.prefix) {
 }
 
 .token.deleted {
-	background: #ffe1e1;
+	background-color: #ffe1e1;
+
+	html[data-theme="dark"] & {
+    background-color: #8d2d2d3b;
+  }
 }
 
 .token.inserted {
-	background: #f0ffde;
+	background-color: #f0ffde;
+
+	html[data-theme="dark"] & {
+    background-color: #84b14e12;
+  }
 }

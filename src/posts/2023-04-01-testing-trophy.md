@@ -20,7 +20,7 @@ likes: 24
 Обычно когда речь заходит про тесты, говорят про пирамиду тестирования. По сути это способ визуального отображения, сколько в проекте должно быть тестов каждого вида (слоя):
 
 <img
-  class="lazyload"
+  class="lazyload inverting"
   alt="Пирамида тестирования"
   src="/assets/images/2023-04-01-testing-trophy/2.min.png"
   data-src="/assets/images/2023-04-01-testing-trophy/2.out.jpg"
@@ -40,7 +40,7 @@ likes: 24
 ## Трофей тестирования
 
 <img
-  class="lazyload"
+  class="lazyload inverting"
   alt="Пирамида тестирования устарела"
   src="/assets/images/2023-04-01-testing-trophy/4.min.png"
   data-src="/assets/images/2023-04-01-testing-trophy/4.out.jpg"
@@ -50,7 +50,7 @@ likes: 24
 ). В нем сильно изменились пропорции и добавился новый слой - «Статические тесты»:
 
 <img
-  class="lazyload image_size_xl"
+  class="lazyload image_size_xl inverting"
   alt="Трофей тестирования"
   src="/assets/images/2023-04-01-testing-trophy/3.min.png"
   data-src="/assets/images/2023-04-01-testing-trophy/3.out.jpg"
@@ -83,7 +83,7 @@ describe('sum', () => {
 Все это Кент вынес в слой статических тестов:
 
 <img
-  class="lazyload"
+  class="lazyload inverting"
   alt="Слой статических тестов"
   src="/assets/images/2023-04-01-testing-trophy/10.min.png"
   data-src="/assets/images/2023-04-01-testing-trophy/10.out.jpg"
@@ -94,7 +94,7 @@ describe('sum', () => {
 Следующий слой — это юнит тесты. Пишутся они на изолированные участки кода (функции, методы класса, хуки и т.д.) и выполняются на стороне NodeJS (на самом деле их можно и в браузере запустить, но обычно этого не делают).
 
 <img
-  class="lazyload"
+  class="lazyload inverting"
   alt="Слой юнит тестов"
   src="/assets/images/2023-04-01-testing-trophy/5.min.png"
   data-src="/assets/images/2023-04-01-testing-trophy/5.out.jpg"
@@ -127,7 +127,7 @@ describe('sum', () => {
 - Они ну очень долгие
 
 <img
-  class="lazyload"
+  class="lazyload inverting"
   alt="Слой E2E тестов"
   src="/assets/images/2023-04-01-testing-trophy/6.min.png"
   data-src="/assets/images/2023-04-01-testing-trophy/6.out.jpg"
@@ -142,7 +142,7 @@ describe('sum', () => {
 Кто внимательно рассмотрел трофей тестирования, мог заметить, что интеграционным тестов выделено очень много места (на моей схеме это не так выделяется, извините, но в оригинале их площадь на схеме довольно большая).
 
 <img
-  class="lazyload"
+  class="lazyload inverting"
   alt="Интеграционные тесты"
   src="/assets/images/2023-04-01-testing-trophy/7.min.png"
   data-src="/assets/images/2023-04-01-testing-trophy/7.out.jpg"
@@ -177,7 +177,7 @@ describe('sum', () => {
 Для таких случаев я выделяю еще один слой — скриншотные тесты (еще их часто называют скриншотные юнит-тесты). Делается скриншот UI-компонента (виджета или даже страницы), и все следующие прогоны сравнивают первый скриншот со сгенерированным в текущем прогоне.
 
 <img
-  class="lazyload"
+  class="lazyload inverting"
   alt="Кастомный слой со скриншотными тестами"
   src="/assets/images/2023-04-01-testing-trophy/8.min.png"
   data-src="/assets/images/2023-04-01-testing-trophy/8.out.jpg"
@@ -200,7 +200,7 @@ describe('sum', () => {
 Мы прошлись по всем слоям (уровням) трофея и получили идеальный вариант для современного среднестатистический приложения:
 
 <img
-  class="lazyload image_size_xl"
+  class="lazyload image_size_xl inverting"
   alt="Финальная версия трофея тестирования"
   src="/assets/images/2023-04-01-testing-trophy/9.min.png"
   data-src="/assets/images/2023-04-01-testing-trophy/9.out.jpg"
@@ -213,7 +213,7 @@ describe('sum', () => {
 Что я вам рекомендую сделать? Нарисуйте трофей вашего текущего проекта, устраивает ли он вас? А может какие-то слои слишком выделяются или их вообще нет? Ниже я нарисовал трофеи для последних трех рабочих проектов, на которых я работал:
 
 <img
-  class="lazyload image_size_xl"
+  class="lazyload image_size_xl inverting"
   alt="А какой трофей тестирования у вас?"
   src="/assets/images/2023-04-01-testing-trophy/11.min.png"
   data-src="/assets/images/2023-04-01-testing-trophy/11.out.jpg"

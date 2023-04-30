@@ -1,5 +1,5 @@
 .quiz {
-  background: var(--color-grey3);
+  background: var(--secondary-background-color);
   padding: 30px;
   min-height: 300px;
 
@@ -27,8 +27,8 @@
 
 .quiz__btn {
   padding: 5px 15px;
-  background: var(--color-primary);
-  color: var(--color-dark);
+  background: var(--brand-color);
+  color: var(--text-color);
   border: 0;
   font-size: 16px;
   cursor: pointer;
