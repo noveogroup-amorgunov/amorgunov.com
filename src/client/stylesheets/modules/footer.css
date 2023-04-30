@@ -4,10 +4,10 @@
   align-items: flex-end;
   gap: 4px;
   padding-top: 58px;
-  color: var(--color-grey1);
+  color: var(--secondary-text-color);
   line-height: 1;
 }
 
 .footer__item_divider {
-  color: var(--color-grey3);
+  color: var(--secondary-background-color);
 }

@@ -19,7 +19,7 @@
 
   p code,
   li code {
-    background: var(--color-grey3);
+    background: var(--secondary-background-color);
     padding: 1px 5px;
     font-family: 'Fira Mono', monospace;
   }
@@ -36,15 +36,19 @@
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' aria-hidden='true' x='0px' y='0px' viewBox='0 0 100 100' width='15' height='15' class='icon outbound'%3E%3Cpath fill='currentColor' d='M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z'%3E%3C/path%3E%3Cpolygon fill='currentColor' points='45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9'%3E%3C/polygon%3E%3C/svg%3E");
     opacity: 0.8;
     content: '\2009';
+
+    html[data-theme="dark"] & {
+      filter: invert(1);
+    }
   }
 
   a:not(.tag) {
     text-decoration: underline;
-    color: var(--color-secondary);
+    color: var(--secondary-brand-color);
 
     &:hover {
       text-decoration: none;
-      color: var(--color-secondaryPressed);
+      color: var(--secondary-brand-colorPressed);
     }
   }
 
@@ -88,7 +92,7 @@
 }
 
 .post__date {
-  color: var(--color-grey1);
+  color: var(--secondary-text-color);
   padding: 8px 0;
 }
 
@@ -97,7 +101,7 @@
 }
 
 .post-series {
-  background: #fef6ec;
+  background: #e27e001f;
   margin: 0 0 1rem;
   padding: 2rem;
   counter-reset: post-series-counter;
@@ -112,7 +116,7 @@
     counter-increment: post-series-counter;
 
     &::before {
-      color: #000;
+      color: var(--text-color);
       font-weight: bold;
       content: "Часть " counter(post-series-counter) ": ";
     }
@@ -144,13 +148,13 @@ pre code.hljs {
 .image-text {
   text-align: center;
   margin: 0 auto 20px;
-  color: var(--color-grey1);
+  color: var(--secondary-text-color);
   font-size: 16px;
   line-height: 16px;
 }
 
 .code-path {
-  color: var(--color-grey1);
+  color: var(--secondary-text-color);
   font-family: 'Fira Mono', monospace;
   font-size: 13px;
   margin-top: 10px;
@@ -159,12 +163,12 @@ pre code.hljs {
 }
 
 .direct-link {
-  color: var(--color-grey1) !important;
+  color: var(--secondary-text-color) !important;
   text-decoration: none !important;
 }
 
 .arrow {
-  border: solid var(--color-dark);
+  border: solid var(--text-color);
   border-width: 0 2px 2px 0;
   display: inline-block;
   padding: 5px;
@@ -189,11 +193,11 @@ pre code.hljs {
   transform: translateZ(0);
   z-index: 999;
   left: 0;
-  color: var(--color-dark);
+  color: var(--text-color);
   text-align: center;
 
   &:hover {
-    background: var(--color-grey4);
+    background: var(--outline-color);
     opacity: 0.8;
   }
 
@@ -231,4 +235,8 @@ pre code.hljs {
   height: 60px;
   background-position: center center;
   margin: 16px auto;
+
+  html[data-theme="dark"] & {
+    filter: invert(0.9);
+  }
 }

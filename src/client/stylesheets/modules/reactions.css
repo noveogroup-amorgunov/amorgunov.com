@@ -5,7 +5,7 @@
   gap: 16px;
   padding: 24px;
   border-radius: 35px;
-  background: var(--color-grey3);
+  background: var(--secondary-background-color);
 }
 
 .reaction {
@@ -21,7 +21,7 @@
 
 .reaction__image {
   position: relative;
-  filter: grayscale(1);
+  filter: grayscale(1) !important;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
 
@@ -30,7 +30,7 @@
   }
 
   .reaction_active & {
-    filter: grayscale(0);
+    filter: grayscale(0) !important;
   }
 }
 
@@ -45,7 +45,8 @@
   right: 0;
   width: 20px;
   height: 20px;
-  background-color: var(--color-primary);
+  background-color: var(--brand-color);
+  color: var(--color-dark);
 
   .reaction_active & {
     background-color: var(--color-dark);

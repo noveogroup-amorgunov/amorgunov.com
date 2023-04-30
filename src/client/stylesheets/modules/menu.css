@@ -44,7 +44,7 @@ body:not(.loaded) .menu {
   height: 100%;
   max-width: 320px;
   width: 85%;
-  background: var(--color-white);
+  background: var(--background-color);
   transform: translateX(100%);
   transition: transform 0.3s ease-in-out;
   text-align: left;
@@ -95,11 +95,6 @@ body:not(.loaded) .menu {
   background-image: url(/assets/images/icons/cross.svg);
   background-repeat: no-repeat;
   background-size: 19px 19px;
-
-  &:hover {
-    background-color: var(--color-grey4);
-    border-radius: 4px;
-  }
 }
 
 .menu__logo {
@@ -110,6 +105,10 @@ body:not(.loaded) .menu {
   background-repeat: no-repeat;
   background-size: 42px;
   background-position-y: -10px;
+
+  html[data-theme="dark"] & {
+    filter: invert(0.9);
+  }
 }
 
 @keyframes fadeOut {

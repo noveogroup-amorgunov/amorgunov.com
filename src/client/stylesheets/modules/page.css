@@ -5,7 +5,7 @@
   margin: 0 auto;
   max-width: 82ch;
   min-height: calc(100vh - 16px);
-  background-color: var(--color-white);
+  background-color: var(--background-color);
 }
 
 .page__container {
@@ -14,7 +14,7 @@
   flex-grow: 1;
   padding: 36px 24px;
   border-radius: 0;
-  background-color: var(--color-white);
+  background-color: var(--background-color);
 }
 
 .page__content {
@@ -38,5 +38,5 @@
 
 .page_type_home p:last-child {
   line-height: 18px;
-  color: var(--color-grey2);
+  color: var(--color-grey);
 }

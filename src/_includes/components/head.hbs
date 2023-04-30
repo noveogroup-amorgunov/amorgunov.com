@@ -4,7 +4,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <link rel="preconnect" href="https://www.google-analytics.com">
-<meta name="theme-color" content="#fff" />
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#fff" />
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#121212" />
+<meta name="color-scheme" content="light dark">
 <meta name="robots" content="index,follow" />
 <title>{{#if title}}{{title}}{{else}}{{ metadata.title}}{{/if}}</title>
 <meta name="description" content="{{#if description}}{{description}}{{else}}{{ metadata.description}}{{/if}}">
@@ -19,3 +21,4 @@
 <meta property="twitter:image" content="{{metadata.url}}{{#if featuredImageThumbnail}}{{featuredImageThumbnail}}{{else}}{{metadata.featuredImageThumbnail}}{{/if}}">
 <link rel="alternate" href="{{url metadata.feed.path ''}}" type="application/atom+xml" title="{{metadata.title}}">
 <link rel="manifest" href="/manifest.json">
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'light')</script>
