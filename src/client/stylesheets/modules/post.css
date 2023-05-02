@@ -240,3 +240,7 @@ pre code.hljs {
     filter: invert(0.9);
   }
 }
+
+.post__subscribe {
+  padding: 28px 0;
+}
