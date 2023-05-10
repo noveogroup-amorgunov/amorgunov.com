@@ -1,0 +1,138 @@
+---
+layout: layouts/next.hbs
+title: Подписаться на email-рассылку
+description: Подписаться на рассылку о новых постах
+permalink: /subscribe/
+excludeFromSitemap: true
+---
+
+{{#> components/text type="h1" as="h1"}}Подписаться на email-рассылку{{/ components/text}}
+
+<p>Я не так часто пишу посты, но все же иногда во мне просыпается писатель, и рассказываю о том, с чем сталкиваюсь в процессе работы или агрегирую полученные знания в учебные материалы.
+Поэтому, если вы не хотите пропускать новые материалы, то можете подписаться на email рассылку по форме ниже.</p>
+<p style="font-style: italic;">Я уважаю ваше время, поэтому планирую делать рассылку не чаще 1 раза в месяц (а скорее всего будет реже),
+	и вы сможете отписаться в любой момент.</p>
+
+<!--Zoho Campaigns Web-Optin Form's Header Code Starts Here-->
+
+<style>
+	p {
+		padding: 8px 0;
+	}
+
+	.SIGNUP_FLD {
+		padding: 8px 0;
+		display: block;
+	}
+
+	.subscribe-form {
+		padding-top: 30px;
+		max-width: 400px;
+	}
+
+	.subscribe-form__buttom {
+		padding: 12px 20px;
+    background: #fbf11f;
+    color: rgba(18,20,22,0.84706);
+    border: 0;
+    font-size: 16px;
+    border-radius: 5px;
+    font-weight: bold;
+		cursor: pointer;
+	}
+
+	.subscribe-form__buttom:hover {
+		background: #eff32c;
+	}
+
+	.subscribe-form__input {
+		background-color: rgb(243, 244, 246);
+		border-color: transparent;
+		border-radius: 0.375rem;
+		width: 100%;
+
+    appearance: none;
+    border-width: 1px;
+		padding-right: 0.75rem;
+    padding-bottom: 0.5rem;
+    padding-left: 0.75rem;
+    padding-top: 0.5rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
+		box-sizing:border-box;
+
+		outline: 2px solid transparent;
+    outline-offset: 2px;
+	}
+
+	.subscribe-form__input:focus {
+		background-color: #fff;
+		box-shadow: #aaa;
+		border-color: #aaa;
+	}
+</style>
+<script type="text/javascript" src="https://zcvf-zcglf.maillist-manage.com/js/optin.min.js" onload="setupSF('sf3zcd8cbd7b0bba11d77df235aecfa38fb310770f9bba6a47fa5d41d34d83df719f','ZCFORMVIEW',false,'light',false,'0')"></script>
+<script type="text/javascript">
+	function runOnFormSubmit_sf3zcd8cbd7b0bba11d77df235aecfa38fb310770f9bba6a47fa5d41d34d83df719f(th){
+		/*Before submit, if you want to trigger your event, "include your code here"*/
+	};
+</script>
+
+<div id="sf3zcd8cbd7b0bba11d77df235aecfa38fb310770f9bba6a47fa5d41d34d83df719f" data-type="signupform" >
+	<div id="customForm">
+		<div class="quick_form_7_css" name="SIGNUP_BODY">
+			<div>
+				<div>
+					<div id="Zc_SignupSuccess" style="display:none">
+						<span class="text_type_h2" id="signupSuccessMsg" >✅ Спасибо за подписку</span>
+					</div>
+				</div>
+				<form class="subscribe-form" method="POST" id="zcampaignOptinForm" action="https://zcvf-zcglf.maillist-manage.com/weboptin.zc" target="_zcSignup">
+					<div id="errorMsgDiv" style="display:none">Пожалуйста заполните правильно поля ниже.</div>
+					<label class="SIGNUP_FLD ">
+						<span class="subscribe-form__label">Email</span>
+						<input placeholder="you@example.com" class="subscribe-form__input" type="email" changeitem="SIGNUP_FORM_FIELD" name="CONTACT_EMAIL" id="EMBED_FORM_EMAIL_LABEL">
+					</label>
+					<label class="SIGNUP_FLD">
+						<span class="subscribe-form__label">Имя</span>
+						<input placeholder="Предпочитаемое имя" class="subscribe-form__input" type="text" changeitem="SIGNUP_FORM_FIELD" name="FIRSTNAME" id="FIRSTNAME">
+					</label>
+					<div class="SIGNUP_FLD">
+						<input class="subscribe-form__buttom" type="button" name="SIGNUP_SUBMIT_BUTTON" id="zcWebOptin" value="Подписаться">
+					</div>
+					<input type="hidden" id="fieldBorder" value="">
+					<input type="hidden" id="submitType" name="submitType" value="optinCustomView">
+					<input type="hidden" id="emailReportId" name="emailReportId" value="">
+					<input type="hidden" id="formType" name="formType" value="QuickForm">
+					<input type="hidden" name="zx" id="cmpZuid" value="13045c8a4">
+					<input type="hidden" name="zcvers" value="3.0">
+					<input type="hidden" name="oldListIds" id="allCheckedListIds" value="">
+					<input type="hidden" id="mode" name="mode" value="OptinCreateView">
+					<input type="hidden" id="zcld" name="zcld" value="1f44497a9fbd0083">
+					<input type="hidden" id="zctd" name="zctd" value="">
+					<input type="hidden" id="document_domain" value="">
+					<input type="hidden" id="zc_Url" value="zcvf-zcglf.maillist-manage.com">
+					<input type="hidden" id="new_optin_response_in" value="0">
+					<input type="hidden" id="duplicate_optin_response_in" value="0">
+					<input type="hidden" name="zc_trackCode" id="zc_trackCode" value="ZCFORMVIEW">
+					<input type="hidden" id="zc_formIx" name="zc_formIx" value="3zcd8cbd7b0bba11d77df235aecfa38fb310770f9bba6a47fa5d41d34d83df719f">
+					<input type="hidden" id="viewFrom" value="URL_ACTION">
+					<span style="display:none" id="dt_CONTACT_EMAIL">1,true,6,Contact Email,2</span>
+					<span style="display:none" id="dt_FIRSTNAME">1,false,1,First Name,2</span>
+					<span style="display:none" id="dt_LASTNAME">1,false,1,Last Name,2</span>
+				</form>
+			</div>
+		</div>
+	</div>
+	<img src="https://zcvf-zcglf.maillist-manage.com/images/spacer.gif" id="refImage" onload="referenceSetter(this)" style="display:none;">
+</div>
+<input type="hidden" id="signupFormType" value="QuickForm_Horizontal">
+<div id="zcOptinOverLay" oncontextmenu="return false" style="display:none;"></div>
+<div id="zcOptinSuccessPopup" style="display:none;">
+	<span id="closeSuccess">
+		[закрыть]
+	</span>
+	<div id="zcOptinSuccessPanel"></div>
+</div>
+
+<!--Zoho Campaigns Web-Optin Form Ends Here-->
