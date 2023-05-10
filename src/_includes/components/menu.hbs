@@ -1,9 +1,14 @@
 <div class="menu">
   <div class="menu__overlay"></div>
   <div class="menu__content">
-    <div class="menu__header">  
+    <div class="menu__header">
       <a href="/" class="menu__logo"></a>
       <a href="#" class="icon menu__toggler"></a>
+    </div>
+    <div class="menu__block">
+      Здесь должно быть что-то очень полезное и доступное на всех страницах блога,
+      но к сожалению чего-то по настоящему стоящего я придумать не смог. Поэтому
+      чекайте самые популярные теги на блоге и последние посты.
     </div>
     <div class="menu__block">
       {{#> components/text type="captionStrong" class="menu__block-header"}}
@@ -16,7 +21,7 @@
       {{#> components/text type="captionStrong" class="menu__block-header"}}
         {{#> components/link href="#"}}Последние посты{{/ components/link}}
       {{/ components/text}}
-      {{> components/post-list popular="1" compact="1" posts=(reverse (head collections.posts 4))}}
+      {{> components/post-list compact="1" posts=(reverse (head collections.posts 2))}}
     </div>
   </div>
 </div>
