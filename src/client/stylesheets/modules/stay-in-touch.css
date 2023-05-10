@@ -1,0 +1,44 @@
+.stay-in-touch {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+  border-radius: 35px;
+  background: var(--secondary-background-color);
+  margin-top: 32px;
+}
+
+.stay-in-touch__content {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+
+  @media (--viewport-mobile) {
+    flex-direction: column;
+  }
+}
+
+.stay-in-touch__button {
+  height: 24px;
+  padding: 12px 20px;
+  background: var(--brand-color);
+  color: var(--color-dark);
+  border: 0;
+  font-size: 16px;
+  border-radius: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  gap: 8px;
+
+  &:hover {
+    background: var(--brand-colorPressed);
+  }
+}
+
+.stay-in-touch__icon {
+  background-image: url("/assets/images/icons/send.svg");
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+}

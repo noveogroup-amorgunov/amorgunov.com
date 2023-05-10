@@ -21,24 +21,24 @@
 
 .header__right {
   display: flex;
-  gap: 16px;
+  gap: 8px;
 }
 
 .header__menu-toggler {
   display: block;
-  width: 19px;
-  height: 19px;
-  background-image: url("/assets/images/icons/menu.svg");
+  width: 24px;
+  height: 24px;
+  background-image: url("/assets/images/icons/code.svg");
   background-repeat: no-repeat;
 }
 
 .header__theme-toggler {
   display: block;
-  width: 23px;
-  height: 23px;
+  width: 24px;
+  height: 24px;
   background-image: url("/assets/images/icons/moon.svg");
   background-repeat: no-repeat;
-  margin-top: -2px;
+  /* margin-top: -2px; */
 
   html[data-theme="dark"] & {
     background-image: url("/assets/images/icons/sun.svg");
