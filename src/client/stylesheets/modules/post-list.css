@@ -130,6 +130,10 @@ a.post-list__card {
 
   color: var(--color-dark);
 
+  html[data-theme="dark"] & {
+    filter: invert(1);
+  }
+
   .post-list_popular & {
     font-size: 19px;
     filter: none !important;
