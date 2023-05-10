@@ -28,11 +28,16 @@ hr {
 
 .page__content:not(.post) > h1,
 h2 {
-  margin: 0.83em 0;
+  margin: 0.83em 0 0.4em;
+}
+
+h2 {
+  font-size: 1.8em;
 }
 
 h3 {
-  padding-top: 1em;
+  font-size: 1.4em;
+  margin: 0.83em 0 0.4em;
 }
 
 a {

@@ -36,11 +36,11 @@
   display: block;
   width: 23px;
   height: 23px;
-  background-image: url("/assets/images/icons/sun.svg");
+  background-image: url("/assets/images/icons/moon.svg");
   background-repeat: no-repeat;
   margin-top: -2px;
 
   html[data-theme="dark"] & {
-    background-image: url("/assets/images/icons/moon.svg");
+    background-image: url("/assets/images/icons/sun.svg");
   }
 }

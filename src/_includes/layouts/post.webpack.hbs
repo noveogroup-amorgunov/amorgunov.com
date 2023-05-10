@@ -26,6 +26,26 @@
           </div>
         </div>
         <div class="post__reactions reactions"></div>
+        <section class="post__subscribe">
+          <div>
+            {{#> components/text type="h3"}}
+              Оставайтесь на связи
+            {{/ components/text}}
+          </div>
+          <div class="post__subscribe-content">
+            <div>
+              {{#> components/text type="body"}}
+              Чтобы не пропустить новые посты или анонсы проектов, которые я делаю,
+              вы можете присоединиться к <span class="text_type_bodyStrong">телеграм каналу</span>,
+              чтобы оставаться на связи,
+              задавать вопросы или просто вместе обсуждать различные инженерные темы.
+              {{/ components/text}}
+            </div>
+            <a class="post__subscribe-button" href="https://t.me/amorgunov" rel="noreferrer external" target="_blank">
+              <span class="post__subscribe-icon"></span> Присоединиться
+            </a>
+          </div>
+        </section>
         <div class="post__readmore">
           {{#> components/text type="h3" as="h3" class="post__readmore-title"}}Вам может быть интересно{{/ components/text}}
           {{> components/post-list popular="true" posts=(relatedPosts collections.posts page.url tags 3)}}
