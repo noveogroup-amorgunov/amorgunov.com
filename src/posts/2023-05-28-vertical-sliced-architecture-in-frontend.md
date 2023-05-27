@@ -79,7 +79,7 @@ src
   class="lazyload inverting"
   alt="Пример слайсов поверх слоев"
   src="/assets/images/2023-05-28-vertical-sliced-architecture-in-frontend/1-sliced-over-layer-architecture.min.png"
-  data-src="/assets/images/2023-05-28-vertical-sliced-architecture-in-frontend/1-sliced-over-layer-architecture.png"
+  data-src="/assets/images/2023-05-28-vertical-sliced-architecture-in-frontend/1-sliced-over-layer-architecture.out.jpg"
 />
 
 Сперва начали складывать по слайсам только слои, которые относятся к состоянию приложения (в контексте редакса: *Reducers*, *Actions*, *Selector*). Назвали это «Duck modular approach», а основые моменты описали в [github/ducks-modular-redux](https://github.com/erikras/ducks-modular-redux):
