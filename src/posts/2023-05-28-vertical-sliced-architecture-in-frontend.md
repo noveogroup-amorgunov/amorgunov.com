@@ -2,7 +2,7 @@
 title: "Архитектура фронтенда на основе вертикальных слайсов"
 date: 2023-05-28
 description: "Обсудим подход вертикальных слайсов через технические слои во фронтенде"
-featuredImageThumbnail: "/assets/images/TODO/preview.jpg"
+featuredImageThumbnail: "/assets/images/2023-05-28-vertical-sliced-architecture-in-frontend/2-sliced-over-clean-architecture.out.jpg"
 tags:
   - architecture
   - frontend
@@ -78,8 +78,8 @@ src
 <img
   class="lazyload inverting"
   alt="Пример слайсов поверх слоев"
-  src="/assets/images/2023-05-28-verical-sliced-architecture-in-frontend/1-sliced-over-layer-architecture.min.png"
-  data-src="/assets/images/2023-05-28-verical-sliced-architecture-in-frontend/1-sliced-over-layer-architecture.png"
+  src="/assets/images/2023-05-28-vertical-sliced-architecture-in-frontend/1-sliced-over-layer-architecture.min.png"
+  data-src="/assets/images/2023-05-28-vertical-sliced-architecture-in-frontend/1-sliced-over-layer-architecture.png"
 />
 
 Сперва начали складывать по слайсам только слои, которые относятся к состоянию приложения (в контексте редакса: *Reducers*, *Actions*, *Selector*). Назвали это «Duck modular approach», а основые моменты описали в [github/ducks-modular-redux](https://github.com/erikras/ducks-modular-redux):
@@ -135,8 +135,8 @@ src
 <img
   class="lazyload inverting"
   alt="Пользовательские истории в контексте слайса"
-  src="/assets/images/2023-05-28-verical-sliced-architecture-in-frontend/3-user-cases-in-slices-context.min.png"
-  data-src="/assets/images/2023-05-28-verical-sliced-architecture-in-frontend/3-user-cases-in-slices-context.out.jpg"
+  src="/assets/images/2023-05-28-vertical-sliced-architecture-in-frontend/3-user-cases-in-slices-context.min.png"
+  data-src="/assets/images/2023-05-28-vertical-sliced-architecture-in-frontend/3-user-cases-in-slices-context.out.jpg"
 />
 
 ### Что с чистой архитектурой?
@@ -160,8 +160,8 @@ src
 <img
   class="lazyload inverting"
   alt="Пример слайсов поверх слоев чистой архитектуры"
-  src="/assets/images/2023-05-28-verical-sliced-architecture-in-frontend/2-sliced-over-clean-architecture.min.png"
-  data-src="/assets/images/2023-05-28-verical-sliced-architecture-in-frontend/2-sliced-over-clean-architecture.out.jpg"
+  src="/assets/images/2023-05-28-vertical-sliced-architecture-in-frontend/2-sliced-over-clean-architecture.min.png"
+  data-src="/assets/images/2023-05-28-vertical-sliced-architecture-in-frontend/2-sliced-over-clean-architecture.out.jpg"
 />
 
 ```treeview
@@ -285,8 +285,8 @@ src
 <img
   class="lazyload"
   alt="Интерфейс модуля детальной информации и продукте"
-  src="/assets/images/2023-05-28-verical-sliced-architecture-in-frontend/7-product-details.min.png"
-  data-src="/assets/images/2023-05-28-verical-sliced-architecture-in-frontend/7-product-details.out.jpg"
+  src="/assets/images/2023-05-28-vertical-sliced-architecture-in-frontend/7-product-details.min.png"
+  data-src="/assets/images/2023-05-28-vertical-sliced-architecture-in-frontend/7-product-details.out.jpg"
 />
 
 У этого модуля может быть свой запрос в API, свое состояние (загружаются данные, была ли получена ошибка), свой UI (общая сетка, изображения, доступные пользователю действия, доступные размеры и т.д.). Он ориентирован на пользователя (предоставляет детальную информацию о товаре). Его можно переиспользовать в различных местах: на отдельной странице или внутри какого-нибудь модального окна. Все требования выполнены - это фича.
@@ -296,8 +296,8 @@ src
 <img
   class="lazyload"
   alt="Разбиваем интерфейс на фичи"
-  src="/assets/images/2023-05-28-verical-sliced-architecture-in-frontend/6-product-details-in-features-slice.min.png"
-  data-src="/assets/images/2023-05-28-verical-sliced-architecture-in-frontend/6-product-details-in-features-slice.out.jpg"
+  src="/assets/images/2023-05-28-vertical-sliced-architecture-in-frontend/6-product-details-in-features-slice.min.png"
+  data-src="/assets/images/2023-05-28-vertical-sliced-architecture-in-frontend/6-product-details-in-features-slice.out.jpg"
 />
 
 Но как объединить этот паттерн фичей со структурой проекта из прошлых разделов? Здесь нам поможет простое правило - не хватает уровня композиции для слоев, вводим новый слой!
@@ -350,8 +350,8 @@ src
 <img
   class="lazyload"
   alt="Что может лежать в домене"
-  src="/assets/images/2023-05-28-verical-sliced-architecture-in-frontend/8-domain-parts.min.png"
-  data-src="/assets/images/2023-05-28-verical-sliced-architecture-in-frontend/8-domain-parts.out.jpg"
+  src="/assets/images/2023-05-28-vertical-sliced-architecture-in-frontend/8-domain-parts.min.png"
+  data-src="/assets/images/2023-05-28-vertical-sliced-architecture-in-frontend/8-domain-parts.out.jpg"
 />
 
 Внутри списка используется карточка отображения, которая используется по всему приложению? Отличный кандидат для попадания в `domain/product/components/ProductCard.tsx`. Есть действие добавление в список желаний/корзину  - `domain/product/store/actions/*`. Как то форматируется цена - `domain/product/helpers/formatPrice.ts`. И так далее. Все, что используется универсально на уровне бизнес сущности по всему приложению (в различных фичах или страницах) можно вынести в слой `domain`.
@@ -380,8 +380,8 @@ src
 <img
   class="lazyload"
   alt="Пример использования фичи в фиче"
-  src="/assets/images/2023-05-28-verical-sliced-architecture-in-frontend/9-using-feature-into-feature.min.png"
-  data-src="/assets/images/2023-05-28-verical-sliced-architecture-in-frontend/9-using-feature-into-feature.out.jpg"
+  src="/assets/images/2023-05-28-vertical-sliced-architecture-in-frontend/9-using-feature-into-feature.min.png"
+  data-src="/assets/images/2023-05-28-vertical-sliced-architecture-in-frontend/9-using-feature-into-feature.out.jpg"
 />
 
 Это можно сделать, создав рендер-проп `rightContentSlot` в *LayoutHeader*, который будет рендерить переданный в компонент контент. Т.е. *LayoutHeader* и *LayoutProfileCard* остаются изолированными фичами, ничего не зная друг о друге.
@@ -389,8 +389,8 @@ src
 <img
   class="lazyload"
   alt="Место для рендер прода"
-  src="/assets/images/2023-05-28-verical-sliced-architecture-in-frontend/10-render-slot-example.min.png"
-  data-src="/assets/images/2023-05-28-verical-sliced-architecture-in-frontend/10-render-slot-example.out.jpg"
+  src="/assets/images/2023-05-28-vertical-sliced-architecture-in-frontend/10-render-slot-example.min.png"
+  data-src="/assets/images/2023-05-28-vertical-sliced-architecture-in-frontend/10-render-slot-example.out.jpg"
 />
 
 В коде это может выглядить следующим образом. Сам компонент *LayoutHeader*:
