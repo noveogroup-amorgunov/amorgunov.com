@@ -331,7 +331,8 @@ mount(createDOMNode(createVApp(state)), app);
 
 setInterval(() => {
   state.count++;
-  mount(createDOMNode(createVApp(state)), app);
+  const target = document.querySelector("[data-count]")
+  mount(createDOMNode(createVApp(state)), target);
 }, 1000);
 ```
 
