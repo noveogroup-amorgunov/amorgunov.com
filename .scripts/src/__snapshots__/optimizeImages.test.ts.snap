@@ -1,0 +1,26 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`compressImage > should create a stub for an image file 1`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      [
+        "src/__tests__/image.out.png",
+      ],
+      {
+        "destination": "src/__tests__/",
+        "plugins": [
+          [Function],
+          [Function],
+        ],
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": "",
+    },
+  ],
+}
+`;

@@ -1,4 +1,5 @@
-name: Update like counters
+name: Update post reactions
+
 on:
   workflow_dispatch:
   schedule:
@@ -8,25 +9,35 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v3
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
         with:
-          node-version: 16.x
+          version: 10
+          run_install: false
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'pnpm'
+
       - name: Install dependencies
         working-directory: ./.scripts
-        run: npm install
-      - name: Update post likes
+        run: pnpm install
+
+      - name: Update post reactions
         working-directory: ./.scripts
-        run: npm run update-post-likes
+        run: pnpm update-post-reactions
+
       - name: Commit changes
         uses: EndBug/add-and-commit@v5
         with:
           author_name: noveogroup-amorgunov
           author_email: noveogroupamorgunov@gmail.com
-          message: "Update post likes"
+          message: "[Automated] Update post reactions"
           add: src
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  
