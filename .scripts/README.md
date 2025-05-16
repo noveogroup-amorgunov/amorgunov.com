@@ -1,42 +1,44 @@
-# Commands
+# scripts
 
-## New post
+- [Generate new post](#generate-new-post)
+- [Optimize post images](#optimize-post-images)
+- [Update post reactions](#update-post-reactions)
 
-Create new post:
+## Generate new post
 
-- create markdown file and put it to content folder;
-- create image folder;
-
-Usage:
-
-```bash
-npm run create-post <title> <slug?> <date?>
-npm run create-post "Awesome title" "awesome-slug" "2019-12-22"
-npm run create-post "Awesome title" # Slug is auto-generated and date is current
-```
-
-then you can generate preview:
-
-```bash
-node .scripts/generatePreview --slug=<slug>
-```
-
-## Optimize images
-
-- Create small thumbnail version of images usign lqip
-- Optimize image using squoosh
+- Create markdown file and put it to content folder
+- Create image folder
 
 Usage:
 
 ```bash
-node .scripts/optimizeImage --slug=<slug> --replace
+# template
+# pnpm optimize-images --help
+# pnpm optimize-images --title=<title> --slug=<slug> --date=<date?>
+
+npm run create-post --title="Awesome title" --slug="awesome-slug" "2019-12-22"
+npm run create-post --title="Awesome title" --slug="awesome-slug" # with current date
 ```
 
-You can pass `--replace` arg to remove original images.
+## Optimize post images
 
-To replace images path in post you can use follow regex:
+- Create small thumbnail version of images with `LQIP` (`*.min.(png|jpg)`)
+- Optimize image with `imagemin` (`*.out.(png|jpg)`)
+- Remove original files
 
+Usage:
+
+```bash
+# template
+# pnpm optimize-images <path>
+
+pnpm optimize-images ../src/assets/images/2025-05-20-how-solve-cross-imports
 ```
-/(\d+).(png|jpg|jpeg)
-/$1.out.jpg
+
+## Update post reactions
+
+Usage:
+
+```bash
+pnpm update-post-reactions
 ```
