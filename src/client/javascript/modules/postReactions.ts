@@ -1,5 +1,5 @@
-type ReactionCode = 'shocked' | 'love' | 'like' | 'rage' | 'dislike' | 'party' | 'partyPopper';
-type Reactions = Record<ReactionCode, number>;
+type ReactionCode = 'shocked' | 'love' | 'like' | 'rage' | 'dislike' | 'party' | 'partyPopper'
+type Reactions = Record<ReactionCode, number>
 
 const EMOJI_MAP: Record<ReactionCode, string> = {
   shocked: '🤯',
@@ -9,7 +9,7 @@ const EMOJI_MAP: Record<ReactionCode, string> = {
   rage: '😡',
   party: '🥳',
   partyPopper: '🥳',
-};
+}
 
 const IMAGES_MAP: Record<ReactionCode, string> = {
   shocked: '/assets/reactions/shocked.svg',
@@ -19,14 +19,14 @@ const IMAGES_MAP: Record<ReactionCode, string> = {
   rage: '/assets/reactions/rage.svg',
   party: '/assets/reactions/party.svg',
   partyPopper: '/assets/reactions/partyPopper.svg',
-};
+}
 
-const REACTION_ENDPOINT =
-  'https://i7on6ck7ng.execute-api.us-east-2.amazonaws.com/dev/posts/{slug}/likes';
+const REACTION_ENDPOINT
+  = 'https://i7on6ck7ng.execute-api.us-east-2.amazonaws.com/dev/posts/{slug}/likes'
 
 function getSlug() {
-  const [, slug] = document.location.pathname.match(/^\/posts\/([a-z0-9-_]+)/) || [];
-  return slug;
+  const [, slug] = document.location.pathname.match(/^\/posts\/([a-z0-9-_]+)/) || []
+  return slug
 }
 
 function getInitialReactions() {
@@ -38,99 +38,100 @@ function getInitialReactions() {
     rage: 0,
     party: 0,
     partyPopper: 0,
-  };
+  }
 }
 
 function renderItems(reactions: Reactions, wrapperEl: HTMLDivElement) {
   if (typeof reactions !== 'object') {
-    return;
+    return
   }
 
   const content = Object.entries(reactions).map(([type, count]) => {
-    const typedType = type as ReactionCode;
+    const typedType = type as ReactionCode
     return `
     <div class="reactions__item reaction" data-type="${type}">
       <img class="reaction__image" src="${IMAGES_MAP[typedType]}" alt="${EMOJI_MAP[typedType]}" width="64" height="64" />
       <div class="reaction__counter">${count}</div>
     </div>
-    `;
-  });
+    `
+  })
 
-  wrapperEl.innerHTML = content.join('\n');
+  wrapperEl.innerHTML = content.join('\n')
 }
 
 function getReaction(slug: string) {
   return fetch(REACTION_ENDPOINT.replace('{slug}', slug))
     .then(response => response.json())
-    .catch(err => console.error(err));
+    .catch(err => console.error(err))
 }
 
 function clientOptimisticUpdate(
   wrapperEl: HTMLDivElement,
   selector: string,
-  increaseValue: boolean
+  increaseValue: boolean,
 ) {
-  const el = wrapperEl.querySelector(selector) as HTMLDivElement | undefined;
+  const el = wrapperEl.querySelector(selector) as HTMLDivElement | undefined
 
   if (!el) {
-    return;
+    return
   }
 
-  const imageEl = el.querySelector('.reaction__image') as HTMLImageElement;
-  const counterEl = el.querySelector('.reaction__counter') as HTMLDivElement;
+  const imageEl = el.querySelector('.reaction__image') as HTMLImageElement
+  const counterEl = el.querySelector('.reaction__counter') as HTMLDivElement
 
   if (increaseValue) {
-    el.classList.add('reaction_active');
-    imageEl.src = imageEl.src.replace('.svg', '.gif');
-    counterEl.innerText = String(Number(counterEl.innerText) + 1);
-  } else {
-    el.classList.remove('reaction_active');
-    imageEl.src = imageEl.src.replace('.gif', '.svg');
-    counterEl.innerText = String(Number(counterEl.innerText) - 1);
+    el.classList.add('reaction_active')
+    imageEl.src = imageEl.src.replace('.svg', '.gif')
+    counterEl.textContent = String(Number(counterEl.textContent) + 1)
+  }
+  else {
+    el.classList.remove('reaction_active')
+    imageEl.src = imageEl.src.replace('.gif', '.svg')
+    counterEl.textContent = String(Number(counterEl.textContent) - 1)
   }
 }
 
 function setReaction(type: ReactionCode, wrapperEl: HTMLDivElement) {
   const params = {
     method: 'POST',
-    headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: `{"reactionId":"${type}"}`,
-  };
+  }
 
-  clientOptimisticUpdate(wrapperEl, '.reaction_active', false);
-  clientOptimisticUpdate(wrapperEl, `.reaction[data-type=${type}]`, true);
+  clientOptimisticUpdate(wrapperEl, '.reaction_active', false)
+  clientOptimisticUpdate(wrapperEl, `.reaction[data-type=${type}]`, true)
 
   return fetch(REACTION_ENDPOINT.replace('{slug}', getSlug()), params)
     .then(response => response.json())
-    .catch(err => console.error(err));
+    .catch(err => console.error(err))
 }
 
 export function registerPostReactions() {
-  const wrapperEl: HTMLDivElement | null = document.querySelector('.reactions');
+  const wrapperEl: HTMLDivElement | null = document.querySelector('.reactions')
 
   if (!wrapperEl) {
-    return;
+    return
   }
 
-  renderItems(getInitialReactions(), wrapperEl);
+  renderItems(getInitialReactions(), wrapperEl)
 
-  getReaction(getSlug()).then(reactions => {
-    renderItems(reactions, wrapperEl);
+  getReaction(getSlug()).then((reactions) => {
+    renderItems(reactions, wrapperEl)
 
     wrapperEl.addEventListener('click', (event: MouseEvent) => {
-      const target = event.target as HTMLDivElement;
+      const target = event.target as HTMLDivElement
 
       if (!target) {
-        return;
+        return
       }
 
-      const el: HTMLDivElement = target.closest('.reaction') || target;
+      const el: HTMLDivElement = target.closest('.reaction') || target
 
       if (!el.dataset.type) {
-        return;
+        return
       }
 
-      setReaction(el.dataset.type as ReactionCode, wrapperEl);
-    });
-  });
+      setReaction(el.dataset.type as ReactionCode, wrapperEl)
+    })
+  })
 }

@@ -8,9 +8,6 @@ importers:
 
   .:
     dependencies:
-      '@babel/polyfill':
-        specifier: 7.2.5
-        version: 7.2.5
       '@typebot/core':
         specifier: 0.0.2
         version: 0.0.2
@@ -39,6 +36,9 @@ importers:
       '@babel/core':
         specifier: 7.3.4
         version: 7.3.4
+      '@babel/plugin-transform-class-properties':
+        specifier: ^7.27.1
+        version: 7.27.1(@babel/core@7.3.4)
       '@babel/preset-env':
         specifier: 7.3.4
         version: 7.3.4(@babel/core@7.3.4)
@@ -426,6 +426,12 @@ packages:
     peerDependencies:
       '@babel/core': ^7.0.0-0
 
+  '@babel/plugin-transform-class-properties@7.27.1':
+    resolution: {integrity: sha512-D0VcalChDMtuRvJIu3U/fwWjf8ZMykz5iZsg77Nuj821vCKI3zCyRLwRdWbsuJ/uRwZhZ002QtCqIkwC/ZkvbA==}
+    engines: {node: '>=6.9.0'}
+    peerDependencies:
+      '@babel/core': ^7.0.0-0
+
   '@babel/plugin-transform-classes@7.27.1':
     resolution: {integrity: sha512-7iLhfFAubmpeJe/Wo2TVuDrykh/zlWXLzPNdL0Jqn/Xu8R3QQ8h9ff8FQoISZOsw74/HFqFI7NX63HN7QFIHKA==}
     engines: {node: '>=6.9.0'}
@@ -575,10 +581,6 @@ packages:
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
-
-  '@babel/polyfill@7.2.5':
-    resolution: {integrity: sha512-8Y/t3MWThtMLYr0YNC/Q76tqN1w30+b0uQMeFUYauG2UGTR19zyUtFrAzT23zNtBxPp+LbE5E/nwV/q/r3y6ug==}
-    deprecated: 🚨 This package has been deprecated in favor of separate inclusion of a polyfill and regenerator-runtime (when needed). See the @babel/polyfill docs (https://babeljs.io/docs/en/babel-polyfill) for more information.
 
   '@babel/preset-env@7.3.4':
     resolution: {integrity: sha512-2mwqfYMK8weA0g0uBKOt4FE3iEodiHy9/CW0b+nWXcbL+pGzLx8ESYc+j9IIxr6LTDHWKgPm71i9smo02bw+gA==}
@@ -4649,9 +4651,6 @@ packages:
   regenerate@1.4.2:
     resolution: {integrity: sha512-zrceR/XhGYU/d/opr2EKO7aRHUeiBI8qjtfHqADTwZd6Szfy16la6kqD0MIUs5z5hx6AaKa+PixpPrR289+I0A==}
 
-  regenerator-runtime@0.12.1:
-    resolution: {integrity: sha512-odxIc1/vDlo4iZcfXqRYFj0vpXFNoGdKMAUieAlFYO6m/nl5e9KR/beGf41z4a1FI+aQgtjhuaSlDxQ0hmkrHg==}
-
   regex-not@1.0.2:
     resolution: {integrity: sha512-J6SDjUgDxQj5NusnOtdFxDwN/+HWykR8GELwctJ7mdqhcyy1xEc4SRFHUXvxTp661YaVKAjfRLZ9cCqS6tn32A==}
     engines: {node: '>=0.10.0'}
@@ -5984,6 +5983,14 @@ snapshots:
       '@babel/core': 7.3.4
       '@babel/helper-plugin-utils': 7.27.1
 
+  '@babel/plugin-transform-class-properties@7.27.1(@babel/core@7.3.4)':
+    dependencies:
+      '@babel/core': 7.3.4
+      '@babel/helper-create-class-features-plugin': 7.27.1(@babel/core@7.3.4)
+      '@babel/helper-plugin-utils': 7.27.1
+    transitivePeerDependencies:
+      - supports-color
+
   '@babel/plugin-transform-classes@7.27.1(@babel/core@7.3.4)':
     dependencies:
       '@babel/core': 7.3.4
@@ -6152,11 +6159,6 @@ snapshots:
       '@babel/core': 7.3.4
       '@babel/helper-create-regexp-features-plugin': 7.27.1(@babel/core@7.3.4)
       '@babel/helper-plugin-utils': 7.27.1
-
-  '@babel/polyfill@7.2.5':
-    dependencies:
-      core-js: 2.6.12
-      regenerator-runtime: 0.12.1
 
   '@babel/preset-env@7.3.4(@babel/core@7.3.4)':
     dependencies:
@@ -10848,8 +10850,6 @@ snapshots:
       regenerate: 1.4.2
 
   regenerate@1.4.2: {}
-
-  regenerator-runtime@0.12.1: {}
 
   regex-not@1.0.2:
     dependencies:

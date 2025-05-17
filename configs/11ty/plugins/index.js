@@ -1,8 +1,8 @@
-const registerMarkdown = require('./markdown');
-const registerHandlebars = require('./handlebars');
-const registerBrowserSync = require('./browserSync');
-const registerHtmlMinification = require('./htmlMin');
-const registerRss = require('./rss');
+const registerBrowserSync = require('./browserSync')
+const registerHandlebars = require('./handlebars')
+const registerHtmlMinification = require('./htmlMin')
+const registerMarkdown = require('./markdown')
+const registerRss = require('./rss')
 
 module.exports = {
   registerMarkdown,
@@ -10,4 +10,4 @@ module.exports = {
   registerBrowserSync,
   registerHtmlMinification,
   registerRss,
-};
+}

@@ -1,3 +1,3 @@
-module.exports = arr => {
-  return arr.reverse();
-};
+module.exports = (arr) => {
+  return arr.reverse()
+}

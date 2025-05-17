@@ -1,5 +1,7 @@
-module.exports = () => {
-  const version = process.env.COMMIT_REF || 'dev';
+const process = require('node:process')
 
-  return version;
-};
+module.exports = () => {
+  const version = process.env.COMMIT_REF || 'dev'
+
+  return version
+}

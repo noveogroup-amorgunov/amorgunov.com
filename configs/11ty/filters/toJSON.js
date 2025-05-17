@@ -1,3 +1,3 @@
-module.exports = obj => {
-  return JSON.stringify(obj);
-};
+module.exports = (obj) => {
+  return JSON.stringify(obj)
+}
