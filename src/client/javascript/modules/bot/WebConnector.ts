@@ -1,58 +1,56 @@
-/* eslint-disable no-underscore-dangle, class-methods-use-this, @typescript-eslint/ban-ts-comment */
-
-import * as ee from 'event-emitter';
-import {Message} from '@typebot/core/lib/core/Message';
-import {IConnector} from '@typebot/core/lib/connectors/IConnector';
-import {IMessage} from '@typebot/core/lib/core/IMessage';
+import type { IConnector } from '@typebot/core/lib/connectors/IConnector'
+import type { IMessage } from '@typebot/core/lib/core/IMessage'
+import { Message } from '@typebot/core/lib/core/Message'
+import * as EE from 'event-emitter'
 
 export interface IWebConnector extends IConnector {
-  send: (message: IMessage) => Promise<void>;
-  receiveMessage: (text: string) => void;
+  send: (message: IMessage) => Promise<void>
+  receiveMessage: (text: string) => void
 }
 
-// @ts-ignore
+// @ts-expect-error FIXME fix type error
 export class WebConnector implements IConnector {
   static _getUser() {
-    return {id: 'user', name: 'Console User'};
+    return { id: 'user', name: 'Console User' }
   }
 
   getConnectorName() {
-    return 'console';
+    return 'console'
   }
 
   getUniqueSessionKey() {
-    return this.getConnectorName();
+    return this.getConnectorName()
   }
 
   getUser() {
-    return Promise.resolve(WebConnector._getUser());
+    return Promise.resolve(WebConnector._getUser())
   }
 
   send(message: IMessage) {
-    console.log(message.getText());
+    // eslint-disable-next-line no-console
+    console.log(message.getText())
 
-    return Promise.resolve();
+    return Promise.resolve()
   }
 
   receiveMessage(text: string) {
     if (!text) {
-      return;
+      return
     }
 
-    console.log();
-
-    // @ts-ignore
+    // @ts-expect-error FIXME fix type error
     this.emit(
       'receiveMessage',
       new Message({
-        rawData: {text},
+        rawData: { text },
         user: WebConnector._getUser(),
         sessionKey: 'web-console',
-        // @ts-ignore
+        // @ts-expect-error FIXME fix type error
         sender: 'user',
-      })
-    );
+      }),
+    )
   }
 }
 
-ee(WebConnector.prototype);
+// @ts-expect-error FIXME fix type error
+EE(WebConnector.prototype)

@@ -1,14 +1,15 @@
 {
   "compilerOptions": {
+    "target": "es5",
+    "baseUrl": "src/client/javascript",
+    "module": "commonjs",
+    "resolveJsonModule": true,
+    "allowJs": true,
+    "strict": true,
+    "noImplicitAny": true,
     "outDir": "./dist/",
     "sourceMap": true,
-    "strict": true,
-    "allowJs": true,
-    "noImplicitAny": true,
-    "resolveJsonModule": true,
-    "module": "commonjs",
-    "target": "es5",
-    "baseUrl": "src/client/javascript"
+    "esModuleInterop": true
   },
   "include": ["src/**/*", "configs/**/*"],
   "exclude": ["node_modules", ".scripts"]

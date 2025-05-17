@@ -1,5 +1,3 @@
-/* eslint-disable class-methods-use-this, @typescript-eslint/ban-ts-comment */
-
 const template = `
     <div class="term">
         <div class="term-bar">
@@ -18,71 +16,77 @@ const template = `
             </div>
         </div>
     </div>
-`;
+`
 
 export class Terminal {
-  el: HTMLDivElement;
+  el: HTMLDivElement
 
-  lines: string[];
+  lines: string[]
 
-  text: string;
+  text: string
 
-  $cont: HTMLDivElement;
+  $cont: HTMLDivElement | null = null
 
-  $lines: HTMLDivElement;
+  $lines: HTMLDivElement | null = null
 
-  $cmd: HTMLDivElement;
+  $cmd: HTMLDivElement | null = null
 
-  constructor(el: HTMLDivElement, {text = ''} = {}) {
-    this.el = el;
-    this.lines = [];
-    this.text = text;
+  constructor(el: HTMLDivElement, { text = '' } = {}) {
+    this.el = el
+    this.lines = []
+    this.text = text
 
-    this.render();
+    this.render()
 
-    this.el.addEventListener('click', () => this.$cmd.focus());
+    this.el.addEventListener('click', () => this.$cmd && this.$cmd.focus())
 
     setTimeout(() => {
-      this.$cont = this.el.querySelector('.term-cont');
-      this.$lines = this.el.querySelector('.term-lines');
-      this.$cmd = this.el.querySelector('.term-cmd.current');
+      this.$cont = this.el.querySelector('.term-cont')
+      this.$lines = this.el.querySelector('.term-lines')
+      this.$cmd = this.el.querySelector('.term-cmd.current')
 
-      this.$cmd.addEventListener('keydown', this.onKeyDown.bind(this));
-    });
+      if (this.$cmd) {
+        this.$cmd.addEventListener('keydown', this.onKeyDown.bind(this))
+      }
+    })
   }
 
   onKeyDown(e: KeyboardEvent) {
-    const line = (e.target as HTMLDivElement).innerHTML;
+    const line = (e.target as HTMLDivElement).innerHTML
 
     if (e.keyCode === 13) {
-      e.preventDefault();
+      e.preventDefault()
 
-      this.addLine(line);
+      this.addLine(line)
 
-      // @ts-ignore
-      this.readLine(line);
+      // @ts-expect-error FIXME fix type error
+      this.readLine(line)
     }
   }
 
   addLine(line: string) {
-    this.lines.push(line);
+    this.lines.push(line)
+
+    if (!this.$lines || !this.$cont || !this.$cmd) {
+      return
+    }
 
     this.$lines.innerHTML = this.lines
       .map(text => `<div class="term-line"><span class="term-cmd">~$&nbsp;${text}</span></div>`)
-      .join('');
+      .join('')
 
-    this.$cmd.innerHTML = '';
-    this.$cont.scrollTop = this.$cont.scrollHeight;
+    this.$cmd.innerHTML = ''
+    this.$cont.scrollTop = this.$cont.scrollHeight
   }
 
   readLine() {
-    return false;
+    return false
   }
 
   render() {
     if (!this.el) {
-      return;
+      return
     }
-    this.el.innerHTML = template.replace('{text}', this.text).replace('{lines}', '');
+    this.el.innerHTML = template.replace('{text}', this.text).replace('{lines}', '')
   }
 }

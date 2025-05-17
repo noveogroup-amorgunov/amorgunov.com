@@ -1,8 +1,8 @@
-const getAllPosts = require(`./getAllPosts`);
-const getAllTags = require(`./getAllTags`);
-const getAllTagsWithPostsCount = require(`./getAllTagsWithPostsCount`);
-const getPopularPosts = require(`./getPopularPosts`);
-const getTagList = require(`./getTagList__deprecated`);
+const getAllPosts = require(`./getAllPosts`)
+const getAllTags = require(`./getAllTags`)
+const getAllTagsWithPostsCount = require(`./getAllTagsWithPostsCount`)
+const getPopularPosts = require(`./getPopularPosts`)
+const getTagList = require(`./getTagList__deprecated`)
 
 module.exports = {
   getAllPosts,
@@ -10,4 +10,4 @@ module.exports = {
   getAllTagsWithPostsCount,
   getPopularPosts,
   getTagList,
-};
+}

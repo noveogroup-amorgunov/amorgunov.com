@@ -1,0 +1,6 @@
+declare module 'postcss-custom-media'
+declare module 'postcss-import'
+declare module 'postcss-nested'
+declare module 'postcss-preset-env'
+declare module 'postcss-reporter'
+declare module 'terser-webpack-plugin'

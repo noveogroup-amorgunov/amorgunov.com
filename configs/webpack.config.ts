@@ -1,17 +1,18 @@
-const path = require('path');
-const TerserJSPlugin = require('terser-webpack-plugin');
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const postcssCustomMedia = require('postcss-custom-media');
-const postcssImport = require('postcss-import');
-const postcssNested = require('postcss-nested');
-const postcssPresetEnv = require('postcss-preset-env');
-const postcssReporter = require('postcss-reporter');
+import path from 'node:path'
+import process from 'node:process'
+import CssMinimizerPlugin from 'css-minimizer-webpack-plugin'
+import HtmlWebpackPlugin from 'html-webpack-plugin'
+import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+import postcssCustomMedia from 'postcss-custom-media'
+import postcssImport from 'postcss-import'
+import postcssNested from 'postcss-nested'
+import postcssPresetEnv from 'postcss-preset-env'
+import postcssReporter from 'postcss-reporter'
+import TerserJSPlugin from 'terser-webpack-plugin'
 
-const IS_DEV = process.env.NODE_ENV !== 'production';
-const $js = path.join(__dirname, '../src/client/javascript/');
-const $template = path.join(__dirname, '../src/_includes/layouts/');
+const IS_DEV = process.env.NODE_ENV !== 'production'
+const $js = path.join(__dirname, '../src/client/javascript/')
+const $template = path.join(__dirname, '../src/_includes/layouts/')
 
 const postcssLoader = {
   loader: 'postcss-loader',
@@ -26,7 +27,7 @@ const postcssLoader = {
       ],
     },
   },
-};
+}
 
 module.exports = {
   entry: {
@@ -43,7 +44,7 @@ module.exports = {
       {
         test: /\.ts$/,
         exclude: /node_modules/,
-        use: {loader: 'babel-loader'},
+        use: { loader: 'babel-loader' },
       },
       {
         test: /\.css$/,
@@ -52,7 +53,7 @@ module.exports = {
           {
             loader: 'css-loader',
             // Files has just copied by 11ty
-            options: {url: false, sourceMap: true},
+            options: { url: false, sourceMap: true },
           },
           postcssLoader,
         ].filter(Boolean),
@@ -89,4 +90,4 @@ module.exports = {
       chunks: 'all',
     },
   },
-};
+}
