@@ -20,20 +20,19 @@ You can see all pages on [https://amorgunov.com](https://amorgunov.com)
 - CLI scripts to create posts and optimize images
 - Lazy loading image like *Medium.com*
 - Dark theme
-- [ ] I18n mode
 
 ## Development
 
 ```bash
 nvm use
 
-npm install
+pnpm install
 
-# generate templates for 11ty
-npm run build:webpack
+# Generate templates for 11ty
+pnpm build:webpack
 
-# start webpack and 11ty watchers
-npm run start
+# Start webpack and 11ty watchers
+pnpm start
 ```
 
 ## Troubleshoots

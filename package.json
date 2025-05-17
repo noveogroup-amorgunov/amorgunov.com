@@ -33,6 +33,7 @@
     "@babel/register": "7.0.0",
     "@types/clipboard": "2.0.1",
     "@types/event-emitter": "0.3.3",
+    "@types/node": "^22.15.18",
     "babel-loader": "8.2.5",
     "common-tags": "1.8.0",
     "css-hot-loader": "1.4.3",
