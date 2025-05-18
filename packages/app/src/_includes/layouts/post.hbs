@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    {{> components/head }}
+    <script defer src="/client/build/vendors-node_modules_pnpm_clipboard_2_0_4_node_modules_clipboard_dist_clipboard_js.entry.js?v=607cb89901bae2f4582d"></script><script defer src="/client/build/vendors-node_modules_pnpm_typebot_core_0_0_2_node_modules_typebot_core_lib_core_Bot_js-node_m-784253.entry.js?v=7647a094f45d879bb412"></script><script defer src="/client/build/post.entry.js?v=b64ef7f3e2cffa5d98e4"></script><link href="/client/build/post.css?v=903d068b5f2f450f67d9" rel="stylesheet">
+  </head>
+  <body>
+    <div class="page">
+      <div class="page__container">
+        {{> components/header }}
+        <div class="page__content post line-numbers">
+          {{#> components/text type="h1" as="h1"}}{{title}}{{/ components/text}}
+          <div class="post__date">
+            {{#> components/text type="captionStrong"}}
+              <time datetime="{{htmlDateString date}}">{{readableDate date}}</time>
+            {{/ components/text}}
+            {{#if updateDate}}
+              {{#> components/text type="captionStrong"}}
+                (обновлено: <time datetime="{{htmlDateString updateDate}}">{{readableDate updateDate}}</time>)
+              {{/ components/text}}
+            {{/if}}
+          </div>
+          {{> components/tag-list tags=tags}}
+          <div class="post__content">
+            {{{content}}}
+          </div>
+        </div>
+        <div class="post__reactions reactions"></div>
+        {{> components/stay-in-touch }}
+        <div class="post__readmore">
+          {{#> components/text type="h3" as="h3" class="post__readmore-title"}}Вам может быть интересно{{/ components/text}}
+          {{> components/post-list popular="true" posts=(relatedPosts collections.posts page.url tags 3)}}
+        </div>
+        <div class="post-layer__up">
+          <div class="post-layer__back">
+            <i class="arrow arrow_type_up"></i>
+            <i class="arrow arrow_type_down"></i>
+          </div>
+        </div>
+        {{> components/footer }}
+        {{> components/menu }}
+        {{> components/share }}
+      </div>
+    </div>   
+    
+    {{> components/scripts }}
+    <script defer src="/assets/prism.js"></script>
+  </body>
+</html>
