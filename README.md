@@ -4,13 +4,19 @@
 
 Hey! Here you can find source files for my personal blog built with [**_11ty_**](https://www.11ty.io/), [**_webpack_**](https://webpack.js.org/) and hosted by [**_Netlify_**](https://netlify.com/).
 
+## Monorepo packages
+
+| [app](./packages/app/) 	    | 11ty application |
+| [content](./packages/content/) 	  | Blog content	|
+| [scripts](./packages/scripts/) 	| Addition scripts to generate post template, optimize images and update reactions in posts 	|
+
 ## Live demo
 
 ![](./src/assets/images/preview-github@dark.png#gh-dark-mode-only)![](./src/assets/images/preview-github@light.png#gh-light-mode-only)
 
 You can see all pages on [https://amorgunov.com](https://amorgunov.com)
 
-## Features
+### Features
 
 - Separate build static (*webpack*) and build pages (*11ty*) processes
 - Components approach (using handlebars templates)
@@ -21,15 +27,17 @@ You can see all pages on [https://amorgunov.com](https://amorgunov.com)
 - Lazy loading image like *Medium.com*
 - Dark theme
 
-## Development
+### Development
+
+Install `pnpm` (or change scripts into `package.json` files to your package manager).
 
 ```bash
 nvm use
 
 pnpm install
 
-# Generate templates for 11ty
-pnpm build:webpack
+# Generate templates for 11ty app
+pnpm run --filter app build:webpack
 
 # Start webpack and 11ty watchers
 pnpm start
