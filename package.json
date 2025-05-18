@@ -4,6 +4,10 @@
   "scripts": {
     "start": "pnpm --filter app start",
     "build": "pnpm --filter app build",
-    "lint": "pnpm --filter app lint"
+    "lint": "pnpm --filter app lint",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "husky": "^9.1.7"
   }
 }

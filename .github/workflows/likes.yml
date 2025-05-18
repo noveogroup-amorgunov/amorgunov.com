@@ -1,5 +1,8 @@
 name: Update post reactions
 
+env:
+  HUSKY: 0
+
 on:
   workflow_dispatch:
   schedule:
