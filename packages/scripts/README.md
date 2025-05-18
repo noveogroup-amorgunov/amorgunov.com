@@ -32,7 +32,7 @@ Usage:
 # template
 # pnpm optimize-images <path>
 
-pnpm optimize-images ../src/assets/images/2025-05-20-how-solve-cross-imports
+pnpm optimize-images ../app/src/assets/images/2025-05-20-how-solve-cross-imports
 ```
 
 ## Update post reactions

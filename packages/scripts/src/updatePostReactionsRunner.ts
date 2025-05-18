@@ -2,8 +2,11 @@ import path from 'node:path'
 import process from 'node:process'
 import { updatePostReactions, walk } from './updatePostReactions.ts'
 
+// TODO: move to env
+const CONTENT_POSTS_PATH = '../../app/src/posts'
+
 Promise
-  .all(walk(path.join(process.cwd(), '../src/posts'), /\.md$/).map(updatePostReactions))
+  .all(walk(path.join(process.cwd(), CONTENT_POSTS_PATH), /\.md$/).map(updatePostReactions))
   .then((updatedPosts) => updatedPosts.filter(Boolean).length 
     ? console.log(`Post reactions updated: ${updatedPosts.filter(Boolean).length}`)
     : console.log('No posts to update'))

@@ -22,7 +22,7 @@ interface Options {
   date?: string
 }
 
-const BASE_PATH = path.join(process.cwd(), '../src')
+const BASE_APP_PATH = path.join(process.cwd(), '../app/src')
 
 export async function generatePost(options: Options) {
   const formattedSlug = options.slug
@@ -36,15 +36,15 @@ export async function generatePost(options: Options) {
   const formattedDate = date.toFormat('yyyy-LL-dd')
 
   const fileName = `${formattedDate}-${formattedSlug}`
-  const path = `${BASE_PATH}/posts/${fileName}.md`
+  const path = `${BASE_APP_PATH}/posts/${fileName}.md`
 
   const content = template
     .replace(/\{TITLE\}/g, options.title)
     .replace(/\{SLUG\}/g, formattedSlug)
     .replace(/\{DATE\}/g, formattedDate)
 
-  if (!fs.existsSync(`${BASE_PATH}/assets/images/${fileName}`)) {
-    fs.mkdirSync(`${BASE_PATH}/assets/images/${fileName}`)
+  if (!fs.existsSync(`${BASE_APP_PATH}/assets/images/${fileName}`)) {
+    fs.mkdirSync(`${BASE_APP_PATH}/assets/images/${fileName}`)
   }
 
   if (!fs.existsSync(path)) {
