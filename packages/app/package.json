@@ -1,8 +1,18 @@
 {
   "name": "app",
   "private": true,
+  "watch": {
+    "copy-posts": {
+      "patterns": ["../content/posts"],
+      "extensions": "md"
+    }
+  },
   "scripts": {
+    "prestart": "pnpm run copy-posts",
+    "prebuild": "pnpm run copy-posts",
+    "copy-posts": "cp ../content/posts/*.md src/posts",
     "start": "NODE_ENV=development pnpm run \"/^start:.*/\"",
+    "start:content": "pnpm watch",
     "start:webpack": "webpack --mode development --watch --config configs/webpack.config.ts",
     "start:11ty": "eleventy --input=src --config=configs/11ty/11ty.config.js --serve --quiet",
     "build": "NODE_ENV=production pnpm run \"/^build:.*/\"",
@@ -12,7 +22,8 @@
     "analyze:js": "source-map-explorer dist/client/build/**/*.js dist/client/build/**/*.js.map",
     "lint": "pnpm run \"/^lint:.*/\"",
     "lint:css": "stylelint src/client/stylesheets/*.css",
-    "lint:js": "eslint src/client/javascript configs"
+    "lint:js": "eslint src/client/javascript configs",
+    "watch": "npm-watch"
   },
   "dependencies": {
     "@typebot/core": "0.0.2",
@@ -48,6 +59,7 @@
     "markdown-it": "12.3.2",
     "markdown-it-anchor": "8.6.2",
     "mini-css-extract-plugin": "2.6.0",
+    "npm-watch": "^0.13.0",
     "postcss-custom-media": "8.0.0",
     "postcss-import": "14.1.0",
     "postcss-loader": "6.2.1",

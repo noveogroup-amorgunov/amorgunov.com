@@ -6,3 +6,5 @@ temp/
 src/client/build/
 src/_includes/layouts/next.hbs
 src/_includes/layouts/post.hbs
+src/posts/*
+!src/posts/posts.json
