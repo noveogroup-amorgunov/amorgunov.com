@@ -6,15 +6,15 @@ Hey! Here you can find source files for my personal blog built with [**_11ty_**]
 
 ## Monorepo packages
 
-| package  | description |
-| -------- | :------- |
-| [app](./packages/app/) 	    | 11ty application |
-| [content](./packages/content/) 	  | Blog content (posts and images)	|
+| package                         | description |
+| --------                        | :------- |
+| [app](./packages/app/) 	        | 11ty application |
+| [content](./packages/content/) 	| Blog content (posts and images)	|
 | [scripts](./packages/scripts/) 	| Addition scripts to generate post template,<br/> optimize images and update reactions in posts 	|
 
 ## Development
 
-Install `pnpm` (or change scripts into `package.json` files to your package manager).
+Install [`pnpm`](https://pnpm.io/installation) (or change scripts into `package.json` files to your package manager).
 
 ```bash
 nvm use

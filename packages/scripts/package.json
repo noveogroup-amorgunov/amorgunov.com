@@ -7,11 +7,12 @@
     "./copyPosts": "./src/copyPosts.ts"
   },
   "scripts": {
-    "generate-post": "node --experimental-strip-types src/generatePostCLI.ts",
-    "update-post-reactions": "node --experimental-strip-types src/updatePostReactionsRunner.ts",
-    "optimize-images": "node --experimental-strip-types src/optimizeImagesCLI.ts",
+    "post:generate": "node --experimental-strip-types src/generatePostCLI.ts",
+    "post:update-reactions": "node --experimental-strip-types src/updatePostReactionsRunner.ts",
+    "post:optimize-images": "node --experimental-strip-types src/optimizeImagesCLI.ts",
     "lint": "eslint .",
-    "test": "vitest"
+    "test": "vitest",
+    "test:ci": "vitest run"
   },
   "dependencies": {
     "axios": "1.9.0",

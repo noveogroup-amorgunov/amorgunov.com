@@ -4,8 +4,12 @@
   "scripts": {
     "start": "pnpm --filter @amorgunov/app start",
     "build": "pnpm --filter @amorgunov/app build",
-    "lint": "pnpm --filter @amorgunov/app lint",
-    "prepare": "husky"
+    "lint": "pnpm --filter \"@amorgunov/*\" lint",
+    "post:generate": "pnpm --filter @amorgunov/scripts post:generate",
+    "post:update-reactions": "pnpm --filter @amorgunov/scripts post:update-reactions",
+    "post:optimize-images": "pnpm --filter @amorgunov/scripts post:optimize-images",
+    "prepare": "husky",
+    "test": "pnpm --filter \"@amorgunov/*\" test:ci"
   },
   "devDependencies": {
     "husky": "^9.1.7"

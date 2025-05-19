@@ -4,6 +4,9 @@
 - [Optimize post images](#optimize-post-images)
 - [Update post reactions](#update-post-reactions)
 
+> [!IMPORTANT]
+> Run scripts from root to resolve correct pathes
+
 ## Generate new post
 
 - Create markdown file and put it to content folder

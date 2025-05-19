@@ -26,6 +26,7 @@ if (argv.help || argv.h) {
 
 const parsedArgs = argvSchema.parse(argv)
 
+// @ts-expect-error FIXME: title and slug are required, not optional
 generatePost(parsedArgs)
   .catch(err => console.error(err))
   .finally(() => process.exit(0))

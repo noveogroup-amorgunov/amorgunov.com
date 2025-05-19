@@ -33,12 +33,6 @@ likes: 0
   data-src="../images/2025-05-20-how-solve-cross-imports/CouplingVsCohesion.out.png"
 />
 
-<img
-  class="lazyload inverting"
-  alt="зацепление против связанности"
-  src="../images/2025-05-20-how-solve-cross-imports/CouplingVsCohesion.out.png"
-/>
-
 Если модули будут как можно более изолированными и самодостаточными, а также независимыми, мы получим возможность независимо их развивать (рефакторить, обновлять, тестировать).
 
 Общая рекомендация проста: **постарайтесь придерживаться принципа «высокого зацепления и низкой связанности» на всех уровнях вашей кодовой базы**. Подробнее можете почитать в материале от Владимира Хорикова [про различие между cohesion и coupling (en)](https://enterprisecraftsmanship.com/posts/cohesion-coupling-difference/).

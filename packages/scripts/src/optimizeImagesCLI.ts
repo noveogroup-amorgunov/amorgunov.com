@@ -1,4 +1,5 @@
 import fs from 'node:fs'
+import path from 'node:path'
 import process from 'node:process'
 import minimist from 'minimist'
 import { optimizeImages } from './optimizeImages.ts'
@@ -13,7 +14,15 @@ if (!imagesPath) {
   )
 }
 
-const inputPath = imagesPath.endsWith('/') ? imagesPath : `${imagesPath}/`
+const inputPath = path.join(
+  process.cwd(),
+  // FIXME: when we run script from root, we need to go up two levels
+  '../..',
+  imagesPath.endsWith('/') ? imagesPath : `${imagesPath}/`
+)
+
+console.log('inputPath', inputPath)
+
 const folderIsExists = fs.existsSync(inputPath)
 
 if (!folderIsExists) {

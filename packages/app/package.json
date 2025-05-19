@@ -28,7 +28,8 @@
     "lint": "pnpm run \"/^lint:.*/\"",
     "lint:css": "stylelint src/client/stylesheets/*.css",
     "lint:js": "eslint src/client/javascript configs",
-    "watch": "npm-watch"
+    "watch": "npm-watch",
+    "test:ci": "echo \"skipping test\""
   },
   "dependencies": {
     "@typebot/core": "0.0.2",

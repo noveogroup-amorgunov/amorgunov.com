@@ -8,7 +8,7 @@ title: "{TITLE}"
 date: {DATE}
 time: 5
 description: "ХХХ"
-featuredImageThumbnail: "/assets/images/{DATE}-{SLUG}/preview.jpg"
+featuredImageThumbnail: "../images/{DATE}-{SLUG}/preview.jpg"
 tags:
   - ХХХ
   - ХХХ
@@ -22,7 +22,8 @@ interface Options {
   date?: string
 }
 
-const BASE_APP_PATH = path.join(process.cwd(), '../app/src')
+// FIXME: move to env
+const BASE_CONTENT_PATH = path.join(process.cwd(), '../content')
 
 export async function generatePost(options: Options) {
   const formattedSlug = options.slug
@@ -36,15 +37,15 @@ export async function generatePost(options: Options) {
   const formattedDate = date.toFormat('yyyy-LL-dd')
 
   const fileName = `${formattedDate}-${formattedSlug}`
-  const path = `${BASE_APP_PATH}/posts/${fileName}.md`
+  const path = `${BASE_CONTENT_PATH}/posts/${fileName}.md`
 
   const content = template
     .replace(/\{TITLE\}/g, options.title)
     .replace(/\{SLUG\}/g, formattedSlug)
     .replace(/\{DATE\}/g, formattedDate)
 
-  if (!fs.existsSync(`${BASE_APP_PATH}/assets/images/${fileName}`)) {
-    fs.mkdirSync(`${BASE_APP_PATH}/assets/images/${fileName}`)
+  if (!fs.existsSync(`${BASE_CONTENT_PATH}/images/${fileName}`)) {
+    fs.mkdirSync(`${BASE_CONTENT_PATH}/images/${fileName}`)
   }
 
   if (!fs.existsSync(path)) {

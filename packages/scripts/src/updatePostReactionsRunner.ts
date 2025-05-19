@@ -3,8 +3,8 @@ import process from 'node:process'
 import { updatePostReactions } from './updatePostReactions.ts'
 import { walk } from './shared/walk.ts'
 
-// TODO: move to env
-const CONTENT_POSTS_PATH = '../../app/src/posts'
+// FIXME: move to env
+const CONTENT_POSTS_PATH = '../../content/posts'
 
 Promise
   .all(walk(path.join(process.cwd(), CONTENT_POSTS_PATH), /\.md$/).map(updatePostReactions))
