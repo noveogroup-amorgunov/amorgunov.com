@@ -229,7 +229,7 @@ pre code.hljs {
 }
 
 .apple-divider {
-  background-image: url("/assets/images/divider.gif");
+  background-image: url("/assets/images/common/divider.gif");
   background-size: cover;
   width: 60px;
   height: 60px;

@@ -8,3 +8,6 @@ src/_includes/layouts/next.hbs
 src/_includes/layouts/post.hbs
 src/posts/*
 !src/posts/posts.json
+src/assets/images/*
+!src/assets/images/common
+!src/assets/images/icons

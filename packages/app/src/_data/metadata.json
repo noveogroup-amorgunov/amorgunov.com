@@ -2,7 +2,7 @@
   "title": "Блог о веб-разработке",
   "url": "https://amorgunov.com",
   "description": "Блог о JavaScript, NodeJs, React, TypeScript и веб-разработке в целом",
-  "featuredImageThumbnail": "/assets/images/preview.jpg",
+  "featuredImageThumbnail": "/assets/images/common/preview.jpg",
   "feed": {
     "subtitle": "Блог о JavaScript, NodeJs, React, TypeScript и веб-разработке в целом",
     "filename": "feed.xml",

@@ -1,6 +1,6 @@
 # app
 
-![](./packages/app/src/assets/images/preview-github@dark.png#gh-dark-mode-only)![](./packages/app/src/assets/images/preview-github@light.png#gh-light-mode-only)
+![](./packages/app/src/assets/images/common/preview-github@dark.png#gh-dark-mode-only)![](./packages/app/src/assets/images/common/preview-github@light.png#gh-light-mode-only)
 
 ## Features
 
