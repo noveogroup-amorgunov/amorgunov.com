@@ -12,6 +12,26 @@ Hey! Here you can find source files for my personal blog built with [**_11ty_**]
 | [content](./packages/content/) 	| Blog content (posts and images)	|
 | [scripts](./packages/scripts/) 	| Addition scripts to generate post template,<br/> optimize images and update reactions in posts 	|
 
+## How it works
+
+```mermaid
+graph TD
+    Start[<pre>pnpm start</pre>] --> CopyPosts[<pre>pnpm start:content</pre><br>Copy posts and images to <pre>packages/app/src/*</pre>]
+    Start --> WebpackWatch[<pre>pnpm start:webpack</pre><br>Run webpack in watch mode]
+    Start --> EleventyWatch[<pre>pnpm start:11ty</pre><br>Run 11ty in watch mode]
+    
+    CopyPosts --> |Watcher| WatchContent[Watch content folder for changes]
+    WebpackWatch --> |Watcher| WatchAssets[Watch client assets for changes]
+    EleventyWatch --> |Watcher| WatchSite[Watch site generation]
+    
+    WatchContent --> |On change| CopyPosts
+    WatchAssets --> |On change| WebpackWatch
+    WatchSite --> |On change| EleventyWatch
+    
+    CopyPosts --> |Trigger| EleventyWatch
+    WebpackWatch --> |Trigger| EleventyWatch
+```
+
 ## Development
 
 Install [`pnpm`](https://pnpm.io/installation) (or change scripts into `package.json` files to your package manager).

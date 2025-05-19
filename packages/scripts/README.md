@@ -1,11 +1,13 @@
 # scripts
 
+> [!IMPORTANT]
+> Run scripts from root to resolve correct paths
+
+Scripts list:
+
 - [Generate new post](#generate-new-post)
 - [Optimize post images](#optimize-post-images)
 - [Update post reactions](#update-post-reactions)
-
-> [!IMPORTANT]
-> Run scripts from root to resolve correct pathes
 
 ## Generate new post
 
