@@ -1,5 +1,5 @@
 {
-  "name": "app",
+  "name": "@amorgunov/app",
   "private": true,
   "watch": {
     "copy:posts": {
@@ -14,8 +14,8 @@
   "scripts": {
     "prestart": "pnpm run \"/^copy:.*/\"",
     "prebuild": "pnpm run \"/^copy:.*/\"",
+    "copy:posts": "node --experimental-strip-types configs/preparePosts.mts ../content/posts ./src/posts",
     "copy:images": "cp -r ../content/images/* src/assets/images",
-    "copy:posts": "cp ../content/posts/*.md src/posts",
     "start": "NODE_ENV=development pnpm run \"/^start:.*/\"",
     "start:content": "pnpm watch",
     "start:webpack": "webpack --mode development --watch --config configs/webpack.config.ts",
@@ -40,6 +40,7 @@
     "@11ty/eleventy": "2.0.1",
     "@11ty/eleventy-plugin-rss": "1.1.2",
     "@11ty/eleventy-plugin-syntaxhighlight": "4.0.0",
+    "@amorgunov/scripts": "workspace:*",
     "@antfu/eslint-config": "^4.13.1",
     "@babel/core": "7.3.4",
     "@babel/plugin-transform-class-properties": "^7.27.1",

@@ -9,7 +9,7 @@ Hey! Here you can find source files for my personal blog built with [**_11ty_**]
 | package  | description |
 | -------- | :------- |
 | [app](./packages/app/) 	    | 11ty application |
-| [content](./packages/content/) 	  | Blog content	|
+| [content](./packages/content/) 	  | Blog content (posts and images)	|
 | [scripts](./packages/scripts/) 	| Addition scripts to generate post template,<br/> optimize images and update reactions in posts 	|
 
 ## Development
@@ -22,7 +22,7 @@ nvm use
 pnpm install
 
 # Generate templates for 11ty app
-pnpm run --filter app build:webpack
+pnpm run --filter @amorgunov/app build:webpack
 
 # Start webpack and 11ty watchers
 pnpm start

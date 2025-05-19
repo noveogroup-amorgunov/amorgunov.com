@@ -1,11 +1,14 @@
 {
   "compilerOptions": {
     "target": "es6",
+    "lib": ["es2021"],
     "module": "commonjs",
     "moduleResolution": "node",
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
     "outDir": "dist",
     "sourceMap": true,
     "esModuleInterop": true
   },
-  "lib": ["es2015"]
+  "lib": ["es2021"]
 }

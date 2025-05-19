@@ -2,7 +2,8 @@
   "compilerOptions": {
     "target": "es5",
     "baseUrl": "src/client/javascript",
-    "module": "commonjs",
+    "module": "NodeNext",
+    "moduleResolution": "nodenext",
     "resolveJsonModule": true,
     "allowJs": true,
     "strict": true,
@@ -12,5 +13,5 @@
     "esModuleInterop": true
   },
   "include": ["src/**/*", "configs/**/*"],
-  "exclude": ["node_modules", "packages/.scripts"]
+  "exclude": ["node_modules"]
 }

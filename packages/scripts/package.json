@@ -1,8 +1,11 @@
 {
-  "name": "scripts",
+  "name": "@amorgunov/scripts",
   "type": "module",
   "private": true,
   "license": "MIT",
+  "exports": {
+    "./copyPosts": "./src/copyPosts.ts"
+  },
   "scripts": {
     "generate-post": "node --experimental-strip-types src/generatePostCLI.ts",
     "update-post-reactions": "node --experimental-strip-types src/updatePostReactionsRunner.ts",

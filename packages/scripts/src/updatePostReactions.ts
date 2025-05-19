@@ -1,27 +1,8 @@
 import fs from 'node:fs'
-import path from 'node:path'
 import axios from 'axios'
 
 // TODO: move to env
 const REACTIONS_API_URL_TEMPLATE = 'https://i7on6ck7ng.execute-api.us-east-2.amazonaws.com/dev/posts/{SLUG}/likes'
-
-export function walk(dir: string, filter: RegExp, fileList: string[] = []) {
-  const files = fs.readdirSync(dir)
-
-  files.forEach((file) => {
-    const filePath = path.join(dir, file)
-    const fileStat = fs.lstatSync(filePath)
-
-    if (fileStat.isDirectory()) {
-      walk(filePath, filter, fileList)
-    }
-    else if (filter.test(filePath)) {
-      fileList.push(filePath)
-    }
-  })
-
-  return fileList
-}
 
 export async function updatePostReactions(file: string) {
   const data = fs.readFileSync(file, 'utf-8')

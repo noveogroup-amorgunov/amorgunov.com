@@ -1,6 +1,7 @@
 import path from 'node:path'
 import process from 'node:process'
-import { updatePostReactions, walk } from './updatePostReactions.ts'
+import { updatePostReactions } from './updatePostReactions.ts'
+import { walk } from './shared/walk.ts'
 
 // TODO: move to env
 const CONTENT_POSTS_PATH = '../../app/src/posts'

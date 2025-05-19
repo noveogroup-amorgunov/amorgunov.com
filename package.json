@@ -2,9 +2,9 @@
   "name": "amorgunov-com",
   "private": true,
   "scripts": {
-    "start": "pnpm --filter app start",
-    "build": "pnpm --filter app build",
-    "lint": "pnpm --filter app lint",
+    "start": "pnpm --filter @amorgunov/app start",
+    "build": "pnpm --filter @amorgunov/app build",
+    "lint": "pnpm --filter @amorgunov/app lint",
     "prepare": "husky"
   },
   "devDependencies": {

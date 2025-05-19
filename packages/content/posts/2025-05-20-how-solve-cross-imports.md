@@ -3,7 +3,7 @@ title: "Как решать проблемы кросс-импортов, и п�
 date: 2025-05-20
 time: 5
 description: "Рассмотрим, что такое кросс-импорты, способы их решения и ответим на вопрос, необходимо ли их запрещать или нет"
-featuredImageThumbnail: "/assets/images/2025-05-20-how-solve-cross-imports/preview.jpg"
+featuredImageThumbnail: "../images/2025-05-20-how-solve-cross-imports/preview.jpg"
 tags:
   - architecture
   - cross-imports
@@ -29,8 +29,14 @@ likes: 0
 <img
   class="lazyload inverting"
   alt="зацепление против связанности"
-  src="/assets/images/2025-05-20-how-solve-cross-imports/CouplingVsCohesion.min.png"
-  data-src="/assets/images/2025-05-20-how-solve-cross-imports/CouplingVsCohesion.out.png"
+  src="../images/2025-05-20-how-solve-cross-imports/CouplingVsCohesion.out.png"
+  data-src="../images/2025-05-20-how-solve-cross-imports/CouplingVsCohesion.out.png"
+/>
+
+<img
+  class="lazyload inverting"
+  alt="зацепление против связанности"
+  src="../images/2025-05-20-how-solve-cross-imports/CouplingVsCohesion.out.png"
 />
 
 Если модули будут как можно более изолированными и самодостаточными, а также независимыми, мы получим возможность независимо их развивать (рефакторить, обновлять, тестировать).
@@ -51,8 +57,8 @@ likes: 0
 <img
   class="lazyload inverting"
   alt="пример кросс-импортов"
-  src="/assets/images/2025-05-20-how-solve-cross-imports/2.min.png"
-  data-src="/assets/images/2025-05-20-how-solve-cross-imports/2.out.png"
+  src="../images/2025-05-20-how-solve-cross-imports/2.out.png"
+  data-src="../images/2025-05-20-how-solve-cross-imports/2.out.png"
 />
 
 К чему такая связь приводит? Во-первых, к более высокой связанности между модулями, что усложняет нашу архитектуру.
@@ -62,8 +68,8 @@ likes: 0
 <img
   class="lazyload inverting"
   alt="пример циклической зависимости"
-  src="/assets/images/2025-05-20-how-solve-cross-imports/3.min.png"
-  data-src="/assets/images/2025-05-20-how-solve-cross-imports/3.out.png"
+  src="../images/2025-05-20-how-solve-cross-imports/3.out.png"
+  data-src="../images/2025-05-20-how-solve-cross-imports/3.out.png"
 />
 
 Циклические зависимости нарушают [принцип ацикличных зависимостей (_ADP_)](https://en.wikipedia.org/wiki/Acyclic_dependencies_principle), который говорит о том, что граф зависимостей пакетов или компонентов не должен иметь циклов (принцип ввёл Роберт Мартин). А нарушение _ADP_ в свою очередь, может приводить к циклическим зависимостям на уровне файлов. _JavaScript_ сейчас достаточно терпим к таким зависимостям, но в любой момент вы сможете получить ошибку [_Cannot access 'X' before initialization_](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Cant_access_lexical_declaration_before_init), которая может полностью сломать ваше приложение.
@@ -73,8 +79,8 @@ likes: 0
 <img
   class="lazyload inverting image_size_xl"
   alt="реальный пример циклических зависимостей"
-  src="/assets/images/2025-05-20-how-solve-cross-imports/1.min.png"
-  data-src="/assets/images/2025-05-20-how-solve-cross-imports/1.out.png"
+  src="../images/2025-05-20-how-solve-cross-imports/1.out.png"
+  data-src="../images/2025-05-20-how-solve-cross-imports/1.out.png"
 />
 
 _Эта часть графа построена через инструмент [dependency-cruiser](https://www.npmjs.com/package/dependency-cruiser), который визуализирует связи модулей в проекте._
@@ -94,8 +100,8 @@ _Эта часть графа построена через инструмент
 <img
   class="lazyload inverting"
   alt="зависимость модуля PopularProductList от стора модуля ShoppingCart"
-  src="/assets/images/2025-05-20-how-solve-cross-imports/2.min.png"
-  data-src="/assets/images/2025-05-20-how-solve-cross-imports/2.out.png"
+  src="../images/2025-05-20-how-solve-cross-imports/2.out.png"
+  data-src="../images/2025-05-20-how-solve-cross-imports/2.out.png"
 />
 
 ```tsx
@@ -147,8 +153,8 @@ export function HomePage() {
 <img
   class="lazyload inverting"
   alt="разворачиваем зависимость"
-  src="/assets/images/2025-05-20-how-solve-cross-imports/4.min.png"
-  data-src="/assets/images/2025-05-20-how-solve-cross-imports/4.out.png"
+  src="../images/2025-05-20-how-solve-cross-imports/4.out.png"
+  data-src="../images/2025-05-20-how-solve-cross-imports/4.out.png"
 />
 
 Поток управления остается прежним: `ProductList` внутри себя использует стор из модуля `ShoppingCart`, но направление зависимости инвертировалось, и теперь `ProductList` зависит не от реализации, а от абстракции (_TypeScript_-интерфейс пропсов компонента). Сама зависимость внедряется через модуль из слоя выше (страница `HomePage`).
@@ -194,8 +200,8 @@ export function ProductList(props: Props) {
 <img
   class="lazyload inverting"
   alt="развернутые зависимости с помощью DI-контейнера"
-  src="/assets/images/2025-05-20-how-solve-cross-imports/5.min.png"
-  data-src="/assets/images/2025-05-20-how-solve-cross-imports/5.out.png"
+  src="../images/2025-05-20-how-solve-cross-imports/5.out.png"
+  data-src="../images/2025-05-20-how-solve-cross-imports/5.out.png"
 />
 
 Здесь оба модуля используют зависимость от DI-контейнера, но прямая связь между ними отсутствует. Именно то, чего мы и добивались. [Пример в репозитории](https://github.com/noveogroup-amorgunov/codefest15-demo-app/blob/main/packages/modular-architecture-fsd/src/widgets/popular-products/ui/ProductList/ProductList.tsx#L18).
@@ -211,8 +217,8 @@ export function ProductList(props: Props) {
 <img
   class="lazyload"
   alt="скриншот компонентов приложения"
-  src="/assets/images/2025-05-20-how-solve-cross-imports/7.min.png"
-  data-src="/assets/images/2025-05-20-how-solve-cross-imports/7.out.png"
+  src="../images/2025-05-20-how-solve-cross-imports/7.out.png"
+  data-src="../images/2025-05-20-how-solve-cross-imports/7.out.png"
 />
 
 Всё же она больше про корзину —  давайте разместим её там. Но на выходе получаем, о неожиданность, кросс-импорт.
@@ -220,8 +226,8 @@ export function ProductList(props: Props) {
 <img
   class="lazyload inverting"
   alt="кросс-импорт UI-компонента"
-  src="/assets/images/2025-05-20-how-solve-cross-imports/8.min.png"
-  data-src="/assets/images/2025-05-20-how-solve-cross-imports/8.out.png"
+  src="../images/2025-05-20-how-solve-cross-imports/8.out.png"
+  data-src="../images/2025-05-20-how-solve-cross-imports/8.out.png"
 />
 
 Первое, что можно сделать (и мы это уже умеем) – это использовать принцип инверсии зависимостей и прокинуть компонент-кнопку через пропсы (используя механизм _render_ -слотов):
@@ -257,8 +263,8 @@ export function ProductList(props: Props) {
 <img
   class="lazyload inverting"
   alt="пример выноса UI-компонента на отдельный слой"
-  src="/assets/images/2025-05-20-how-solve-cross-imports/9.min.png"
-  data-src="/assets/images/2025-05-20-how-solve-cross-imports/9.out.png"
+  src="../images/2025-05-20-how-solve-cross-imports/9.out.png"
+  data-src="../images/2025-05-20-how-solve-cross-imports/9.out.png"
 />
 
 [Пример из кода на github-е](https://github.com/noveogroup-amorgunov/codefest15-demo-app/blob/main/packages/modular-architecture-fsd/src/widgets/cart/ui/Cart/Cart.tsx#L50-L59).
@@ -333,8 +339,8 @@ return (
 <img
   class="lazyload inverting"
   alt="попытался визуально изобразить связь компонентов выше"
-  src="/assets/images/2025-05-20-how-solve-cross-imports/6.min.png"
-  data-src="/assets/images/2025-05-20-how-solve-cross-imports/6.out.png"
+  src="../images/2025-05-20-how-solve-cross-imports/6.out.png"
+  data-src="../images/2025-05-20-how-solve-cross-imports/6.out.png"
 />
 
 Какова вероятность того, что `ArticlesList` будет рендерить что-то кроме `ArticlePreviewCard`. Или что компонент `ArticlePreviewCard` будет в блоке с действиями использовать что-то кроме `ArticleMeta`? В данном случае введённые абстракции излишни и сильно усложняют данный компонент. Хотя можно было бы просто оставить прямую связь компонентов и использовать `ArticlesList` следующим образом:
@@ -365,8 +371,8 @@ _В мастер-ветке этого репозитория пример та�
 <img
   class="lazyload inverting"
   alt="пример нормального применения кросс-импорта"
-  src="/assets/images/2025-05-20-how-solve-cross-imports/10.min.png"
-  data-src="/assets/images/2025-05-20-how-solve-cross-imports/10.out.png"
+  src="../images/2025-05-20-how-solve-cross-imports/10.out.png"
+  data-src="../images/2025-05-20-how-solve-cross-imports/10.out.png"
 />
 
 В итоге получаем, что между модулями может быть некая иерархия: стабильные модули могут использоваться нестабильными – и это нормально. Между некоторыми модулями в целом может быть прямая зависимость (пост – комментарий, папка – файл и т.д.). В данных случаях запрет на кросс-импорты будет заставлять нас вводить ненужные абстракции.
@@ -397,8 +403,8 @@ forbidden: [
 <img
   class="lazyload inverting image_size_xl"
   alt="результат работы правила запрета кросс-импортов"
-  src="/assets/images/2025-05-20-how-solve-cross-imports/11.min.png"
-  data-src="/assets/images/2025-05-20-how-solve-cross-imports/11.out.png"
+  src="../images/2025-05-20-how-solve-cross-imports/11.out.png"
+  data-src="../images/2025-05-20-how-solve-cross-imports/11.out.png"
 />
 
 Красная стрелка по центру как раз-таки указывает на кросс-импорт в рамках одного слоя. Все эти инструменты также позволяют запускаться в виде CLI-линтера, который мы можем встроить в CI, чтобы отлавливать такие ошибки.
