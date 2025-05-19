@@ -2,15 +2,20 @@
   "name": "app",
   "private": true,
   "watch": {
-    "copy-posts": {
+    "copy:posts": {
       "patterns": ["../content/posts"],
       "extensions": "md"
+    },
+    "copy:images": {
+      "patterns": ["../content/images"],
+      "extensions": "gif,png,jpg,jpeg,svg"
     }
   },
   "scripts": {
-    "prestart": "pnpm run copy-posts",
-    "prebuild": "pnpm run copy-posts",
-    "copy-posts": "cp ../content/posts/*.md src/posts",
+    "prestart": "pnpm run \"/^copy:.*/\"",
+    "prebuild": "pnpm run \"/^copy:.*/\"",
+    "copy:images": "cp -r ../content/images/* src/assets/images",
+    "copy:posts": "cp ../content/posts/*.md src/posts",
     "start": "NODE_ENV=development pnpm run \"/^start:.*/\"",
     "start:content": "pnpm watch",
     "start:webpack": "webpack --mode development --watch --config configs/webpack.config.ts",
