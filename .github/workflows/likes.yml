@@ -1,9 +1,12 @@
 name: Update post reactions
 
+env:
+  HUSKY: 0
+
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 0 * * 0"
+    - cron: '0 0 * * 0'
 
 jobs:
   build:
@@ -22,14 +25,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: 'pnpm'
+          cache: pnpm
 
       - name: Install dependencies
-        working-directory: ./.scripts
         run: pnpm install
 
       - name: Update post reactions
-        working-directory: ./.scripts
+        working-directory: ./packages/scripts
         run: pnpm update-post-reactions
 
       - name: Commit changes
@@ -37,7 +39,7 @@ jobs:
         with:
           author_name: noveogroup-amorgunov
           author_email: noveogroupamorgunov@gmail.com
-          message: "[Automated] Update post reactions"
-          add: src
+          message: '[Automated] Update post reactions'
+          add: ./packages/content
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "baseUrl": "src/client/javascript",
+    "module": "NodeNext",
+    "moduleResolution": "nodenext",
+    "resolveJsonModule": true,
+    "allowJs": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "outDir": "./dist/",
+    "sourceMap": true,
+    "esModuleInterop": true
+  },
+  "include": ["src/**/*", "configs/**/*"],
+  "exclude": ["node_modules"]
+}

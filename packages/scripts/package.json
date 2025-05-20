@@ -1,0 +1,36 @@
+{
+  "name": "@amorgunov/scripts",
+  "type": "module",
+  "private": true,
+  "license": "MIT",
+  "exports": {
+    "./copyPosts": "./src/copyPosts.ts"
+  },
+  "scripts": {
+    "post:generate": "node --experimental-strip-types src/generatePostCLI.ts",
+    "post:update-reactions": "node --experimental-strip-types src/updatePostReactionsRunner.ts",
+    "post:optimize-images": "node --experimental-strip-types src/optimizeImagesCLI.ts",
+    "lint": "eslint .",
+    "test": "vitest",
+    "test:ci": "vitest run"
+  },
+  "dependencies": {
+    "axios": "1.9.0",
+    "express": "5.1.0",
+    "imagemin": "9.0.1",
+    "imagemin-mozjpeg": "10.0.0",
+    "imagemin-pngquant": "^10.0.0",
+    "lqip": "2.1.0",
+    "luxon": "3.6.1",
+    "minimist": "^1.2.8",
+    "puppeteer": "24.8.2",
+    "yargs": "17.7.2",
+    "zod": "^3.24.4"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^4.13.1",
+    "@types/node": "^22.15.18",
+    "eslint": "^9.26.0",
+    "vitest": "^3.1.3"
+  }
+}

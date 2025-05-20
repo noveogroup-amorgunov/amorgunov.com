@@ -1,0 +1,91 @@
+{
+  "name": "@amorgunov/app",
+  "private": true,
+  "watch": {
+    "copy:posts": {
+      "patterns": ["../content/posts"],
+      "extensions": "md"
+    },
+    "copy:images": {
+      "patterns": ["../content/images"],
+      "extensions": "gif,png,jpg,jpeg,svg"
+    }
+  },
+  "scripts": {
+    "prestart": "pnpm run \"/^copy:.*/\"",
+    "prebuild": "pnpm run \"/^copy:.*/\"",
+    "copy:posts": "node --experimental-strip-types configs/preparePosts.mts ../content/posts ./src/posts",
+    "copy:images": "cp -r ../content/images/* src/assets/images",
+    "start": "NODE_ENV=development pnpm run \"/^start:.*/\"",
+    "start:content": "pnpm watch",
+    "start:webpack": "webpack --mode development --watch --config configs/webpack.config.ts",
+    "start:11ty": "eleventy --input=src --config=configs/11ty/11ty.config.js --serve --quiet",
+    "build": "pnpm run build:clean && NODE_ENV=production pnpm run build:webpack && NODE_ENV=production pnpm run build:11ty",
+    "build:clean": "rimraf dist",
+    "build:webpack": "webpack --mode production --config configs/webpack.config.ts",
+    "build:11ty": "eleventy --input=src --config=configs/11ty/11ty.config.js",
+    "analyze:js": "source-map-explorer dist/client/build/**/*.js dist/client/build/**/*.js.map",
+    "lint": "pnpm run \"/^lint:.*/\"",
+    "lint:css": "stylelint src/client/stylesheets/*.css",
+    "lint:js": "eslint src/client/javascript configs",
+    "watch": "npm-watch",
+    "test:ci": "echo \"skipping test\""
+  },
+  "dependencies": {
+    "@typebot/core": "0.0.2",
+    "clipboard": "2.0.4",
+    "event-emitter": "0.3.5",
+    "medium-zoom": "1.0.4"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "2.0.1",
+    "@11ty/eleventy-plugin-rss": "1.1.2",
+    "@11ty/eleventy-plugin-syntaxhighlight": "4.0.0",
+    "@amorgunov/scripts": "workspace:*",
+    "@antfu/eslint-config": "^4.13.1",
+    "@babel/core": "7.3.4",
+    "@babel/plugin-transform-class-properties": "^7.27.1",
+    "@babel/preset-env": "7.3.4",
+    "@babel/preset-typescript": "7.9.0",
+    "@babel/register": "7.0.0",
+    "@types/clipboard": "2.0.1",
+    "@types/event-emitter": "0.3.3",
+    "@types/node": "^22.15.18",
+    "babel-loader": "8.2.5",
+    "common-tags": "1.8.0",
+    "css-hot-loader": "1.4.3",
+    "css-loader": "6.7.1",
+    "css-minimizer-webpack-plugin": "3.4.1",
+    "eslint": "^9.27.0",
+    "handlebars": "4.7.7",
+    "handlebars-helpers": "0.9.8",
+    "html-minifier": "4.0.0",
+    "html-webpack-plugin": "5.5.0",
+    "liquidjs": "10.7.1",
+    "luxon": "1.28.1",
+    "markdown-it": "12.3.2",
+    "markdown-it-anchor": "8.6.2",
+    "mini-css-extract-plugin": "2.6.0",
+    "npm-watch": "^0.13.0",
+    "postcss-custom-media": "8.0.0",
+    "postcss-import": "14.1.0",
+    "postcss-loader": "6.2.1",
+    "postcss-nested": "5.0.6",
+    "postcss-preset-env": "7.4.4",
+    "postcss-reporter": "7.0.5",
+    "prettier": "2.7.1",
+    "rimraf": "6.0.1",
+    "source-map-explorer": "2.5.0",
+    "stylelint": "14.14.0",
+    "stylelint-config-recommended": "9.0.0",
+    "stylelint-config-standard": "29.0.0",
+    "terser-webpack-plugin": "2.3.6",
+    "typescript": "5.0.3",
+    "webpack": "5.77.0",
+    "webpack-cli": "4.9.2"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
+}

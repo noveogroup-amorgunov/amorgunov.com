@@ -1,0 +1,49 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`copyPosts > should copy post with updating images path 1`] = `
+[MockFunction writeFileSync] {
+  "calls": [
+    [
+      "src/__tests__/2025-05-18-test-slug.md",
+      "---
+title: "test-post"
+date: 2025-05-18
+time: 5
+description: "ХХХ"
+featuredImageThumbnail: "/assets/images/2025-05-18-test-slug/preview.jpg"
+tags:
+  - ХХХ
+  - ХХХ
+layout: layouts/post.hbs
+likes: 0
+---
+
+# Test post
+
+<img
+  class="lazyload inverting"
+  alt="зацепление против связанности"
+  src="/assets/images/2025-05-20-how-solve-cross-imports/CouplingVsCohesion.min.png"
+  data-src="/assets/images/2025-05-20-how-solve-cross-imports/CouplingVsCohesion.out.png"
+/>
+
+## Second image
+
+<img
+  class="lazyload inverting"
+  alt="зацепление против связанности"
+  src="/assets/images/2025-05-20-how-solve-cross-imports/CouplingVsCohesion.png"
+  data-src="/assets/images/2025-05-20-how-solve-cross-imports/CouplingVsCohesion.png"
+/>
+",
+      "utf-8",
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": "calling mock function",
+    },
+  ],
+}
+`;

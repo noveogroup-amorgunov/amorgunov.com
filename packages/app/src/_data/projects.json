@@ -1,0 +1,19 @@
+[
+  {
+    "title": "Квиз по JavaScript",
+    "url": "/javascript-quiz/",
+    "theme": "dark"
+  },
+  {
+    "title": "Авторский телеграм канал о разработке",
+    "url": "https://t.me/amorgunov",
+    "coverImage": "/assets/images/common/project-telegram.png",
+    "theme": "dark"
+  },
+  {
+    "title": "Обучающий youtube-канал о фронтенде «Typing Away»",
+    "url": "https://www.youtube.com/@typingaway",
+    "coverImage": "/assets/images/common/project-youtube.png",
+    "theme": "light"
+  }
+]
