@@ -24,3 +24,6 @@ dist-ssr
 *.sw?
 
 temp
+packages/app/src/client/build/
+packages/app/src/_includes/layouts/next.hbs
+packages/app/src/_includes/layouts/post.hbs
