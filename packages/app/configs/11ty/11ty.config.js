@@ -52,7 +52,7 @@ module.exports = function (config) {
       input: 'src',
       includes: '_includes',
       data: '_data',
-      output: 'dist',
+      output: '../../dist',
     },
   }
 }

@@ -20,7 +20,7 @@
     "start:content": "pnpm watch",
     "start:webpack": "webpack --mode development --watch --config configs/webpack.config.ts",
     "start:11ty": "eleventy --input=src --config=configs/11ty/11ty.config.js --serve --quiet",
-    "build": "NODE_ENV=production pnpm run \"/^build:.*/\"",
+    "build": "pnpm run build:clean && NODE_ENV=production pnpm run build:webpack && NODE_ENV=production pnpm run build:11ty",
     "build:clean": "rimraf dist",
     "build:webpack": "webpack --mode production --config configs/webpack.config.ts",
     "build:11ty": "eleventy --input=src --config=configs/11ty/11ty.config.js",
