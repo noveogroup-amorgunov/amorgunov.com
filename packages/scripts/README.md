@@ -18,11 +18,11 @@ Usage:
 
 ```bash
 # template
-# pnpm optimize-images --help
-# pnpm optimize-images --title=<title> --slug=<slug> --date=<date?>
+# pnpm post:generate --help
+# pnpm post:generate --title=<title> --slug=<slug> --date=<date?>
 
-npm run create-post --title="Awesome title" --slug="awesome-slug" "2019-12-22"
-npm run create-post --title="Awesome title" --slug="awesome-slug" # with current date
+pnpm post:generate --title="Awesome title" --slug="awesome-slug" "2019-12-22"
+pnpm post:generate --title="Awesome title" --slug="awesome-slug" # with current date
 ```
 
 ## Optimize post images
@@ -35,9 +35,9 @@ Usage:
 
 ```bash
 # template
-# pnpm optimize-images <path>
+# pnpm post:optimize-images <path>
 
-pnpm optimize-images ../app/src/assets/images/2025-05-20-how-solve-cross-imports
+pnpm post:optimize-images ../content/images/2025-05-20-how-solve-cross-imports
 ```
 
 ## Update post reactions
@@ -45,5 +45,5 @@ pnpm optimize-images ../app/src/assets/images/2025-05-20-how-solve-cross-imports
 Usage:
 
 ```bash
-pnpm update-post-reactions
+pnpm post:update-reactions
 ```

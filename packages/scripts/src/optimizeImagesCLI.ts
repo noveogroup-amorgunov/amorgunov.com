@@ -14,23 +14,42 @@ if (!imagesPath) {
   )
 }
 
-const inputPath = path.join(
+function getInputPaths(inputPaths: string[]) {
+  for (const inputPath of inputPaths) {
+    const folderIsExists = fs.existsSync(inputPath)
+
+    if (folderIsExists) {
+      return inputPath
+    }
+  }
+
+  return null
+}
+
+const rootInputPath = path.join(
   process.cwd(),
   // FIXME: when we run script from root, we need to go up two levels
   '../..',
   imagesPath.endsWith('/') ? imagesPath : `${imagesPath}/`
 )
 
-console.log('inputPath', inputPath)
+const inputPath = path.join(
+  process.cwd(),
+  imagesPath.endsWith('/') ? imagesPath : `${imagesPath}/`
+)
 
-const folderIsExists = fs.existsSync(inputPath)
+const correntInputPath = getInputPaths([rootInputPath, inputPath])
 
-if (!folderIsExists) {
+if (!correntInputPath) {
   throw new Error(
-    `Nothing to optimize in ${inputPath}. Try change folder path.`,
+    `Nothing to optimize in ${imagesPath}. Try change folder path.
+Try open by follow paths:
+-  ${rootInputPath}
+-  ${inputPath}
+    `,
   )
 }
 
-optimizeImages(inputPath)
+optimizeImages(correntInputPath)
   .catch(err => console.error(err))
   .finally(() => process.exit(0))
