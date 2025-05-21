@@ -55,7 +55,7 @@ Usage:
 pnpm post:update-reactions
 ```
 
-# Copy posts
+## Copy posts
 
 > [!IMPORTANT]
 > Internal script which using by main package (app) to copy posts to 11ty folder.
