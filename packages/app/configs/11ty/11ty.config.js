@@ -20,6 +20,7 @@ module.exports = function (config) {
   config.addFilter('version', filters.version)
   config.addFilter('readableDate', filters.readableDate)
   config.addFilter('readableDateShort', filters.readableDateShort)
+  config.addFilter('readableDateLocalazed', filters.readableDateLocalazed)
   config.addFilter('random', filters.swapListItem)
   config.addFilter('relatedPosts', filters.relatedPosts)
   config.addFilter('toJSON', filters.toJSON)

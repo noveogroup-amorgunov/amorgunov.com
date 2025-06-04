@@ -8,9 +8,10 @@
     <div class="page{{#if pageType}} page_type_{{pageType}}{{/if}}">
       <div class="page__container">
         {{> components/header }}
-        <div class="page__content">
+        <main id="main-content-id" class="page__content">
+          <a id="skipped-link-id" tabindex="-1" class=""></a>
           {{{content}}}
-        </div>
+        </main>
         {{> components/footer }}
         {{> components/menu }}
       </div>

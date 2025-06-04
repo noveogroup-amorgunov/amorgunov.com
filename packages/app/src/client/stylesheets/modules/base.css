@@ -79,6 +79,13 @@ ol {
   }
 }
 
+button.icon {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
 html[data-theme="dark"] img {
   filter: brightness(0.8) contrast(1.2);
 }
@@ -93,4 +100,15 @@ html[data-theme="dark"] img.inverting {
   html[data-theme="dark"] & {
     mix-blend-mode: screen;
   }
+}
+
+/* a11y */
+
+.visually-hidden {
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
 }

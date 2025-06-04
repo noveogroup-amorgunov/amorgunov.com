@@ -1,0 +1,13 @@
+#a11y-skip-to-content {
+  position: fixed;
+  opacity: 0;
+  top: 5px;
+  left: 0;
+  transform: translateY(-600%);
+  transition: transform .3s;
+
+  &:focus {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

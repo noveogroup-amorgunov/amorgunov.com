@@ -4,6 +4,7 @@
   align-items: center;
   gap: 10px 4px;
   padding: 8px 0;
+  list-style-type: none;
 }
 
 a.tag {

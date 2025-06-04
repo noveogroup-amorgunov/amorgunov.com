@@ -1,20 +1,24 @@
-<section class="pagination-container">
-  <nav class="pagination">
+<nav class="pagination" role="navigation" aria-label="Переход по страницам">
+  <ul>
     {{#if pagination.nextPageLink}}
-      {{#> components/text type="body"}}
-        {{#> components/link class="pagination__item" rel="prev" href=(append "/blog/page/" (JSONstringify (plus pagination.pageNumber 1)))}}К старым постам{{/ components/link}}
-      {{/ components/text}}
+      <li>
+        {{#> components/text type="body"}}
+          {{#> components/link class="pagination__item" rel="prev" href=(append "/blog/page/" (JSONstringify (plus pagination.pageNumber 1)))}}К старым постам{{/ components/link}}
+        {{/ components/text}}
+      </li>
     {{/if}}
     {{#if pagination.previousPageLink}}
-      {{#if (eq pagination.pageNumber 1)}}
-      {{#> components/text type="body"}}
-        {{#> components/link class="pagination__item" rel="next" href="/blog"}}К новым{{/ components/link}}
-      {{/ components/text}}
-      {{else}}
+      <li>
+        {{#if (eq pagination.pageNumber 1)}}
         {{#> components/text type="body"}}
-          {{#> components/link class="pagination__item" rel="next" href=(append "/blog/page/" (JSONstringify (plus pagination.pageNumber -1)))}}К новым{{/ components/link}}
+          {{#> components/link class="pagination__item" rel="next" href="/blog"}}К новым{{/ components/link}}
         {{/ components/text}}
-      {{/if}}
+        {{else}}
+          {{#> components/text type="body"}}
+            {{#> components/link class="pagination__item" rel="next" href=(append "/blog/page/" (JSONstringify (plus pagination.pageNumber -1)))}}К новым{{/ components/link}}
+          {{/ components/text}}
+        {{/if}}
+      </li>
     {{/if}}
-  </nav>
-</section>
+  </ul>
+</nav>

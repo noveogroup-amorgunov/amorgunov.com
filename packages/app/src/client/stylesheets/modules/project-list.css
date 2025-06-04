@@ -5,6 +5,7 @@
   gap: 16px;
   max-width: 100%;
   padding-top: 8px;
+  list-style-type: none;
 
   @media (--viewport-mobile) {
     grid-template-columns: repeat(1, minmax(0, 1fr));

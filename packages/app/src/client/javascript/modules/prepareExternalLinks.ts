@@ -5,7 +5,8 @@ function isExternalLink(url = '') {
 
 export function prepareExternalLinks() {
   document.querySelectorAll('.post a').forEach((a) => {
-    if (isExternalLink(a.getAttribute('href'))) {
+    const href = a.getAttribute('href')
+    if (href && isExternalLink(href)) {
       a.setAttribute('rel', 'noreferrer external')
       a.setAttribute('target', '_blank')
     }

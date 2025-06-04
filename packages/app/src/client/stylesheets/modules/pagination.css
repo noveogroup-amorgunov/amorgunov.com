@@ -1,5 +1,9 @@
 .pagination {
   padding: 30px 0;
+}
+
+.pagination ul {
+  list-style-type: none;
   display: flex;
   justify-content: space-between;
 }

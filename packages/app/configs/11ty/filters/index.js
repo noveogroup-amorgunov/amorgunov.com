@@ -1,6 +1,7 @@
 const htmlDateString = require(`./htmlDateString`)
 const readableDate = require(`./readableDate`)
 const readableDateShort = require(`./readableDateShort`)
+const readableDateLocalazed = require(`./readableDateLocalazed`)
 const swapListItem = require(`./swapListItem`)
 const head = require(`./head`)
 const toJSON = require(`./toJSON`)
@@ -13,6 +14,7 @@ module.exports = {
   htmlDateString,
   readableDate,
   readableDateShort,
+  readableDateLocalazed,
   swapListItem,
   head,
   toJSON,

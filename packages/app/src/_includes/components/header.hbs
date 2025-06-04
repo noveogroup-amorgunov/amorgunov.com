@@ -1,7 +1,8 @@
-<div class="header">
-  <a href="{{#if (eq page.url '/blog/')}}/{{else}}/blog{{/if}}" class="header__logo"></a>
-  <div class="header__right">
-    <a href="#" class="icon header__theme-toggler"></a>
-    <a href="#" class="icon header__menu-toggler"></a>
-  </div>
-</div>
+<header class="header">
+  {{> components/a11y-skip-to-content }}
+  <a href="{{#if (eq page.url '/blog/')}}/{{else}}/blog{{/if}}" class="header__logo" aria-label="Главная страница"></a>
+  <nav aria-label="Действия" class="header__right">
+    <button aria-label="Сменить тему" class="icon header__theme-toggler" />
+    <button aria-label="Открыть меню" class="icon header__menu-toggler" />
+  </nav>
+</header>

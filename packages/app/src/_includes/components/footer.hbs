@@ -1,20 +1,24 @@
-<div class="footer">
-  <div class="footer__item">
-    {{#> components/text type="caption"}}
-      Powered by
-      {{#> components/text type="captionStrong"}}
-        {{#> components/link href="#"}}11ty{{/ components/link}}
-      {{/ components/text}}
-    {{/ components/text}}
-  </div>
-  <div class="footer__item footer__item_divider">
-    {{#> components/text type="captionStrong"}} | {{/ components/text}}
-  </div>
-  <div class="footer__item">
-    {{#> components/text type="caption"}}
-      {{#> components/link href=(append "https://github.com/noveogroup-amorgunov/amorgunov.com/tree/master/" page.inputPath) }}
-        Редактировать страницу на GitHub
-      {{/ components/link}}
-    {{/ components/text}}
-  </div>
-</div>
+<footer class="footer">
+  <nav>
+    <ul class="footer__list">
+      <li class="footer__item">
+        {{#> components/text type="caption"}}
+          Powered by
+          {{#> components/text type="captionStrong"}}
+            {{#> components/link href="#"}}11ty{{/ components/link}}
+          {{/ components/text}}
+        {{/ components/text}}
+      </li>
+      <li class="footer__item footer__item_divider" aria-hidden="true">
+        {{#> components/text type="captionStrong"}} | {{/ components/text}}
+      </li>
+      <li class="footer__item">
+        {{#> components/text type="caption"}}
+          {{#> components/link href=(append "https://github.com/noveogroup-amorgunov/amorgunov.com/tree/master/" page.inputPath) }}
+            Редактировать страницу на GitHub
+          {{/ components/link}}
+        {{/ components/text}}
+      </li>
+    </ul>
+  </nav>
+</footer>
