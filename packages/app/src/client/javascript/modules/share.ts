@@ -12,9 +12,9 @@ export function isWebShareSupported() {
 }
 
 export function registerShare() {
-  const button = document.querySelector('[data-id=share-button') as HTMLButtonElement
+  const $button = document.querySelector('[data-id=share-button') as HTMLButtonElement
 
-  if (!button || !isWebShareSupported()) {
+  if (!$button || !isWebShareSupported()) {
     return
   }
 
@@ -23,7 +23,7 @@ export function registerShare() {
     url: window.location.href,
   }
 
-  button.addEventListener('click', (event: MouseEvent) => {
+  $button.addEventListener('click', (event: MouseEvent) => {
     try {
       event.preventDefault()
       navigator.share(shareData)
