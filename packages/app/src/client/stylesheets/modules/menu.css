@@ -1,64 +1,31 @@
-.menu {
-  z-index: 5;
-}
-
 body:not(.loaded) .menu {
   display: none;
   opacity: 0;
 }
 
-.menu__overlay {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  top: 0;
-  background-color: rgba(0, 0, 0, 0.2);
+.menu::backdrop {
+  background: linear-gradient(270deg, rgba(0, 0, 0, .30) 60%, hsla(0, 0.00%, 52.90%, 0.40));
   transition: opacity 0.3s ease-in-out;
-  visibility: hidden;
-  opacity: 0;
-
-  .menu_opened & {
-    opacity: 1;
-    visibility: visible;
-  }
-
-  &::after {
-    content: '';
-    display: block;
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(270deg, rgba(0, 0, 0, 0.15) 60%, rgba(217, 217, 217, 0) 100%);
-  }
 }
 
-.menu__content {
+.menu {
   position: fixed;
+  border: 0;
   right: 0;
   top: 0;
   bottom: 0;
   padding: 36px 24px;
+  padding-top: 72px;
   height: 100%;
   max-width: 320px;
   width: 85%;
   background: var(--background-color);
-  transform: translateX(100%);
-  transition: transform 0.3s ease-in-out;
   text-align: left;
   overflow-y: auto;
 
-  .menu_opened & {
-    transform: translate(0, 0);
-    visibility: visible;
-  }
-
-  .menu:not(.menu_opened) & {
-    animation: 1s fadeOut;
+  &[open] {
+    animation: 0.3s fadeIn;
     animation-fill-mode: forwards;
-    visibility: visible;
   }
 
   @media (--viewport-mobile) {
@@ -67,7 +34,6 @@ body:not(.loaded) .menu {
     max-width: 100%;
     border-top-left-radius: 35px;
     border-top-right-radius: 35px;
-    transform: translateY(100%);
   }
 }
 
@@ -75,19 +41,8 @@ body:not(.loaded) .menu {
   padding: 16px 0;
 }
 
-.menu__block-header {
-  padding: 8px 0;
-}
-
-.menu__header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
 .menu__toggler {
-  display: inline-block;
-  position: absolute;
+  position: fixed;
   right: 24px;
   top: 34px;
   width: 19px;
@@ -97,21 +52,23 @@ body:not(.loaded) .menu {
   background-size: 19px 19px;
 }
 
-.menu__logo {
-  display: block;
-  width: 42px;
-  height: 27px;
-  background-image: url(/assets/favicon192.png);
-  background-repeat: no-repeat;
-  background-size: 42px;
-  background-position-y: -10px;
-
-  html[data-theme="dark"] & {
-    filter: invert(0.9);
-  }
+.menu__nav-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-weight: 500;
 }
 
-@keyframes fadeOut {
-  99% { visibility: visible; }
-  100% { visibility: hidden; }
+.menu__nav-list a {
+  color: var(--text-color);
+}
+
+@keyframes fadeIn{
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }

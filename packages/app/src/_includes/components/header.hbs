@@ -1,8 +1,21 @@
 <header class="header">
   {{> components/a11y-skip-to-content }}
   <a href="{{#if (eq page.url '/blog/')}}/{{else}}/blog{{/if}}" class="header__logo" aria-label="Главная страница"></a>
-  <nav aria-label="Действия" class="header__right">
+  <div class="header__actions">
+    <nav aria-label="Ссылки по разделам" class="header__nav">
+      <ul class="header__nav-list">
+        <li{{#if (eq page.url '/blog/')}} aria-current="true"{{/if}}>
+          <a href="/blog/">Посты</a>
+        </li>
+        <li{{#if (eq page.url '/projects/')}} aria-current="true"{{/if}}>
+          <a href="/projects/">Проекты</a>
+        </li>
+        <li{{#if (eq page.url '/talks/')}} aria-current="true"{{/if}}>
+          <a href="/talks/">Talks</a>
+        </li>
+      </ul>
+    </nav>
     <button aria-label="Сменить тему" class="icon header__theme-toggler" />
     <button aria-label="Открыть меню" class="icon header__menu-toggler" />
-  </nav>
+  </div>
 </header>

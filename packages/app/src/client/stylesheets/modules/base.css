@@ -112,3 +112,17 @@ html[data-theme="dark"] img.inverting {
   position: absolute;
   width: 1px;
 }
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--brand-color);
+  outline-offset: 2px;
+}
+
+.icon:focus-visible,
+.header__logo:focus-visible {
+  html[data-theme="dark"] & {
+    /* Inverted var(--brand-color) */
+    outline: 2px solid #040ee0;
+  }
+}
