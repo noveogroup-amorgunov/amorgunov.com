@@ -14,31 +14,39 @@ body:not(.loaded) .menu {
 
 .menu {
   position: fixed;
-  border: 0;
   right: 0;
   top: 0;
   bottom: 0;
-  padding: 36px 24px;
-  padding-top: 72px;
+
+  border: 0;
+  padding: 0;
+  padding-bottom: 36px;
+
   height: 100%;
   max-width: 320px;
-  width: 85%;
+  width: 100%;
   background: var(--background-color);
   text-align: left;
   overflow-y: auto;
 
   &[open] {
+    display: flex;
     animation: 0.3s fadeIn;
     animation-fill-mode: forwards;
   }
 
   @media (--viewport-mobile) {
     top: 16px;
-    width: calc(100vw - 48px);
+    width: 100vw;
     max-width: 100%;
     border-top-left-radius: 35px;
     border-top-right-radius: 35px;
   }
+}
+
+.menu__content {
+  padding: 72px 24px;
+  width: 100%;
 }
 
 .menu__block {

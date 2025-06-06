@@ -1,17 +1,19 @@
 <dialog class="menu">
-  <nav aria-label="Ссылки по разделам" class="menu__nav">
-    <ul class="menu__nav-list">
-      <li{{#if (eq page.url '/blog/')}} aria-current="true"{{/if}}>
-        <a href="/blog/">Посты</a>
-      </li>
-      <li{{#if (eq page.url '/projects/')}} aria-current="true"{{/if}}>
-        <a href="/projects/">Проекты</a>
-      </li>
-      <li{{#if (eq page.url '/talks/')}} aria-current="true"{{/if}}>
-        <a href="/talks/">Talks</a>
-      </li>
-    </ul>
-  </nav>
+  <div class="menu__content">
+    <nav aria-label="Ссылки по разделам" class="menu__nav">
+      <ul class="menu__nav-list">
+        <li{{#if (eq page.url '/blog/')}} aria-current="true"{{/if}}>
+          <a href="/blog/">Посты</a>
+        </li>
+        <li{{#if (eq page.url '/projects/')}} aria-current="true"{{/if}}>
+          <a href="/projects/">Проекты</a>
+        </li>
+        <li{{#if (eq page.url '/talks/')}} aria-current="true"{{/if}}>
+          <a href="/talks/">Talks</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
   {{!-- <section class="menu__block" aria-label="Популярные теги">
     {{> components/tag-list-with-bullet tags=(reverse (head collections.tagsWithPostsCount -8))}}
   </section> --}}
