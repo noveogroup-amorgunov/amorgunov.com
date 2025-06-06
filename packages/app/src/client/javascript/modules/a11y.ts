@@ -18,7 +18,7 @@ function registerSkipToContent() {
 
   $toggler.addEventListener('click', () => {
     $main.scrollIntoView({ behavior: 'smooth' })
-    $skippedLink?.focus()
+    $skippedLink.focus()
   })
 }
 

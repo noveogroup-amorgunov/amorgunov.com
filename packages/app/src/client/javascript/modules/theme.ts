@@ -41,7 +41,11 @@ export function registerThemeToggler() {
 
     setTheme(nextTheme)
 
-    $toggler?.setAttribute('aria-label', `Сменить тему на ${nextTheme === 'light' ? 'тёмную' : 'светлую'}`)
+    if (!$toggler) {
+      return
+    }
+
+    $toggler.setAttribute('aria-label', `Сменить тему на ${nextTheme === 'light' ? 'тёмную' : 'светлую'}`)
   }
 
   $toggler.addEventListener('click', onTogglerClick)

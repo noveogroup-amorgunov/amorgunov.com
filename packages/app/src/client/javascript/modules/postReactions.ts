@@ -84,13 +84,13 @@ function clientOptimisticUpdate(
 
   if (increaseValue) {
     el.classList.add('reaction_active')
-    button?.setAttribute('aria-current', 'true')
+    button.setAttribute('aria-current', 'true')
     imageEl.src = imageEl.src.replace('.svg', '.gif')
     counterEl.textContent = String(Number(counterEl.textContent) + 1)
   }
   else {
     el.classList.remove('reaction_active')
-    button?.removeAttribute('aria-current')
+    button.removeAttribute('aria-current')
     imageEl.src = imageEl.src.replace('.gif', '.svg')
     counterEl.textContent = String(Number(counterEl.textContent) - 1)
   }
