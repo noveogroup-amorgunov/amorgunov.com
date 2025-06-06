@@ -2,12 +2,17 @@
   <ul class="project-list">
     {{#each (reverse projects) as |project|}}
       <li>
-        <a rel="noreferrer external" target="_blank" href="{{project.url}}" class="project-list__card {{project.theme}}" style="background-image: url({{project.coverImage}});">
+        <a rel="noreferrer external" target="_blank" href="{{project.url}}" class="project-list__card {{project.theme}}" style="{{#if project.coverImage}}background-image: url({{project.coverImage}});{{/if}} {{#if project.color}}background-color: {{project.color}};{{/if}}">
+          <div class="project-list__card-notes">{{project.notes}}</div>
           {{#> components/text type="h3" class="project-list__card-title"}}
             {{project.title}}
+          {{/ components/text}}
+          {{#> components/text type="p" class="project-list__card-description"}}
+            {{project.description}}
           {{/ components/text}}
         </a>
       </li>
     {{/each}}
   </ul>
 </nav>
+

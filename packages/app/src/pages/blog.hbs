@@ -34,12 +34,5 @@ permalink: /blog/{{#if (not (eq pagination.pageNumber 0))}}page/{{pagination.pag
   {{> components/pagination pagination=pagination}}
 </section>
 
-{{#if (eq pagination.pageNumber 0)}}
-  <section aria-labelledby="projects-title">
-    {{#> components/text type="h2" as="h2" id="projects-title"}}Проекты{{/ components/text}}
-    {{> components/project-list projects=projects}}
-  </section>
-{{/if}}
-
 {{> components/stay-in-touch }}
 

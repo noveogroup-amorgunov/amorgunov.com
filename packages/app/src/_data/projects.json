@@ -1,19 +1,48 @@
 [
   {
     "title": "Квиз по JavaScript",
+    "description": "Квиз на знание JavaScript из 13 вопросов",
     "url": "/javascript-quiz/",
-    "theme": "dark"
+    "theme": "dark",
+    "notes": "2019"
   },
   {
-    "title": "Авторский телеграм канал о разработке",
+    "title": "vdom130",
+    "description": "Свой VirtualDOM на 130 строк кода",
+    "url": "https://github.com/noveogroup-amorgunov/vdom130",
+    "theme": "dark",
+    "notes": "2020"
+  },
+  {
+    "title": "t.me/amorgunov",
+    "description": "Авторский телеграм канал о разработке",
     "url": "https://t.me/amorgunov",
     "coverImage": "/assets/images/common/project-telegram.png",
-    "theme": "dark"
+    "theme": "dark",
+    "notes": "с 2019"
   },
   {
-    "title": "Обучающий youtube-канал о фронтенде «Typing Away»",
+    "title": "@typingaway",
+    "description": "Обучающий YouTube-канал о фронтенде «AM»",
     "url": "https://www.youtube.com/@typingaway",
     "coverImage": "/assets/images/common/project-youtube.png",
-    "theme": "light"
+    "theme": "light",
+    "notes": "с 2023"
+  },
+  {
+    "title": "nukeapp",
+    "description": "Легендарное приложение кроссовок на основе React + Feature-Sliced Design",
+    "url": "https://github.com/noveogroup-amorgunov/nukeapp",
+    "theme": "dark",
+    "color": "#5f0951",
+    "notes": "с 2023"
+  },
+  {
+    "title": "fsd-lessons",
+    "description": "Монорепа с уроками по Feature-Sliced Design",
+    "url": "https://github.com/noveogroup-amorgunov/fsd-lessons",
+    "theme": " dark",
+    "color": "#030533",
+    "notes": "с 2025"
   }
 ]

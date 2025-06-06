@@ -1,0 +1,53 @@
+---
+layout: layouts/next.hbs
+title: Выступления
+description: Выступления на конференциях и митапах
+permalink: /talks/
+---
+
+{{#> components/text type="h1" as="h1"}}Выступления{{/ components/text}}
+
+<style>
+  .talks-list-container {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 1rem;
+  }
+
+  .talks-list-container a + a::before {
+    content: ' / ';
+    display: inline-block;
+    padding-right: 0.3rem;
+  }
+  
+  .talks-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .talks-list > li > a:first-child {
+    background-color: var(--brand-color);
+    color: var(--color-dark);
+  }
+</style>
+
+<nav aria-label="Список выступлений" class="talks-list-container">
+  {{#each talks as |talkInYear|}}
+    <div>
+      {{#> components/text type="h1" as="h2"}}{{@key}}{{/ components/text}}
+
+      <ul class="talks-list">
+        {{#each talkInYear as |talk|}}
+          <li>
+            <a href="{{talk.conferenceUrl}}" target="_blank" rel="noopener noreferrer"><strong>{{talk.conference}}</strong></a> / <strong>{{talk.title}}</strong>
+            <br />
+            ({{#if talk.videoUrl}}<a href="{{talk.videoUrl}}">🍿 Video</a>{{/if}}
+              {{#if talk.slidesUrl}}<a href="{{talk.slidesUrl}}">📸 Slides</a>{{/if}}
+              {{#if talk.materialsUrl}}<a href="{{talk.materialsUrl}}">📒 Materials</a>{{/if}})
+          </li>
+        {{/each}}
+      </ul>
+    </div>
+  {{/each}}
+</nav>

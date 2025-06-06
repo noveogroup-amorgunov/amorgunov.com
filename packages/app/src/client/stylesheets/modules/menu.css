@@ -6,6 +6,10 @@ body:not(.loaded) .menu {
 .menu::backdrop {
   background: linear-gradient(270deg, rgba(0, 0, 0, .30) 60%, hsla(0, 0.00%, 52.90%, 0.40));
   transition: opacity 0.3s ease-in-out;
+
+  html[data-theme="dark"] & {
+    background: linear-gradient(270deg, rgba(255, 255, 255, .15) 60%, hsla(0, 0.00%, 52.90%, 0.20));
+  }
 }
 
 .menu {
