@@ -14,27 +14,25 @@ permalink: /blog/{{#if (not (eq pagination.pageNumber 0))}}page/{{pagination.pag
 {{#> components/text type="h1" as="h1"}}Блог о веб-разработке{{/ components/text}}
 
 {{#if (eq pagination.pageNumber 0)}}
-  {{#> components/text type="h2" as="h2"}}Лучшие посты{{/ components/text}}
-
-  {{> components/post-list popular="true" posts=(reverse collections.popularPosts)}}
+  <section aria-labelledby="popular-posts-title">
+    {{#> components/text type="h2" as="h2" id="popular-posts-title"}}Популярные посты{{/ components/text}}
+    {{> components/post-list postListTitle="Список популярных постов" popular="true" posts=(reverse collections.popularPosts)}}
+  </section>
 {{/if}}
 
-{{#> components/text type="h2" as="h2"}}
-  {{#if (not (eq pagination.pageNumber 0))}}
-    Cтраница {{plus pagination.pageNumber 1}} из {{paginationSize pagination.data.length pagination.size}}
-  {{else}}
-    Последние посты
-  {{/if}}
-{{/ components/text}}
+<section aria-labelledby="posts-title">
+  {{#> components/text type="h2" as="h2" id="posts-title"}}
+    {{#if (not (eq pagination.pageNumber 0))}}
+      Cтраница {{plus pagination.pageNumber 1}} из {{paginationSize pagination.data.length pagination.size}}
+    {{else}}
+      Последние посты
+    {{/if}}
+  {{/ components/text}}
 
-{{> components/post-list posts=(reverse pagination.items)}}
+  {{> components/post-list postListTitle="Список последних постов" posts=(reverse pagination.items)}}
 
-{{> components/pagination pagination=pagination}}
-
-{{#if (eq pagination.pageNumber 0)}}
-  {{#> components/text type="h2" as="h2"}}Проекты{{/ components/text}}
-  {{> components/project-list projects=projects}}
-{{/if}}
+  {{> components/pagination pagination=pagination}}
+</section>
 
 {{> components/stay-in-touch }}
 

@@ -3,6 +3,7 @@
 @import url("./modules/colors.css");
 @import url("./modules/page.css");
 @import url("./modules/base.css");
+@import url("./modules/a11y-skip-to-content.css");
 
 /* Common components */
 @import url("./modules/text.css");

@@ -31,11 +31,21 @@ export function registerThemeToggler() {
     return
   }
 
+  $toggler.setAttribute('aria-label', `Сменить тему на ${document.documentElement.getAttribute('data-theme') === 'light' ? 'тёмную' : 'светлую'}`)
+
   function onTogglerClick(event: MouseEvent) {
     event.preventDefault()
 
     const theme = document.documentElement.getAttribute('data-theme') as Theme
-    setTheme(theme === 'light' ? 'dark' : 'light')
+    const nextTheme = theme === 'light' ? 'dark' : 'light'
+
+    setTheme(nextTheme)
+
+    if (!$toggler) {
+      return
+    }
+
+    $toggler.setAttribute('aria-label', `Сменить тему на ${nextTheme === 'light' ? 'тёмную' : 'светлую'}`)
   }
 
   $toggler.addEventListener('click', onTogglerClick)

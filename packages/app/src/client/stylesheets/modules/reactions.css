@@ -6,6 +6,7 @@
   padding: 24px;
   border-radius: 35px;
   background: var(--secondary-background-color);
+  list-style-type: none;
 }
 
 .reaction {
@@ -17,6 +18,14 @@
     backface-visibility: hidden;
     perspective: 1000px;
   }
+}
+
+.reaction button {
+  border: none;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
 }
 
 .reaction__image {
@@ -39,6 +48,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 16px;
   font-weight: 700;
   position: absolute;
   top: 0;

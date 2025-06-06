@@ -1,4 +1,4 @@
-.footer {
+.footer .footer__list {
   display: flex;
   flex-direction: row;
   align-items: flex-end;
@@ -6,6 +6,8 @@
   padding-top: 58px;
   color: var(--secondary-text-color);
   line-height: 1;
+
+  list-style-type: none;
 }
 
 .footer__item_divider {

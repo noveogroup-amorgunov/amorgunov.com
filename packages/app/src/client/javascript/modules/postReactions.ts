@@ -49,10 +49,12 @@ function renderItems(reactions: Reactions, wrapperEl: HTMLDivElement) {
   const content = Object.entries(reactions).map(([type, count]) => {
     const typedType = type as ReactionCode
     return `
-    <div class="reactions__item reaction" data-type="${type}">
-      <img class="reaction__image" src="${IMAGES_MAP[typedType]}" alt="${EMOJI_MAP[typedType]}" width="64" height="64" />
-      <div class="reaction__counter">${count}</div>
-    </div>
+    <li class="reactions__item reaction" data-type="${type}">
+      <button aria-label="Поставить реакцию ${typedType}">
+        <img aria-hidden="true" class="reaction__image" src="${IMAGES_MAP[typedType]}" alt="${EMOJI_MAP[typedType]}" width="64" height="64" />
+        <div class="reaction__counter" aria-label="Реакция поставлена ${count} раз">${count}</div>
+      </button>
+    </li>
     `
   })
 
@@ -78,14 +80,17 @@ function clientOptimisticUpdate(
 
   const imageEl = el.querySelector('.reaction__image') as HTMLImageElement
   const counterEl = el.querySelector('.reaction__counter') as HTMLDivElement
+  const button = el.querySelector('button') as HTMLButtonElement
 
   if (increaseValue) {
     el.classList.add('reaction_active')
+    button.setAttribute('aria-current', 'true')
     imageEl.src = imageEl.src.replace('.svg', '.gif')
     counterEl.textContent = String(Number(counterEl.textContent) + 1)
   }
   else {
     el.classList.remove('reaction_active')
+    button.removeAttribute('aria-current')
     imageEl.src = imageEl.src.replace('.gif', '.svg')
     counterEl.textContent = String(Number(counterEl.textContent) - 1)
   }

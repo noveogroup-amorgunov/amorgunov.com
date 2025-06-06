@@ -1,5 +1,5 @@
 {{#if as}}
-<{{as}} class="text{{#if type}} text_type_{{type}}{{/if}}{{#if class}} {{class}}{{/if}}">{{> @partial-block }}</{{as}}>
+<{{as}} {{#if id}}id="{{id}}"{{/if}} class="text{{#if type}} text_type_{{type}}{{/if}}{{#if class}} {{class}}{{/if}}">{{> @partial-block }}</{{as}}>
 {{else}}
-<span class="text{{#if type}} text_type_{{type}}{{/if}}{{#if class}} {{class}}{{/if}}">{{> @partial-block }}</span>
+<span {{#if id}}id="{{id}}"{{/if}} class="text{{#if type}} text_type_{{type}}{{/if}}{{#if class}} {{class}}{{/if}}">{{> @partial-block }}</span>
 {{/if}}

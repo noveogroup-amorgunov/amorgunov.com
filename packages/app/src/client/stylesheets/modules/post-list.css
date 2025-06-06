@@ -6,6 +6,8 @@
   max-width: 100%;
   padding-top: 8px;
 
+  list-style-type: none;
+
   @media (--viewport-mobile) {
     grid-template-columns: repeat(1, minmax(0, 1fr));
   }
@@ -24,7 +26,7 @@
   }
 }
 
-a.post-list__card {
+.post-list__card {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -73,6 +75,14 @@ a.post-list__card {
     z-index: 1;
     content: "";
   }
+}
+
+.post-list__card a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
 
 .post-list__card-title {
@@ -138,4 +148,10 @@ a.post-list__card {
     font-size: 19px;
     filter: none !important;
   }
+}
+
+.post-list__card-content {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
 }

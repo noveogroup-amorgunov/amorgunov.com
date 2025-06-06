@@ -1,0 +1,82 @@
+{
+  "2025": [
+    {
+      "conferenceUrl": "https://15.codefest.ru/lecture/2883",
+      "slidesUrl": "https://docs.google.com/presentation/d/1tt7S4W00qkw9TTx8N7Tv-h5S_29vJOTvbQNOZ8TfBms/edit?usp=sharing",
+      "materialsUrl": "https://gist.github.com/noveogroup-amorgunov/a8458105ca6b72164202d596271269e4",
+      "title": "Используем различные архитектуры внутри FSD",
+      "conference": "CodeFest 15",
+      "year": "2025"
+    },
+    {
+      "conferenceUrl": "https://holyjs.ru/archive/2025%20Spring/talks/d67e83dfbf544b7891971a07c8107191/",
+      "slidesUrl": "https://docs.google.com/presentation/d/1scB6qmqjP8R0pvJW7PLozNUUwmC38VgQjaGamviF7Ck/edit?usp=sharing",
+      "materialsUrl": "https://gist.github.com/noveogroup-amorgunov/20af2f1596fdef7409bd918d7281af45",
+      "title": "Воркшоп: Используем различные архитектуры внутри FSD",
+      "conference": "HolyJS 2025",
+      "year": "2025"
+    }
+  ],
+  "2024": [
+    {
+      "conferenceUrl": "https://holyjs.ru/talks/1025b2f91f5e48fc8598e6a990697a2e",
+      "videoUrl": "https://www.youtube.com/watch?v=H_rJ0zB8rqc",
+      "slidesUrl": "https://docs.google.com/presentation/d/1W3xmFgfcIssZY9Pg9VnNAbUBCA665V3QzQtTdkcmo00/edit",
+      "materialsUrl": "https://gist.github.com/noveogroup-amorgunov/cd70296d5c4246a53f14a11d498a809c",
+      "title": "Разбираемся в Feature-Sliced Design",
+      "conference": "HolyJS 2024 Autumn",
+      "year": "2024"
+    },
+    {
+      "conferenceUrl": "https://events.yandex.ru/events/ya-love-frontend-2024",
+      "videoUrl": "https://www.youtube.com/watch?v=M84x3pzDYr0",
+      "slidesUrl": "https://docs.google.com/presentation/d/1zHaieuqyiW95witifD9rO0-nnj5GmjzzPkDGvhWft6s/edit?usp=sharing",
+      "materialsUrl": "https://gist.github.com/noveogroup-amorgunov/014965078e55de811dcf8b3ad9351de0",
+      "title": "Копаем глубже в Feature-Sliced Design",
+      "conference": "Я <3 Фронтенд",
+      "year": "2024"
+    },
+    {
+      "conferenceUrl": "https://moscowjs.org/events/moscowjs-58",
+      "videoUrl": "https://www.youtube.com/watch?v=1RHxFJhLrQk",
+      "slidesUrl": "https://docs.google.com/presentation/d/1bbWxYGwKJ9HOFm8K81LWTVJ6hbLrLzAqZW2oN1U9luI/edit?usp=sharing",
+      "materialsUrl": "https://gist.github.com/noveogroup-amorgunov/dd179ba9e41fe06ff327d5d6a2d296a9",
+      "title": "Темная сторона NextJS",
+      "conference": "MoscowJS #58",
+      "year": "2024"
+    }
+  ],
+  "2022": [
+    {
+      "videoUrl": "https://www.youtube.com/watch?v=4S5VDv6Ximk",
+      "title": "Тестирование в современном фронтенде",
+      "conference": "Samokat_tech Meetup",
+      "year": "2022"
+    },
+    {
+      "videoUrl": "https://www.youtube.com/watch?v=_HM76ktNcTA",
+      "slidesUrl": "https://docs.google.com/presentation/d/16XdAl52GuCE1BJlWB0kMaSEhP6Xrv2r0w5ULU5tMQ6Y/edit?usp=sharing",
+      "title": "Как писать интеграционные тесты",
+      "conference": "Samokat_tech Meetup",
+      "year": "2022"
+    }
+  ],
+  "2020": [
+    {
+      "conferenceUrl": "https://events.yandex.ru/events/js_party/30oct",
+      "slidesUrl": "https://docs.google.com/presentation/d/1eSqDMmGEQjnnP5Jj0DZEzh-Vm7F_YHkcwN4V0SgQhcg/edit?usp=sharing",
+      "title": "Разбираемся с бессерверными технологиями",
+      "conference": "JS Party Яндекс.Маркета",
+      "year": "2020"
+    }
+  ],
+  "2019": [
+    {
+      "videoUrl": "https://www.youtube.com/watch?v=CjDaePioMf0",
+      "slidesUrl": "https://docs.google.com/presentation/d/1-OdgdBfRWRJL4shq1IS8PLhePk0RL5d9-G7QdADdRbs/edit?usp=sharing",
+      "title": "SSR в React",
+      "conference": "ReactNSK #2",
+      "year": "2019"
+    }
+  ]
+}

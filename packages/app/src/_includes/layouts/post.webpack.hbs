@@ -8,7 +8,8 @@
     <div class="page">
       <div class="page__container">
         {{> components/header }}
-        <div class="page__content post line-numbers">
+        <main id="main-content-id" class="page__content post line-numbers">
+          <a id="skipped-link-id" tabindex="-1" class=""></a>
           {{#> components/text type="h1" as="h1"}}{{title}}{{/ components/text}}
           <div class="post__date">
             {{#> components/text type="captionStrong"}}
@@ -24,14 +25,16 @@
           <div class="post__content">
             {{{content}}}
           </div>
-        </div>
-        <div class="post__reactions reactions"></div>
+        </main>
+        <section class="post__reactions" aria-label="Оценить пост">
+          <ul class="reactions"></ul>
+        </section>
         {{> components/stay-in-touch }}
-        <div class="post__readmore">
-          {{#> components/text type="h3" as="h3" class="post__readmore-title"}}Вам может быть интересно{{/ components/text}}
-          {{> components/post-list popular="true" posts=(relatedPosts collections.posts page.url tags 3)}}
-        </div>
-        <div class="post-layer__up">
+        <section class="post__readmore" aria-labelledby="post-readmore-title">
+          {{#> components/text type="h3" as="h3" id="post-readmore-title" class="post__readmore-title"}}Вам может быть интересно{{/ components/text}}
+          {{> components/post-list postListTitle="Список постов" popular="true" posts=(relatedPosts collections.posts page.url tags 3)}}
+        </section>
+        <div class="post-layer__up" aria-hidden="true">
           <div class="post-layer__back">
             <i class="arrow arrow_type_up"></i>
             <i class="arrow arrow_type_down"></i>
@@ -41,7 +44,7 @@
         {{> components/menu }}
         {{> components/share }}
       </div>
-    </div>   
+    </div>
     <%= htmlWebpackPlugin.tags.bodyTags %>
     {{> components/scripts }}
     <script defer src="/assets/prism.js"></script>
