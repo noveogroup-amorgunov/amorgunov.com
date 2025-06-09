@@ -2,13 +2,13 @@ import registerImageZoom from 'medium-zoom'
 import { registerA11y } from './modules/a11y'
 import { registerTerminals } from './modules/bot/createBot'
 import { initCopyToClipboard as registerCopyToClipboard } from './modules/copy'
+import { registerHotkeys } from './modules/hotkeys'
 import { lazyload as registerImageLazyload } from './modules/lazyload'
 import { registerMenuHandlers } from './modules/menu'
 import { registerPostReactions } from './modules/postReactions'
 import { prepareExternalLinks as registerExternalLinks } from './modules/prepareExternalLinks'
 import { scroll as registerScrollTop } from './modules/scroll'
 import { registerShare } from './modules/share'
-
 import { registerThemeToggler, syncTheme } from './modules/theme'
 
 import '../stylesheets/post.entry.css'
@@ -32,4 +32,5 @@ document.addEventListener('DOMContentLoaded', () => {
   registerShare()
   registerThemeToggler()
   registerA11y()
+  registerHotkeys()
 })
