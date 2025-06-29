@@ -1,6 +1,7 @@
 {
   "2025": [
     {
+      "imageUrl": "/assets/images/common/talks/2025-codefestx.out.jpg",
       "conferenceUrl": "https://15.codefest.ru/lecture/2883",
       "slidesUrl": "https://docs.google.com/presentation/d/1tt7S4W00qkw9TTx8N7Tv-h5S_29vJOTvbQNOZ8TfBms/edit?usp=sharing",
       "materialsUrl": "https://gist.github.com/noveogroup-amorgunov/a8458105ca6b72164202d596271269e4",
@@ -9,6 +10,7 @@
       "year": "2025"
     },
     {
+      "imageUrl": "/assets/images/common/talks/2025-holyjs.out.jpg",
       "conferenceUrl": "https://holyjs.ru/archive/2025%20Spring/talks/d67e83dfbf544b7891971a07c8107191/",
       "slidesUrl": "https://docs.google.com/presentation/d/1scB6qmqjP8R0pvJW7PLozNUUwmC38VgQjaGamviF7Ck/edit?usp=sharing",
       "materialsUrl": "https://gist.github.com/noveogroup-amorgunov/20af2f1596fdef7409bd918d7281af45",
@@ -19,6 +21,7 @@
   ],
   "2024": [
     {
+      "imageUrl": "/assets/images/common/talks/2024-holyjs.out.jpg",
       "conferenceUrl": "https://holyjs.ru/talks/1025b2f91f5e48fc8598e6a990697a2e",
       "videoUrl": "https://www.youtube.com/watch?v=H_rJ0zB8rqc",
       "slidesUrl": "https://docs.google.com/presentation/d/1W3xmFgfcIssZY9Pg9VnNAbUBCA665V3QzQtTdkcmo00/edit",
@@ -28,6 +31,7 @@
       "year": "2024"
     },
     {
+      "imageUrl": "/assets/images/common/talks/2024-yalovefrontend.out.jpg",
       "conferenceUrl": "https://events.yandex.ru/events/ya-love-frontend-2024",
       "videoUrl": "https://www.youtube.com/watch?v=M84x3pzDYr0",
       "slidesUrl": "https://docs.google.com/presentation/d/1zHaieuqyiW95witifD9rO0-nnj5GmjzzPkDGvhWft6s/edit?usp=sharing",
@@ -37,6 +41,8 @@
       "year": "2024"
     },
     {
+      "wide": true,
+      "imageUrl": "/assets/images/common/talks/2024-moscowjs.out.jpg",
       "conferenceUrl": "https://moscowjs.org/events/moscowjs-58",
       "videoUrl": "https://www.youtube.com/watch?v=1RHxFJhLrQk",
       "slidesUrl": "https://docs.google.com/presentation/d/1bbWxYGwKJ9HOFm8K81LWTVJ6hbLrLzAqZW2oN1U9luI/edit?usp=sharing",
