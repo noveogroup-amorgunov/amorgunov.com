@@ -27,7 +27,9 @@
           </div>
         </main>
         <section class="post__reactions" aria-label="Оценить пост">
-          <ul class="reactions"></ul>
+          <nav>
+            <ul class="reactions"></ul>
+          </nav>
         </section>
         {{> components/stay-in-touch }}
         <section class="post__readmore" aria-labelledby="post-readmore-title">
@@ -41,10 +43,10 @@
           </div>
         </div>
         {{> components/footer }}
-        {{> components/menu }}
         {{> components/share }}
       </div>
     </div>
+    {{> components/menu }}
     <%= htmlWebpackPlugin.tags.bodyTags %>
     {{> components/scripts }}
     <script defer src="/assets/prism.js"></script>
