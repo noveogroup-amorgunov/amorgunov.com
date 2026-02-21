@@ -1,3 +1,5 @@
+import * as keyux from 'keyux'
+
 function registerSkipToContent() {
   const $toggler = document.querySelector('#a11y-skip-to-content') as HTMLButtonElement
   const $main = document.querySelector('#main-content-id') as HTMLDivElement
@@ -7,14 +9,7 @@ function registerSkipToContent() {
     return
   }
 
-  // Focus toggler on Alt-0
-  window.addEventListener('keydown', (event) => {
-    if (event.type === 'keydown') {
-      if (event.code === 'Digit0' && event.altKey && !event.repeat) {
-        $toggler.focus()
-      }
-    }
-  }, false)
+  $toggler.innerHTML = `Пропустить (<kbd>${keyux.getHotKeyHint(window, 'alt+0')}</kbd>)`
 
   $toggler.addEventListener('click', () => {
     $main.scrollIntoView({ behavior: 'smooth' })
