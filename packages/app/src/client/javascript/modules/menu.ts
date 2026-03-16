@@ -2,15 +2,22 @@ export function registerMenuHandlers() {
   const $toggler = document.querySelector('.header__menu-toggler') as HTMLDivElement
   const $togglerCross = document.querySelector('.menu__toggler') as HTMLDivElement
   const $dialog = document.querySelector('dialog.menu') as HTMLDialogElement
+  const $mainContainer = document.querySelector('.page') as HTMLDivElement
 
   function openMenu(event: MouseEvent) {
     event.preventDefault()
     $dialog.showModal()
+    $mainContainer.setAttribute('inert', 'true')
   }
 
-  function closeMenu(event: MouseEvent) {
+  function closeMenu(event: MouseEvent | KeyboardEvent) {
     event.preventDefault()
-    $dialog.close()
+    $mainContainer.removeAttribute('inert')
+
+    setTimeout(() => {
+      $dialog.close()
+      $toggler.focus()
+    }, 10)
   }
 
   function closeOnBackDropClick(event: MouseEvent) {
@@ -29,7 +36,7 @@ export function registerMenuHandlers() {
 
   document.addEventListener('keydown', (event: KeyboardEvent) => {
     if (event.key === 'Escape') {
-      $dialog.close()
+      closeMenu(event)
     }
   })
 }
